@@ -1,0 +1,74 @@
+﻿@use 'variables' as v;
+@use 'breakpoints' as b;
+
+:root {
+    font-size: 62.5%;
+
+    @each $section, $items in v.$variables-mobile {
+        @each $item, $value in $items {
+            --#{$item}: #{$value};
+        }
+    }
+
+    @media only screen and (min-width: b.$mobile-point) {
+        @each $section, $items in v.$variables-tablet {
+            @each $item, $value in $items {
+                --#{$item}: #{$value};
+            }
+        }
+    }
+
+    @media only screen and (min-width: b.$tablet-point) {
+        @each $section, $items in v.$variables-desktop {
+            @each $item, $value in $items {
+                @each $item, $value in $items {
+                --#{$item}: #{$value};
+                }
+            }
+        }
+    }
+}
+
+@each $section, $items in v.$variables-mobile {
+    @each $item, $value in $items {
+        @if $section == colours {
+            .text-#{$item} {
+                color: var(--#{$item});
+            }
+
+            .bg-#{$item} {
+                background-color: var(--#{$item});
+            }
+        }
+
+        @if $section == font-size {
+            .#{$item} {
+                font-size: var(--#{$item});
+            }
+        }
+
+        @if $section == line-height {
+            .#{$item} {
+                line-height: var(--#{$item});
+            }
+        }
+
+        @if $section == letter-spacing {
+            .#{$item} {
+                letter-spacing: var(--#{$item});
+            }
+        }
+
+        @if $section == font-weight {
+            .#{$item} {
+                font-weight: var(--#{$item});
+            }
+        }
+
+        @if $section == opacity {
+            .#{$item} {
+                opacity: var(--#{$item});
+            }
+        }
+    }
+}
