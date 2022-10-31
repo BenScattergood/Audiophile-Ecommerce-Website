@@ -1,0 +1,38 @@
+﻿@use "../globals/breakpoints" as b;
+
+.navbar {
+    background-color: var(--black-100);
+    display: flex;
+    justify-content: space-between;
+    height: 9rem;
+    align-items: center;
+    gap: 1rem;
+}
+
+@media only screen and (min-width: b.$mobile-point) {  
+    .navbar {
+        justify-content: flex-start;
+        gap: 4.2rem;
+    }
+
+    .navbar__cart-icon {
+        margin-left: auto;
+    }
+}
+
+@media only screen and (min-width: b.$tablet-point) {
+    .navbar {
+        justify-content: space-between;
+        gap: 1rem;
+    }
+
+    .navbar__cart-icon {
+        margin-left: initial;
+    }
+}
+
+.navbar__links {
+    text-transform: uppercase;
+    display: flex;
+    gap: 3.4rem;
+}

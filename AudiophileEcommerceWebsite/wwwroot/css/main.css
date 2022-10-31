@@ -2,7 +2,8 @@
   font-size: 62.5%;
   --beige-100: hsl(22deg, 65%, 57%);
   --beige-200: hsl(21deg, 94%, 75%);
-  --black-100: hsl(0deg, 0%, 6%);
+  --black-100: hsl(0deg, 0%, 0%);
+  --black-200: hsl(0deg, 0%, 6%);
   --white-100: hsl(0deg, 0%, 100%);
   --white-98: hsl(0deg, 0%, 98%);
   --white-95: hsl(0deg, 0%, 0%);
@@ -74,6 +75,14 @@
 
 .bg-black-100 {
   background-color: var(--black-100);
+}
+
+.text-black-200 {
+  color: var(--black-200);
+}
+
+.bg-black-200 {
+  background-color: var(--black-200);
 }
 
 .text-white-100 {
@@ -263,6 +272,73 @@ svg {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
+.navbar {
+  background-color: var(--black-100);
+  display: flex;
+  justify-content: space-between;
+  height: 9rem;
+  align-items: center;
+  gap: 1rem;
+}
+
+@media only screen and (min-width: 768px) {
+  .navbar {
+    justify-content: flex-start;
+    gap: 4.2rem;
+  }
+  .navbar__cart-icon {
+    margin-left: auto;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .navbar {
+    justify-content: space-between;
+    gap: 1rem;
+  }
+  .navbar__cart-icon {
+    margin-left: initial;
+  }
+}
+.navbar__links {
+  text-transform: uppercase;
+  display: flex;
+  gap: 3.4rem;
+}
+
+@media only screen and (min-width: 1200px) {
+  .tablet-only {
+    display: none;
+  }
+}
+@media only screen and (max-width: 1199px) {
+  .desktop-only {
+    display: none;
+  }
+}
+.wrapper {
+  padding: 2.4rem;
+  max-width: 375px;
+}
+
+@media only screen and (min-width: 1200px) {
+  .wrapper {
+    padding: 3.9rem;
+    max-width: 769px;
+  }
+}
+@media only screen and (min-width: 1800px) {
+  .wrapper {
+    padding: 0;
+    max-width: 90%;
+  }
+}
+body {
+  font-size: 1.6rem;
+  display: flex;
+  flex-direction: column;
+  font-family: "Manrope", sans-serif;
+  margin: 0;
 }
 
 /*# sourceMappingURL=main.css.map */

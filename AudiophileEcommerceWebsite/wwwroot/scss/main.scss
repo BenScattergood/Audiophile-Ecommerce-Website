@@ -1,1 +1,10 @@
 ﻿@forward 'globals';
+@forward 'components';
+
+body {
+    font-size: 1.6rem;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Manrope', sans-serif;
+    margin: 0;
+}

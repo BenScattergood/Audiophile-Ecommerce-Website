@@ -1,0 +1,33 @@
+﻿@use "../globals/breakpoints" as b;
+
+
+@media only screen and (min-width: b.$tablet-point) {
+    .tablet-only {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: b.$tablet-point--max) {
+    .desktop-only {
+        display: none;
+    }
+}
+
+.wrapper {
+    padding: 2.4rem;
+    max-width: 375px;
+}
+
+@media only screen and (min-width: b.$tablet-point) {
+    .wrapper {
+        padding: 3.9rem;
+        max-width: 769px;
+    }
+}
+
+@media only screen and (min-width: b.$desktop-point) {
+    .wrapper {
+        padding: 0;
+        max-width: 90%;
+    }
+}

@@ -10,9 +10,28 @@
     <link rel="stylesheet" href="~/css/main.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/AudiophileEcommerceWebsite.styles.css" asp-append-version="true" />
 </head>
-<body>
+<body class="ff-">
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav class="navbar wrapper">
+            <div class="tablet-only">
+                <img src="/assets/shared//tablet/icon-hamburger.svg"/>
+            </div>
+            <div class="navbar__logo">
+                <img src="/assets/shared/desktop/logo.svg" />
+            </div>
+            <div class="desktop-only navbar__links text-white-100 fs-button fw-700 ls-h3">
+                <p>Home</p>
+                <p>Headphones</p>
+                <p>Speakers</p>
+                <p>Earphones</p>
+            </div>
+            <div class="navbar__cart-icon">
+                <img src="/assets/shared/desktop/icon-cart.svg" />
+            </div>
+        </nav>
+
+
+      @*  <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container-fluid">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">AudiophileEcommerceWebsite</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
@@ -30,7 +49,7 @@
                     </ul>
                 </div>
             </div>
-        </nav>
+        </nav>  *@
     </header>
     <div class="container">
         <main role="main" class="pb-3">
