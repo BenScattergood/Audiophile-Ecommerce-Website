@@ -15,19 +15,45 @@
 
 .wrapper {
     padding: 2.4rem;
-    max-width: 375px;
+    /*max-width: 375px;*/
+    width: 100%;
+}
+
+@media only screen and (min-width: b.$mobile-point) {
+    .wrapper {
+        padding: 3.9rem;
+        /*max-width: 769px;*/
+    }
 }
 
 @media only screen and (min-width: b.$tablet-point) {
     .wrapper {
-        padding: 3.9rem;
-        max-width: 769px;
+        padding: 0;
+        width: 85%;
+        max-width: 1800px;
     }
 }
 
-@media only screen and (min-width: b.$desktop-point) {
-    .wrapper {
-        padding: 0;
-        max-width: 90%;
-    }
+.text-uppercase {
+    text-transform: uppercase;
+}
+
+.a-text-black {
+    color: var(--black-100) !important;
+}
+
+.nav__filter {
+    position: absolute;
+    inset: 9rem 0 0 0;
+    background-color: grey;
+    z-index: 10;
+    //will become a filter...
+}
+
+.hidden {
+    display: none;
+}
+
+.pointer {
+    cursor: pointer;
 }

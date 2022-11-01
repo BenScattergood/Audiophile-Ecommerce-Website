@@ -10,10 +10,10 @@
     <link rel="stylesheet" href="~/css/main.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/AudiophileEcommerceWebsite.styles.css" asp-append-version="true" />
 </head>
-<body class="ff-">
-    <header>
-        <nav class="navbar wrapper">
-            <div class="tablet-only">
+<body class="">
+    <header class="heading">
+        <nav class="wrapper navbar">
+            <div class="hamburger tablet-only pointer">
                 <img src="/assets/shared//tablet/icon-hamburger.svg"/>
             </div>
             <div class="navbar__logo">
@@ -28,6 +28,41 @@
             <div class="navbar__cart-icon">
                 <img src="/assets/shared/desktop/icon-cart.svg" />
             </div>
+            <section class="navbar__menu wrapper tablet-only hidden">
+                <div class="navbar__menu__item bg-white-94">
+                    <img class="menu__item__img" src="/assets/image-removebg-preview(41).png" /> 
+                    <h4 class="text-uppercase fs-main-h4 text-black-100 ls-h4 lh-h4 fw-700">Headphones</h4>
+                    <div class="menu__item__link">
+                        <a class="a-text-black text-uppercase opacity-05 fw-700 fs-button lh-button ls-button">Shop</a>
+                        <div>
+                            <img src="/assets/shared/desktop/icon-arrow-right.svg" />
+                        </div>
+                    </div>
+                </div>
+                <div class="navbar__menu__item bg-white-94">
+                    <img class="menu__item__img" src="/assets/image-removebg-preview(38).png" />
+                    <h4 class="text-uppercase fs-main-h4 text-black-100 ls-h4 lh-h4 fw-700">Speakers</h4>
+                    <div class="menu__item__link">
+                        <a class="a-text-black text-uppercase opacity-05 fw-700 fs-button lh-button ls-button">Shop</a>
+                        <div>
+                            <img src="/assets/shared/desktop/icon-arrow-right.svg" />
+                        </div>
+                    </div>
+                </div>
+                <div class="navbar__menu__item bg-white-94">
+                    <img class="menu__item__img" src="/assets/image-removebg-preview(42).png" />
+                    <h4 class="text-uppercase fs-main-h4 text-black-100 ls-h4 lh-h4 fw-700">Earphones</h4>
+                    <div class="menu__item__link">
+                        <a class="a-text-black text-uppercase opacity-05 fw-700 fs-button lh-button ls-button">Shop</a>
+                        <div>
+                            <img src="/assets/shared/desktop/icon-arrow-right.svg" />
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <span class="nav__filter tablet-only hidden">
+
+            </span>
         </nav>
 
 
@@ -56,14 +91,6 @@
             @RenderBody()
         </main>
     </div>
-
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2022 - AudiophileEcommerceWebsite - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
-    </footer>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
