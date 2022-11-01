@@ -26,3 +26,4 @@ C:\Users\Ben\Documents\Ben\Coding\WebDev\FrontEndMentor\Level 5\Audiophile e-com
 C:\Users\Ben\Documents\Ben\Coding\WebDev\FrontEndMentor\Level 5\Audiophile e-commerce website\AudiophileEcommerceWebsite\AudiophileEcommerceWebsite\obj\Debug\net6.0\AudiophileEcommerceWebsite.pdb
 C:\Users\Ben\Documents\Ben\Coding\WebDev\FrontEndMentor\Level 5\Audiophile e-commerce website\AudiophileEcommerceWebsite\AudiophileEcommerceWebsite\obj\Debug\net6.0\AudiophileEcommerceWebsite.genruntimeconfig.cache
 C:\Users\Ben\Documents\Ben\Coding\WebDev\FrontEndMentor\Level 5\Audiophile e-commerce website\AudiophileEcommerceWebsite\AudiophileEcommerceWebsite\obj\Debug\net6.0\ref\AudiophileEcommerceWebsite.dll
+C:\Users\Ben\Documents\Ben\Coding\WebDev\FrontEndMentor\Level 5\Audiophile e-commerce website\AudiophileEcommerceWebsite\AudiophileEcommerceWebsite\bin\Debug\net6.0\data.json
