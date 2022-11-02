@@ -26,6 +26,7 @@ namespace AudiophileEcommerceWebsite.Entities
 
     public class Image
     {
+        public int ImageId { get; set; }
         public string? Mobile { get; set; }
         public string? Tablet { get; set; }
         public string? Desktop { get; set; }
@@ -33,12 +34,14 @@ namespace AudiophileEcommerceWebsite.Entities
 
     public class Details
     {
+        public int DetailsId { get; set; }
         public int Quantity { get; set; }
         public string Item { get; set; } = default!;
     }
 
     public class Other
     {
+        public int OtherId { get; set; }
         public string Slug { get; set; } = default!;
         public string Name { get; set; } = default!;
         public Image? Images { get; set; }

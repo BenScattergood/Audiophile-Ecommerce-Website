@@ -1,7 +1,18 @@
+using AudiophileEcommerceWebsite.Entities;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
+var connectionString = builder.Configuration.GetConnectionString
+    ("AudiophileEcommerceWebsite") ?? throw new InvalidOperationException
+    ("Connection string 'AudiophileEcommerceWebsite' not found.");
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddDbContext<AudiophileDbContext>(options =>
+{
+    options.UseSqlServer(connectionString);
+});
 
 var app = builder.Build();
 
