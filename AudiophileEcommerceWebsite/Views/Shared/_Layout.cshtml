@@ -12,42 +12,44 @@
 </head>
 <body class="">
     <header class="heading">
-        <div class="heading__background"></div>
-        <picture class="heading__img">
-            <source media="(min-width: 950px)" 
-                    srcset="/assets/home/desktop/image-hero.jpg" />
+        <div class="heading__img-container">
+            <picture>
+                <source media="(min-width: 1025px)" 
+                        srcset="/assets/home/desktop/image-hero.jpg" />
                     
-            <source media="(min-width: 600px)" 
-                    srcset="/assets/home/tablet/image-header.jpg" />
+                <source media="(min-width: 600px)" 
+                        srcset="/assets/home/tablet/image-header.jpg" />
                     
-            <img src="/assets/home/mobile/image-header.jpg" />
-        </picture>
-        
-        <nav class="wrapper navbar">
-            <div class="hamburger tablet-only pointer">
-                <img src="/assets/shared/tablet/icon-hamburger.svg"/>
-            </div>
-            <div class="navbar__logo">
-                <img src="/assets/shared/desktop/logo.svg" />
-            </div>
-            <div class="desktop-only navbar__links text-white-100 fs-button fw-700 ls-h3">
-                <p>Home</p>
-                <p>Headphones</p>
-                <p>Speakers</p>
-                <p>Earphones</p>
-            </div>
-            <div class="navbar__cart-icon">
-                <img src="/assets/shared/desktop/icon-cart.svg" />
-            </div>
-            <section class="navbar__menu wrapper tablet-only hidden">
-                <partial name="_Categories" />
-            </section>
-            <span class="nav__filter tablet-only hidden">
+                <img class="heading__img" src="/assets/home/mobile/image-header.jpg" />
+            </picture>
+        </div>
+        <div class="heading__nav-container">
+            <nav class="wrapper navbar">
+                <div class="hamburger tablet-only pointer">
+                    <img src="/assets/shared/tablet/icon-hamburger.svg"/>
+                </div>
+                <div class="navbar__logo">
+                    <img src="/assets/shared/desktop/logo.svg" />
+                </div>
+                <div class="desktop-only navbar__links text-white-100 fs-button fw-700 ls-h3">
+                    <p>Home</p>
+                    <p>Headphones</p>
+                    <p>Speakers</p>
+                    <p>Earphones</p>
+                </div>
+                <div class="navbar__cart-icon">
+                    <img src="/assets/shared/desktop/icon-cart.svg" />
+                </div>
+                <section class="navbar__menu categories-wrapper wrapper tablet-only hidden">
+                    <partial name="_CategoriesPartial" />
+                </section>
+                <span class="nav__filter tablet-only hidden"></span>
 
-            </span>
-        </nav>
-        @RenderSection("heroText",true)
-
+            
+            </nav>
+            @RenderSection("heroText",true)
+            <span class="empty"></span>
+        </div>
 
 
       @*  <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
@@ -70,10 +72,9 @@
             </div>
         </nav>  *@
     </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
+    <main role="main" class="wrapper">
+        @RenderBody()
+    </main>
     </div>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)

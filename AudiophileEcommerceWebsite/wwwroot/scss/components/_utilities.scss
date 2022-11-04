@@ -14,22 +14,23 @@
 }
 
 .wrapper {
-    padding: 2.4rem;
+    padding-inline: 2.4rem;
     /*max-width: 375px;*/
-    width: 100%;
+    width: 100vw;
+    min-width: 350px;
 }
 
 @media only screen and (min-width: b.$mobile-point) {
     .wrapper {
-        padding: 3.9rem;
+        padding-inline: 3.9rem;
         /*max-width: 769px;*/
     }
 }
 
 @media only screen and (min-width: b.$tablet-point) {
     .wrapper {
-        padding: 0;
-        width: 75%;
+        padding-inline: 0;
+        width: 75vw;
         max-width: b.$desktop-point;
     }
 }
@@ -43,7 +44,7 @@
 }
 
 .nav__filter {
-    position: absolute;
+    position: fixed;
     inset: 9rem 0 0 0;
     background-color: grey;
     z-index: 10;
@@ -51,7 +52,7 @@
 }
 
 .hidden {
-    display: none;
+    display: none !important;
 }
 
 .pointer {
@@ -75,4 +76,13 @@
 
 .margin-t-15 {
     margin-top: 1.5rem;
+}
+
+.categories-wrapper {
+    display: flex
+}
+
+.empty {
+    content: "";
+    height: 9rem;
 }
