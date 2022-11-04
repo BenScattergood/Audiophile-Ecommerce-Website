@@ -3,7 +3,7 @@
 
 @media only screen and (min-width: b.$tablet-point) {
     .tablet-only {
-        display: none;
+        display: none !important;
     }
 }
 
@@ -41,6 +41,7 @@
 
 .a-text-black {
     color: var(--black-100) !important;
+    text-decoration: none;
 }
 
 .nav__filter {
@@ -63,26 +64,22 @@
     text-transform: uppercase;
 }
 
-.button-main {
-    padding: 1.5rem 3rem;
-    background-color: var(--beige-100);
-    border: none;
-}
-
-.button-main:hover {
-    background-color: var(--beige-200);
-    cursor: pointer;
-}
-
 .margin-t-15 {
     margin-top: 1.5rem;
-}
-
-.categories-wrapper {
-    display: flex
 }
 
 .empty {
     content: "";
     height: 9rem;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.text-hover:hover {
+    cursor: pointer;
+    color: var(--beige-100);
 }

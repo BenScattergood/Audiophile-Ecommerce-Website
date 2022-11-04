@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "+g1PZCr3Bb7vKDnreesgT4qIJCCdp/NL0tkvY7yogQk=",
+  "Hash": "7D7Z4vOB5yh+qixNj0wSyN9u/56APwp5kA1jZYCxQhI=",
   "Source": "AudiophileEcommerceWebsite",
   "BasePath": "_content/AudiophileEcommerceWebsite",
   "Mode": "Default",
@@ -3517,6 +3517,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Identity": "C:\\Users\\Ben\\Documents\\Ben\\Coding\\WebDev\\FrontEndMentor\\Level 5\\Audiophile e-commerce website\\AudiophileEcommerceWebsite\\AudiophileEcommerceWebsite\\wwwroot\\scss\\components\\_button.scss",
+      "SourceId": "AudiophileEcommerceWebsite",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Ben\\Documents\\Ben\\Coding\\WebDev\\FrontEndMentor\\Level 5\\Audiophile e-commerce website\\AudiophileEcommerceWebsite\\AudiophileEcommerceWebsite\\wwwroot\\",
+      "BasePath": "_content/AudiophileEcommerceWebsite",
+      "RelativePath": "scss/components/_button.scss",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\scss\\components\\_button.scss"
+    },
+    {
+      "Identity": "C:\\Users\\Ben\\Documents\\Ben\\Coding\\WebDev\\FrontEndMentor\\Level 5\\Audiophile e-commerce website\\AudiophileEcommerceWebsite\\AudiophileEcommerceWebsite\\wwwroot\\scss\\components\\_categoriesSection.scss",
+      "SourceId": "AudiophileEcommerceWebsite",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Ben\\Documents\\Ben\\Coding\\WebDev\\FrontEndMentor\\Level 5\\Audiophile e-commerce website\\AudiophileEcommerceWebsite\\AudiophileEcommerceWebsite\\wwwroot\\",
+      "BasePath": "_content/AudiophileEcommerceWebsite",
+      "RelativePath": "scss/components/_categoriesSection.scss",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\scss\\components\\_categoriesSection.scss"
     },
     {
       "Identity": "C:\\Users\\Ben\\Documents\\Ben\\Coding\\WebDev\\FrontEndMentor\\Level 5\\Audiophile e-commerce website\\AudiophileEcommerceWebsite\\AudiophileEcommerceWebsite\\wwwroot\\scss\\components\\_heading.scss",
