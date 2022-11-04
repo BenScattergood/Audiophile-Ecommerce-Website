@@ -35,7 +35,7 @@
   --opacity-05: 0.5;
   --opacity-075: 0.75;
 }
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 600px) {
   :root {
     --fs-main-h1: 5.6rem;
     --fs-main-h2: 4rem;
@@ -45,7 +45,7 @@
     --ls-h2: 0.14rem;
   }
 }
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 950px) {
   :root {
     --fs-main-h4: 1.8rem;
     --lh-h4: 2.5rem;
@@ -274,11 +274,31 @@ svg {
   }
 }
 .heading {
-  background-color: var(--black-100);
-  height: 9rem;
+  height: 72rem;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  border: 1px solid green;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.heading__background {
+  position: absolute;
+  top: 72rem;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: var(--white-98);
+  z-index: -9;
+}
+
+.heading__img {
+  position: absolute;
+  top: -5rem;
+  z-index: -10;
+  /*top: -12rem;*/
 }
 
 .navbar {
@@ -286,9 +306,10 @@ svg {
   justify-content: space-between;
   align-items: center;
   gap: 1rem;
+  height: 9rem;
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 600px) {
   .navbar {
     justify-content: flex-start;
     gap: 4.2rem;
@@ -297,13 +318,17 @@ svg {
     margin-left: auto;
   }
 }
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 950px) {
   .navbar {
     justify-content: space-between;
     gap: 1rem;
   }
   .navbar__cart-icon {
     margin-left: initial;
+  }
+  .heading__img {
+    top: 0;
+    transform: scale(1.1);
   }
 }
 .navbar__links {
@@ -348,7 +373,7 @@ svg {
   align-items: center;
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 600px) {
   .navbar__menu {
     height: 34rem;
     flex-direction: row;
@@ -358,12 +383,12 @@ svg {
     margin-top: 0;
   }
 }
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 950px) {
   .tablet-only {
     display: none;
   }
 }
-@media only screen and (max-width: 1199px) {
+@media only screen and (max-width: 949px) {
   .desktop-only {
     display: none;
   }
@@ -374,17 +399,17 @@ svg {
   width: 100%;
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 600px) {
   .wrapper {
     padding: 3.9rem;
     /*max-width: 769px;*/
   }
 }
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 950px) {
   .wrapper {
     padding: 0;
-    width: 85%;
-    max-width: 1800px;
+    width: 75%;
+    max-width: 1400px;
   }
 }
 .text-uppercase {

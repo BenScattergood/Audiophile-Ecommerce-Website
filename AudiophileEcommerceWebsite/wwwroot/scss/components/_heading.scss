@@ -2,11 +2,31 @@
 
 
 .heading {
-    background-color: var(--black-100);
-    height: 9rem;
+    height: 72rem;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
+    border: 1px solid green;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.heading__background {
+    position: absolute;
+    top: 72rem;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: var(--white-98);
+    z-index: -9;
+}
+
+.heading__img {
+    position: absolute;
+    top: -5rem;
+    z-index: -10;
+    /*top: -12rem;*/
 }
 
 .navbar {
@@ -14,6 +34,7 @@
     justify-content: space-between;
     align-items: center;
     gap: 1rem;
+    height: 9rem;
 }
 
 @media only screen and (min-width: b.$mobile-point) {  
@@ -35,6 +56,10 @@
 
     .navbar__cart-icon {
         margin-left: initial;
+    }
+    .heading__img {
+        top: 0;
+        transform: scale(1.1);
     }
 }
 

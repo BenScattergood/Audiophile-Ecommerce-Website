@@ -12,9 +12,20 @@
 </head>
 <body class="">
     <header class="heading">
+        <div class="heading__background"></div>
+        <picture class="heading__img">
+            <source media="(min-width: 950px)" 
+                    srcset="/assets/home/desktop/image-hero.jpg" />
+                    
+            <source media="(min-width: 600px)" 
+                    srcset="/assets/home/tablet/image-header.jpg" />
+                    
+            <img src="/assets/home/mobile/image-header.jpg" />
+        </picture>
+        
         <nav class="wrapper navbar">
             <div class="hamburger tablet-only pointer">
-                <img src="/assets/shared//tablet/icon-hamburger.svg"/>
+                <img src="/assets/shared/tablet/icon-hamburger.svg"/>
             </div>
             <div class="navbar__logo">
                 <img src="/assets/shared/desktop/logo.svg" />
@@ -29,41 +40,14 @@
                 <img src="/assets/shared/desktop/icon-cart.svg" />
             </div>
             <section class="navbar__menu wrapper tablet-only hidden">
-                <div class="navbar__menu__item bg-white-94">
-                    <img class="menu__item__img" src="/assets/image-removebg-preview(41).png" /> 
-                    <h4 class="text-uppercase fs-main-h4 text-black-100 ls-h4 lh-h4 fw-700">Headphones</h4>
-                    <div class="menu__item__link">
-                        <a class="a-text-black text-uppercase opacity-05 fw-700 fs-button lh-button ls-button">Shop</a>
-                        <div>
-                            <img src="/assets/shared/desktop/icon-arrow-right.svg" />
-                        </div>
-                    </div>
-                </div>
-                <div class="navbar__menu__item bg-white-94">
-                    <img class="menu__item__img" src="/assets/image-removebg-preview(38).png" />
-                    <h4 class="text-uppercase fs-main-h4 text-black-100 ls-h4 lh-h4 fw-700">Speakers</h4>
-                    <div class="menu__item__link">
-                        <a class="a-text-black text-uppercase opacity-05 fw-700 fs-button lh-button ls-button">Shop</a>
-                        <div>
-                            <img src="/assets/shared/desktop/icon-arrow-right.svg" />
-                        </div>
-                    </div>
-                </div>
-                <div class="navbar__menu__item bg-white-94">
-                    <img class="menu__item__img" src="/assets/image-removebg-preview(42).png" />
-                    <h4 class="text-uppercase fs-main-h4 text-black-100 ls-h4 lh-h4 fw-700">Earphones</h4>
-                    <div class="menu__item__link">
-                        <a class="a-text-black text-uppercase opacity-05 fw-700 fs-button lh-button ls-button">Shop</a>
-                        <div>
-                            <img src="/assets/shared/desktop/icon-arrow-right.svg" />
-                        </div>
-                    </div>
-                </div>
+                <partial name="_Categories" />
             </section>
             <span class="nav__filter tablet-only hidden">
 
             </span>
         </nav>
+
+
 
 
       @*  <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
