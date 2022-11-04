@@ -245,6 +245,7 @@ html:focus-within {
 html,
 body {
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 body {
@@ -274,11 +275,10 @@ svg {
   }
 }
 .heading {
-  height: 72rem;
+  height: 60rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 1px solid green;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -286,7 +286,7 @@ svg {
 
 .heading__background {
   position: absolute;
-  top: 72rem;
+  top: 60rem;
   left: 0;
   bottom: 0;
   right: 0;
@@ -296,7 +296,8 @@ svg {
 
 .heading__img {
   position: absolute;
-  top: -5rem;
+  top: -10rem;
+  min-width: 44rem;
   z-index: -10;
   /*top: -12rem;*/
 }
@@ -310,12 +311,22 @@ svg {
 }
 
 @media only screen and (min-width: 600px) {
+  .heading {
+    height: 72rem;
+  }
+  .heading__background {
+    top: 72rem;
+  }
   .navbar {
     justify-content: flex-start;
     gap: 4.2rem;
   }
   .navbar__cart-icon {
     margin-left: auto;
+  }
+  .heading__img {
+    min-width: 87rem;
+    top: -10rem;
   }
 }
 @media only screen and (min-width: 950px) {
@@ -327,8 +338,9 @@ svg {
     margin-left: initial;
   }
   .heading__img {
-    top: 0;
+    top: -5rem;
     transform: scale(1.1);
+    min-width: 146rem;
   }
 }
 .navbar__links {
