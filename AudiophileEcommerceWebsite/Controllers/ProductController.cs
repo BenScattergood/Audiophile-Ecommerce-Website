@@ -1,4 +1,4 @@
-﻿using AudiophileEcommerceWebsite.Models;
+﻿
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
@@ -7,15 +7,24 @@ namespace AudiophileEcommerceWebsite.Controllers
     public class ProductController : Controller
     {
         private readonly ILogger<ProductController> _logger;
+        private readonly IProductRepository productRepository;
+        private readonly IMapper _mapper;
 
-        public ProductController(ILogger<ProductController> logger)
+        public ProductController(ILogger<ProductController> logger,
+            IProductRepository productRepository, IMapper mapper)
         {
             _logger = logger;
+            this.productRepository = productRepository;
+            this._mapper = mapper;
         }
 
         public IActionResult Index()
         {
-            return View();
+            var products = productRepository.GetAllProducts();
+
+            var viewModelList = _mapper.Map<List<ProductViewModel>>(products);
+            //create view model with automapper
+            return View(viewModelList);
         }
 
         public IActionResult Privacy()

@@ -36,6 +36,10 @@ body {
     text-rendering: optimizeSpeed;
 }
 
+button {
+    font-family: inherit;
+}
+
 /* Make images easier to work with */
 img,
 picture,

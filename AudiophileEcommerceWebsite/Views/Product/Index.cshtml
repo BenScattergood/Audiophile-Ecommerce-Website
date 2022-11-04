@@ -1,6 +1,4 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿@model List<ProductViewModel>
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
@@ -8,6 +6,13 @@
 </div>
 
 
-@section heading {
-    <p>hia</p>
+@section heroText {
+    <section class="wrapper">
+        <section class="heroText">
+            <h5 class="fw-400 text-white-100 opacity-05 fs-main-h5 ls-h5 uppercase">New Product</h5>
+            <h2 class="fw-700 text-white-100 fs-main-h1 ls-h1 lh-h1 uppercase">@Model.SingleOrDefault(p => p.Id == 4).Name</h2>
+            <p class="fw-500 fs-main-p text-white-100 opacity-075 lh-p">Experience natural, lifelike audio and exceptional build quality made for the passionate music enthusiast.</p>
+            <button class="margin-t-15 button-main fw-700 text-white-100 fs-button ls-button uppercase">See Product</button>
+        </section>
+    </section>
 }

@@ -57,3 +57,22 @@
 .pointer {
     cursor: pointer;
 }
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.button-main {
+    padding: 1.5rem 3rem;
+    background-color: var(--beige-100);
+    border: none;
+}
+
+.button-main:hover {
+    background-color: var(--beige-200);
+    cursor: pointer;
+}
+
+.margin-t-15 {
+    margin-top: 1.5rem;
+}

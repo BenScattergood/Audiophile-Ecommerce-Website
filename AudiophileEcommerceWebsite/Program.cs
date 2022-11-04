@@ -1,5 +1,7 @@
 using AudiophileEcommerceWebsite.Entities;
+using AudiophileEcommerceWebsite.ViewModels;
 using Microsoft.EntityFrameworkCore;
+using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString
@@ -8,6 +10,9 @@ var connectionString = builder.Configuration.GetConnectionString
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddScoped<IProductRepository, ProductRepository>();
+
+builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
 
 builder.Services.AddDbContext<AudiophileDbContext>(options =>
 {
