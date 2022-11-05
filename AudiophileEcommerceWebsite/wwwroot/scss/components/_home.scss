@@ -1,5 +1,23 @@
 ﻿@use "../globals/breakpoints" as b;
 
+.main__features-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+}
+
+@media only screen and (min-width: b.$mobile-point) {
+    .main__features-container {
+        gap: 3.2rem;
+    }
+}
+
+@media only screen and (min-width: b.$tablet-point) {
+    .main__features-container {
+        gap: 5rem;
+    }
+}
+
 .home__feature-main {
     display: flex;
     flex-direction: column;

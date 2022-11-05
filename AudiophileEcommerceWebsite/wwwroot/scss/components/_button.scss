@@ -2,11 +2,11 @@
     padding: 1.5rem 3rem;
     border: none;
     cursor: pointer;
+    z-index: 1;
 }
 
 .button-main--black {
     background-color: var(--black-100);
-    z-index: 1000;
 }
 
 .button-main--black:hover {

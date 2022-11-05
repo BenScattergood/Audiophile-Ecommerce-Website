@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="~/css/main.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/AudiophileEcommerceWebsite.styles.css" asp-append-version="true" />
 </head>
-<body class="">
+<body class="body">
     <header class="heading">
         <div class="heading__img-container">
             <picture>
@@ -43,14 +43,13 @@
                 <section class="navbar__menu categories-wrapper wrapper tablet-only hidden">
                     <partial name="_CategoriesPartial" />
                 </section>
-                <span class="nav__filter tablet-only hidden"></span>
-
-            
+                
             </nav>
             @RenderSection("heroText",true)
             <span class="empty"></span>
+            <span class="line"></span>
         </div>
-
+        <span class="nav__filter tablet-only hidden"></span>
 
       @*  <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container-fluid">
@@ -75,7 +74,31 @@
     <main role="main" class="wrapper main-container">
         @RenderBody()
     </main>
-    </div>
+    <footer class="bg-black-300 footer-container">
+        <article class="wrapper footer-wrapper">
+            <div class="footer-nav">
+                <div class="navbar__logo">
+                    <img src="/assets/shared/desktop/logo.svg" />
+                </div>
+                <div class="navbar__links navbar__links--footer text-white-100 fs-button fw-700 ls-h3">
+                    <p class="text-hover">Home</p>
+                    <p class="text-hover">Headphones</p>
+                    <p class="text-hover">Speakers</p>
+                    <p class="text-hover">Earphones</p>
+                </div>
+            </div>
+            <p class="footer-para text-white-100 opacity-05 fs-main-p fw-500 lh-p">Audiophile is an all in one stop to fulfill your audio needs. We're a small team of music lovers and sound specialists who are devoted to helping you get the most out of personal audio. Come and visit our demo facility - we’re open 7 days a week.</p>
+            <div class="footer-wrapper__social-container">
+                <p class="text-white-100 opacity-05 fs-main-p fw-700 lh-p">Copyright 2021. All Rights Reserved</p>
+                <div class="footer-wrapper__social">
+                    <img src="/assets/shared/desktop/icon-facebook.svg" />
+                    <img src="/assets/shared/desktop/icon-twitter.svg" />
+                    <img src="/assets/shared/desktop/icon-instagram.svg" />
+                </div>
+            </div>
+            <span class="ui-marker"></span>
+        </article>
+    </footer>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>

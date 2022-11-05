@@ -3,9 +3,6 @@
 
 .heading {
     position: relative;
-    /*height: 60rem;*/
-    /*display: flex;
-    flex-direction: column;*/
     align-items: center;
     justify-content: center;
     display: grid;
@@ -19,6 +16,9 @@
 .heading__img-container {
     max-height: 60rem;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .heading__img {
@@ -35,12 +35,23 @@
     align-items: center;
     justify-content: space-between;
     height: 100%;
+    z-index: 100;
+}
+
+.line {
+    width: min(100%, b.$desktop-point-outer);
+    height: 1px;
+    background-color: var(--white-100);
+    opacity: 10%;
+    position: absolute;
+    top: 9rem;
 }
 
 @media only screen and (min-width: b.$mobile-point) {
     .heading__img-container {
         max-height: 72rem;
     }
+
     .heading__img {
         margin-top: -5rem;
         min-width: 66rem;
@@ -103,5 +114,13 @@
     border-radius: 0 0 1rem 1rem;
     background-color: var(--white-100);
     z-index: 100;
+    padding-block: 7rem 3rem;
+    max-height: calc(100vh - 9rem);
+    overflow-y: auto;
 }
 
+@media only screen and (min-width: b.$mobile-point) {
+    .navbar__menu {
+        height: 34rem !important;
+    }
+}
