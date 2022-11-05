@@ -462,10 +462,15 @@ svg{
   display: block;
 }
 
-.width-80 {
-  width: 80%;
+.border-radius {
+  border-radius: 1rem;
 }
 
+@media only screen and (max-width: 599px) {
+  .width-80-mobile {
+    width: 80%;
+  }
+}
 .heroText {
   display: flex;
   flex-direction: column;
@@ -512,6 +517,18 @@ svg{
 
 .button-main--beige:hover {
   background-color: var(--beige-200);
+}
+
+.button-main--transparent {
+  background-color: transparent;
+  border: 1px solid;
+  color: var(--black-100);
+}
+
+.button-main--transparent:hover {
+  background-color: var(--black-100);
+  border: 1px solid;
+  color: var(--white-100);
 }
 
 .categories-wrapper {
@@ -582,7 +599,7 @@ svg{
   overflow: hidden;
 }
 
-.features-wrapper {
+.features-wrapper--main {
   padding-inline: 2rem;
 }
 
@@ -623,7 +640,7 @@ svg{
     left: -200%;
     width: 500%;
   }
-  .features-wrapper {
+  .features-wrapper--main {
     padding-inline: 0;
     width: 50%;
   }
@@ -636,9 +653,6 @@ svg{
     grid-template-columns: 60% 40%;
     height: 56rem;
   }
-  .features-wrapper {
-    width: 50%;
-  }
   .home__feature-main__text {
     text-align: left;
     align-items: flex-start;
@@ -648,6 +662,102 @@ svg{
     width: 41rem;
     margin-inline: auto;
     margin-bottom: -11rem;
+  }
+}
+.features-wrapper--other {
+  padding-inline: 2rem;
+}
+
+.home__feature-other {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 3rem;
+  align-items: flex-start;
+  border-radius: 1rem;
+}
+
+.home__feature-other--pri {
+  aspect-ratio: 1/1;
+  background-image: url(../../assets/home/mobile/image-speaker-zx7.jpg);
+  background-size: cover;
+}
+
+.home__feature-other--sec {
+  aspect-ratio: 1.6/1;
+  background-color: var(--white-94);
+}
+
+.home__feature-other-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.home__feature-other__img-container {
+  border-radius: 1rem;
+}
+
+@media only screen and (min-width: 600px) {
+  .home__feature-other--pri {
+    background-image: url(../../assets/home/tablet/image-speaker-zx7.jpg);
+    aspect-ratio: 2.1/1;
+  }
+  .features-wrapper--other {
+    padding-inline: 6rem;
+  }
+  .home__feature-other-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+  }
+  .home__feature-other--sec {
+    aspect-ratio: initial;
+  }
+}
+@media only screen and (min-width: 1025px) {
+  .home__feature-other--pri {
+    background-image: url(../../assets/home/desktop/image-speaker-zx7.jpg);
+    aspect-ratio: 3.4/1;
+  }
+  .features-wrapper--other {
+    padding-inline: 9.6rem;
+  }
+  .home__feature-other-container {
+    gap: 2rem;
+  }
+}
+.best-gear {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 2rem;
+  align-items: center;
+  text-align: center;
+}
+
+.best-gear__text {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+@media only screen and (min-width: 600px) {
+  .best-gear {
+    gap: 3rem;
+  }
+  .best-gear__text {
+    gap: 3rem;
+    width: 85%;
+  }
+}
+@media only screen and (min-width: 1025px) {
+  .best-gear {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+  }
+  .best-gear__text {
+    width: 80%;
   }
 }
 body {

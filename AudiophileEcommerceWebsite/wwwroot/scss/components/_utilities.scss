@@ -84,10 +84,6 @@
     color: var(--beige-100);
 }
 
-.flex-column-center {
-    
-}
-
 .main-container {
     display: flex;
     flex-direction: column;
@@ -99,6 +95,12 @@
     display: block;
 }
 
-.width-80 {
-    width: 80%;
+.border-radius {
+    border-radius: 1rem;
+}
+
+@media only screen and (max-width: b.$mobile-point--max) {
+    .width-80-mobile {
+        width: 80%;
+    }
 }

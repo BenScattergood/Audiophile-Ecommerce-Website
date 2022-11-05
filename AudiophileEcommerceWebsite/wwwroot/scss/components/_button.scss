@@ -11,7 +11,6 @@
 
 .button-main--black:hover {
     background-color: var(--black-200);
-    
 }
 
 .button-main--beige {
@@ -20,4 +19,16 @@
 
 .button-main--beige:hover {
     background-color: var(--beige-200);
+}
+
+.button-main--transparent {
+    background-color: transparent;
+    border: 1px solid;
+    color: var(--black-100);
+}
+
+.button-main--transparent:hover {
+    background-color: var(--black-100);
+    border: 1px solid;
+    color: var(--white-100);
 }
