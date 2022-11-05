@@ -15,6 +15,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\Ben\Documents\Ben\Coding\WebDev\FrontEndMentor\Level 5\Audiophile e-commerce website\AudiophileEcommerceWebsite\AudiophileEcommerceWebsite
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/Ben/Documents/Ben/Coding/WebDev/FrontEndMentor/Level 5/Audiophile e-commerce website/AudiophileEcommerceWebsite/AudiophileEcommerceWebsite/Views/Product/Category.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxDYXRlZ29yeS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Ben/Documents/Ben/Coding/WebDev/FrontEndMentor/Level 5/Audiophile e-commerce website/AudiophileEcommerceWebsite/AudiophileEcommerceWebsite/Views/Product/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

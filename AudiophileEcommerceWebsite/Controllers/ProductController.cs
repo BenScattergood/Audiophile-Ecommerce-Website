@@ -23,8 +23,23 @@ namespace AudiophileEcommerceWebsite.Controllers
             var products = productRepository.GetAllProducts();
 
             var viewModelList = _mapper.Map<List<ProductViewModel>>(products);
-            //create view model with automapper
             return View(viewModelList);
+        }
+
+        public IActionResult Category(string category)
+        {
+            var products = productRepository.GetProductsFromCategory(category);
+
+            var viewModelList = _mapper.Map<List<ProductViewModel>>(products);
+            return View(viewModelList);
+        }
+
+        public IActionResult Product(int id)
+        {
+            var product = productRepository.GetProductById(id);
+
+            var viewModel = _mapper.Map<ProductViewModel>(product);
+            return View(viewModel);
         }
 
         public IActionResult Privacy()

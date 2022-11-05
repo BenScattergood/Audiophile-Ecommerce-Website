@@ -12,30 +12,20 @@
 </head>
 <body class="body">
     <header class="heading">
-        <div class="heading__img-container">
-            <picture>
-                <source media="(min-width: 1025px)" 
-                        srcset="/assets/home/desktop/image-hero.jpg" />
-                    
-                <source media="(min-width: 600px)" 
-                        srcset="/assets/home/tablet/image-header.jpg" />
-                    
-                <img class="heading__img" src="/assets/home/mobile/image-header.jpg" />
-            </picture>
-        </div>
+        @RenderSection("heroImage", true)
         <div class="heading__nav-container">
             <nav class="wrapper navbar">
                 <div class="hamburger tablet-only pointer">
                     <img src="/assets/shared/tablet/icon-hamburger.svg"/>
                 </div>
                 <div class="navbar__logo">
-                    <img src="/assets/shared/desktop/logo.svg" />
+                    <a asp-controller="Product" asp-action="Index"><img src="/assets/shared/desktop/logo.svg" /></a>
                 </div>
                 <div class="desktop-only navbar__links text-white-100 fs-button fw-700 ls-h3">
-                    <p class="text-hover">Home</p>
-                    <p class="text-hover">Headphones</p>
-                    <p class="text-hover">Speakers</p>
-                    <p class="text-hover">Earphones</p>
+                    <a class="text-hover" asp-controller="Product" asp-action="Index">Home</a>
+                    <a class="text-hover" asp-controller="Product" asp-action="Category" asp-route-category="Headphones">Headphones</a>
+                    <a class="text-hover" asp-controller="Product" asp-action="Category" asp-route-category="Speakers">Speakers</a>
+                    <a class="text-hover" asp-controller="Product" asp-action="Category" asp-route-category="Earphones">Earphones</a>
                 </div>
                 <div class="navbar__cart-icon">
                     <img src="/assets/shared/desktop/icon-cart.svg" />
@@ -43,33 +33,12 @@
                 <section class="navbar__menu categories-wrapper wrapper tablet-only hidden">
                     <partial name="_CategoriesPartial" />
                 </section>
-                
             </nav>
-            @RenderSection("heroText",true)
+            @RenderSection("heroText",false)
             <span class="empty"></span>
             <span class="line"></span>
         </div>
         <span class="nav__filter tablet-only hidden"></span>
-
-      @*  <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">AudiophileEcommerceWebsite</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>  *@
     </header>
     <main role="main" class="wrapper main-container">
         @RenderBody()
@@ -81,10 +50,10 @@
                     <img src="/assets/shared/desktop/logo.svg" />
                 </div>
                 <div class="navbar__links navbar__links--footer text-white-100 fs-button fw-700 ls-h3">
-                    <p class="text-hover">Home</p>
-                    <p class="text-hover">Headphones</p>
-                    <p class="text-hover">Speakers</p>
-                    <p class="text-hover">Earphones</p>
+                    <a class="text-hover" asp-controller="Product" asp-action="Index">Home</a>
+                    <a class="text-hover" asp-controller="Product" asp-action="Category" asp-route-category="Headphones">Headphones</a>
+                    <a class="text-hover" asp-controller="Product" asp-action="Category" asp-route-category="Speakers">Speakers</a>
+                    <a class="text-hover" asp-controller="Product" asp-action="Category" asp-route-category="Earphones">Earphones</a>
                 </div>
             </div>
             <p class="footer-para text-white-100 opacity-05 fs-main-p fw-500 lh-p">Audiophile is an all in one stop to fulfill your audio needs. We're a small team of music lovers and sound specialists who are devoted to helping you get the most out of personal audio. Come and visit our demo facility - we’re open 7 days a week.</p>

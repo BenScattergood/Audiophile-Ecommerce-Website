@@ -13,8 +13,10 @@
     grid-area: 1/-1;
 }
 
-.heading__img-container {
+.heading__img-container--img {
     max-height: 60rem;
+}
+.heading__img-container {
     overflow: hidden;
     display: flex;
     flex-direction: column;

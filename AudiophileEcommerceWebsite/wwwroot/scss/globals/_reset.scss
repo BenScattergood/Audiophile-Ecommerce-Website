@@ -29,7 +29,7 @@ html:focus-within {
 html,
 body {
     min-height: 100vh;
-    /*overflow-x: hidden;*/
+    overflow-x: hidden;
 }
 
 body {
@@ -38,6 +38,11 @@ body {
 
 button {
     font-family: inherit;
+}
+
+a {
+    text-decoration: none;
+    color: var(--white-100);
 }
 
 /* Make images easier to work with */

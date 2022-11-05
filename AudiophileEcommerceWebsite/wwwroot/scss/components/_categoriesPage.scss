@@ -1,0 +1,29 @@
+﻿@use "../globals/breakpoints" as b;
+
+/*.heading__img-container {
+    max-height: 60rem;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    ;
+}*/
+
+.heading__img-container--cat {
+    height: 9rem;
+    background-color: var(--black-100);
+    align-self: flex-start;
+}
+
+.heroText--cat {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+@media only screen and (min-width: b.$mobile-point) {
+    .heading__img-container--cat {
+        height: 33rem;
+    }
+}
