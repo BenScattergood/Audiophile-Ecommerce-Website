@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "7D7Z4vOB5yh+qixNj0wSyN9u/56APwp5kA1jZYCxQhI=",
+  "Hash": "/ZyhqBxEwdkFQMwO82b1fBl9X5+VCk2AUZNP6Fa4QGg=",
   "Source": "AudiophileEcommerceWebsite",
   "BasePath": "_content/AudiophileEcommerceWebsite",
   "Mode": "Default",
@@ -3585,6 +3585,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\scss\\components\\_heroText.scss"
+    },
+    {
+      "Identity": "C:\\Users\\Ben\\Documents\\Ben\\Coding\\WebDev\\FrontEndMentor\\Level 5\\Audiophile e-commerce website\\AudiophileEcommerceWebsite\\AudiophileEcommerceWebsite\\wwwroot\\scss\\components\\_home.scss",
+      "SourceId": "AudiophileEcommerceWebsite",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Ben\\Documents\\Ben\\Coding\\WebDev\\FrontEndMentor\\Level 5\\Audiophile e-commerce website\\AudiophileEcommerceWebsite\\AudiophileEcommerceWebsite\\wwwroot\\",
+      "BasePath": "_content/AudiophileEcommerceWebsite",
+      "RelativePath": "scss/components/_home.scss",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\scss\\components\\_home.scss"
     },
     {
       "Identity": "C:\\Users\\Ben\\Documents\\Ben\\Coding\\WebDev\\FrontEndMentor\\Level 5\\Audiophile e-commerce website\\AudiophileEcommerceWebsite\\AudiophileEcommerceWebsite\\wwwroot\\scss\\components\\_index.scss",

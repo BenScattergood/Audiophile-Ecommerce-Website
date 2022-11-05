@@ -83,3 +83,22 @@
     cursor: pointer;
     color: var(--beige-100);
 }
+
+.flex-column-center {
+    
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+}
+
+.image-reset {
+    max-width: 100%;
+    display: block;
+}
+
+.width-80 {
+    width: 80%;
+}

@@ -1,10 +1,23 @@
 ﻿.button-main {
     padding: 1.5rem 3rem;
-    background-color: var(--beige-100);
     border: none;
+    cursor: pointer;
 }
 
-.button-main:hover {
+.button-main--black {
+    background-color: var(--black-100);
+    z-index: 1000;
+}
+
+.button-main--black:hover {
+    background-color: var(--black-200);
+    
+}
+
+.button-main--beige {
+    background-color: var(--beige-100);
+}
+
+.button-main--beige:hover {
     background-color: var(--beige-200);
-    cursor: pointer;
 }
