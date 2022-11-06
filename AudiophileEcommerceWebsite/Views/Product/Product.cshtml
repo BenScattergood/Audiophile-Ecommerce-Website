@@ -1,0 +1,62 @@
+﻿@model ProductViewModel
+
+@section heroImage {
+	<div class="heading__img-container heading__img-container--cat">
+	</div>
+}
+
+	<main role="main" class="wrapper container-categories">
+		<div>
+			<a><p class="fw-500 text-black-100 opacity-05 lh-p fs-main-p">Go Back</p></a>
+		</div>
+		<article class="products__product">
+			<div class="categories__product__img-container">
+				<picture>
+					<source media="(min-width: 1025px)"
+						srcset="@Model.Image.Desktop" />
+					<source media="(min-width: 600px)"
+						srcset="@Model.Image.Tablet" />
+					<img class="border-radius image-reset" src="@Model.Image.Mobile" />
+				</picture>
+			</div>
+			<div class="products__product__text">
+			@if (Model.isNew)
+			{
+				<h5 class="margin-b--2 fw-400 text-beige-100 fs-main-h5 ls-h5 uppercase">New Product</h5>
+			}
+				<h3 class="width-50-tablet text-black-100 fs-main-h3 ls-h3 lh-h3 fw-700 uppercase">@Model.Name</h3>
+				<p class="fw-500 fs-main-p text-black-100 opacity-05 lh-p">@Model.Description</p>
+				<p class="fw-700 fs-main-price ls-h1 text-black-100">$ @Model.Price</p>
+				<button>add to cart</button>
+			</div>
+		</article>
+		<article class="products__details">
+			<article class="products__details__features">
+				<h2 class="fw-700 ls-h2 text-black-100 fs-products-h2 uppercase">Features</h2>
+				<p class="fw-500 fs-main-p text-black-100 opacity-05 lh-p">@Model.Features</p>
+			</article>
+			<article class="products__details__accessories">
+				<h2 class="fw-700 ls-h2 text-black-100 fs-products-h2 uppercase">In The Box</h2>
+				<ul role="list" class="accessories__list">
+					@foreach (var accessory in Model.Accessories)
+				{
+					<li class="accessories__list__item">
+						<p class="fw-700 fs-main-p text-beige-100">@accessory.Quantity x</p>
+						<p class="fw-500 fs-main-p text-black-100 opacity-05">@accessory.Item</p>
+					</li>
+				}
+				</ul>
+			</article>
+			<div>
+				<div>
+				<picture>
+					<source media="(min-width: 1025px)"
+							srcset="@Model.Gallery.First[0]" />
+					<source media="(min-width: 600px)"
+							srcset="@Model.Gallery.First[1]" />
+					<img class="border-radius image-reset" src="@Model.Image.Mobile" />
+				</picture>
+				</div>
+			</div>
+		</article>
+	</main>

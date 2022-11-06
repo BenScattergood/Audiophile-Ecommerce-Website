@@ -36,7 +36,9 @@ namespace AudiophileEcommerceWebsite.ViewModels
                 .Include(c => c.Image)
                 .Include(c => c.CategoryImages)
                 .Include(c => c.Accessories)
-                .Include(c => c.Gallery)
+                .Include(c => c.Gallery.First)
+                .Include(c => c.Gallery.Second)
+                .Include(c => c.Gallery.Third)
                 .Include(c => c.RelatedData)
                 .SingleOrDefault(c => c.ProductId == id);
         }
