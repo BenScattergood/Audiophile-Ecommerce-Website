@@ -31,7 +31,11 @@ namespace AudiophileEcommerceWebsite.Controllers
             var products = productRepository.GetProductsFromCategory(category);
 
             var viewModelList = _mapper.Map<List<ProductViewModel>>(products);
-            return View(viewModelList);
+            var sortedVML = viewModelList
+                .OrderByDescending(c => c.isNew)
+                .ToList();
+
+            return View(sortedVML);
         }
 
         public IActionResult Product(int id)

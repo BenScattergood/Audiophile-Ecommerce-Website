@@ -68,10 +68,10 @@
     margin-top: 1.5rem;
 }
 
-.empty {
+/*.empty {
     content: "";
     height: 9rem;
-}
+}*/
 
 .overflow-y-hidden {
     overflow-y: hidden;
@@ -81,6 +81,8 @@
     display: flex;
     flex-direction: column;
     gap: 10rem;
+    align-content: center;
+    margin-block: 10rem;
 }
 
 @media only screen and (min-width: b.$tablet-point){
@@ -92,13 +94,6 @@
 .text-hover:hover {
     cursor: pointer;
     color: var(--beige-100);
-}
-
-.main-container {
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    margin-block: 10rem;
 }
 
 .image-reset {
@@ -113,6 +108,16 @@
 @media only screen and (max-width: b.$mobile-point--max) {
     .width-80-mobile {
         width: 80%;
+    }
+}
+
+.width-50-tablet {
+    width: 80%;
+}
+
+@media only screen and (min-width:b.$tablet-point) and (max-width:b.$tablet-point--max) {
+    .width-50-tablet {
+        width: 50%;
     }
 }
 

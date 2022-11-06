@@ -49,6 +49,7 @@ public static class DbInitializer
                 Product product = products[i - 1];
 
                 PopulateProductImageMembers(jsonProduct, product);
+                var temp = jsonProduct.GetProperty("new");
 
                 DeserializeJsonToAccessoryObject(product, jsonProduct);
                 DeserializeJsonToGalleryObject(product, jsonProduct);
@@ -136,6 +137,8 @@ public static class DbInitializer
         var node = item.GetProperty(nodeNameStr);
         var image = node.Deserialize<Image>(options);
 
+        CorrectImageFilePath(image);
+
         var existingNode = images
             .FirstOrDefault(d => d.Mobile == image.Mobile);
 
@@ -143,6 +146,14 @@ public static class DbInitializer
 
         return new List<Image>() { updatedImage };
     }
+
+    private static void CorrectImageFilePath(Image? image)
+    {
+        image.Mobile = new string(image.Mobile.Skip(1).ToArray());
+        image.Tablet = new string(image.Tablet.Skip(1).ToArray());
+        image.Desktop = new string(image.Desktop.Skip(1).ToArray());
+    }
+
     private static T UpdateGenericNodeReference<T>(List<T> list, T node, T existingNode)
     {
         if (existingNode is null)

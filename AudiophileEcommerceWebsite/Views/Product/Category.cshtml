@@ -4,8 +4,26 @@
 	<div class="heading__img-container heading__img-container--cat">
 	</div>
 }
-@*@section heroText {
-	<div class="heroText--cat">
-		<h1 class="fs-main-h2 fw-700 text-white-100 ls-h2 lh-h2 uppercase">Headphones</h1>
-	</div>
-}*@
+
+	<article class="heroText--cat bg-black-100">
+		<h1 class="fs-main-h2 fw-700 text-white-100 ls-h2 lh-h2 uppercase">@Model[0].Category.CategoryName</h1>
+	</article>
+	<main role="main" class="wrapper container-categories">
+		@{
+			int i = 0;
+			foreach (var product in Model)
+		{
+			if (i % 2 == 0)
+			{
+				<partial name="_CatPageProd" model="product" />
+			}
+			else
+			{
+				<partial name="_CatPageProdReverse" model="product" />
+			}
+			i++;
+		}
+		}
+	<partial name="_CategoriesWithWrapper" />
+	<partial name="_BestGearPartial" />
+	</main>

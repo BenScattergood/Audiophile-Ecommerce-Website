@@ -24,6 +24,7 @@ namespace AudiophileEcommerceWebsite.ViewModels
                 _audiophileDbContext.Products
                 .Where(c => c.Category.CategoryName.ToLower() == category.ToLower())
                 .Include(p => p.Category)
+                .Include(p => p.CategoryImages)
                 .ToList();
         }
 

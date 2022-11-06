@@ -17,6 +17,7 @@ namespace AudiophileEcommerceWebsite.Entities
         public Category Category { get; set; } = default!;
         [JsonIgnore]
         public Image CategoryImages { get; set; } = default!;
+        [JsonPropertyName("new")]
         public bool isNew { get; set; }
         public int Price { get; set; }
         public string Description { get; set; } = default!;

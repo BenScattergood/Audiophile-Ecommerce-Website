@@ -35,14 +35,13 @@
                 </section>
             </nav>
             @RenderSection("heroText",false)
-            <span class="empty"></span>
+            @*<span class="empty"></span>*@
             <span class="line"></span>
         </div>
         <span class="nav__filter tablet-only hidden"></span>
     </header>
-    <main role="main" class="wrapper main-container">
-        @RenderBody()
-    </main>
+    @RenderBody()
+    
     <footer class="bg-black-300 footer-container">
         <article class="wrapper footer-wrapper">
             <div class="footer-nav">

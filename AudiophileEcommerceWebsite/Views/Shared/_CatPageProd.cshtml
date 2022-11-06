@@ -1,0 +1,22 @@
+﻿@model ProductViewModel
+
+<article class="categories__product">
+	<div class="categories__product__img-container">
+		<picture>
+			<source media="(min-width: 1025px)"
+					srcset="@Model.CategoryImages.Desktop" />
+			<source media="(min-width: 600px)"
+					srcset="@Model.CategoryImages.Tablet" />
+			<img class="border-radius image-reset" src="@Model.CategoryImages.Mobile" />
+		</picture>
+	</div>
+	<div class="categories__product__text categories__product__text--normal">
+		@if (Model.isNew)
+		{
+			<h5 class="fw-400 text-beige-100 fs-main-h5 ls-h5 uppercase">New Product</h5>
+		}
+		<h3 class="width-50-tablet text-black-100 fs-main-h3 ls-h3 lh-h3 fw-700 uppercase">@Model.Name</h3>
+		<p class="fw-500 fs-main-p text-black-100 opacity-05 lh-p">@Model.Description</p>
+		<a asp-controller="Product" asp-action="Product" asp-route-id="@Model.Id" class="button-main button-main--beige fw-700 text-white-100 fs-button ls-button uppercase">See Product</a>
+	</div>
+</article>
