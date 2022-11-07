@@ -8,7 +8,8 @@ namespace AudiophileEcommerceWebsite.Entities
         public string Slug { get; set; } = default!;
         public string Name { get; set; } = default!;
         [JsonIgnore]
-        public List<Image> Images { get; set; } = new List<Image>();
+        public int ImagesId { get; set; }
+        public Image Images { get; set; }
         public List<Product> Products { get; set; } = new List<Product>();
     }
 }

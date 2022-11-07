@@ -69,13 +69,12 @@ public static class DbInitializer
     }
     private static void PopulateProductImageMembers(JsonElement jsonProduct, Product product)
     {
-        List<Image> ImageList =
-                            DeserializeImageNode(jsonProduct);
-        product.Image = ImageList[0];
+        Image returnedImage = DeserializeImageNode(jsonProduct);
+        product.Image = returnedImage;
 
-        ImageList =
+        returnedImage =
             DeserializeImageNode(jsonProduct, "categoryImage");
-        product.CategoryImages = ImageList[0];
+        product.CategoryImages = returnedImage;
     }
     private static void DeserializeJsonToRelatedDataObject(Product product, JsonElement item)
     {
@@ -104,14 +103,14 @@ public static class DbInitializer
         var galleryNode = (JsonElement)item.GetProperty("gallery");
         var gallery = new Gallery();
 
-        List<Image> newListImages = DeserializeImageNode(galleryNode, "first");
-        gallery.First.AddRange(newListImages);
+        Image newImages = DeserializeImageNode(galleryNode, "first");
+        gallery.First = newImages;
 
-        newListImages = DeserializeImageNode(galleryNode, "second");
-        gallery.Second.AddRange(newListImages);
+        newImages = DeserializeImageNode(galleryNode, "second");
+        gallery.Second = newImages;
 
-        newListImages = DeserializeImageNode(galleryNode, "third");
-        gallery.Third.AddRange(newListImages);
+        newImages = DeserializeImageNode(galleryNode, "third");
+        gallery.Third = newImages;
 
         product.Gallery = gallery;
     }
@@ -132,7 +131,7 @@ public static class DbInitializer
             product.Accessories.Add(updatedAccessory);
         }
     }
-    private static List<Image> DeserializeImageNode(JsonElement item, string nodeNameStr = "image")
+    private static Image DeserializeImageNode(JsonElement item, string nodeNameStr = "image")
     {
         var node = item.GetProperty(nodeNameStr);
         var image = node.Deserialize<Image>(options);
@@ -144,7 +143,7 @@ public static class DbInitializer
 
         var updatedImage = UpdateGenericNodeReference<Image>(images, image, existingNode);
 
-        return new List<Image>() { updatedImage };
+        return updatedImage;
     }
 
     private static void CorrectImageFilePath(Image? image)

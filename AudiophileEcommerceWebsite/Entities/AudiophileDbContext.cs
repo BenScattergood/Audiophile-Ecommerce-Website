@@ -33,19 +33,19 @@ namespace AudiophileEcommerceWebsite.Entities
                         .OnDelete(DeleteBehavior.NoAction);
 
             modelBuilder.Entity<Image>()
-                        .HasMany(i => i.FirstGalleries)
-                        .WithMany(g => g.First)
-                        .UsingEntity(pi => pi.ToTable("GalleryFirstImage"));
+                        .HasMany(g => g.FirstGalleries)
+                        .WithOne(i => i.First)
+                        .OnDelete(DeleteBehavior.NoAction);
 
             modelBuilder.Entity<Image>()
-                        .HasMany(i => i.SecondGalleries)
-                        .WithMany(g => g.Second)
-                        .UsingEntity(pi => pi.ToTable("GallerySecondImage"));
+                        .HasMany(g => g.SecondGalleries)
+                        .WithOne(i => i.Second)
+                        .OnDelete(DeleteBehavior.NoAction);
 
             modelBuilder.Entity<Image>()
-                        .HasMany(i => i.ThirdGalleries)
-                        .WithMany(g => g.Third)
-                        .UsingEntity(pi => pi.ToTable("GalleryThirdImage"));
+                        .HasMany(g => g.ThirdGalleries)
+                        .WithOne(i => i.Third)
+                        .OnDelete(DeleteBehavior.NoAction);
         }
     }
 }
