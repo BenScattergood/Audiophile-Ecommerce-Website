@@ -271,7 +271,6 @@ html:focus-within {
 html,
 body {
   min-height: 100vh;
-  overflow-x: hidden;
 }
 
 body {
@@ -467,7 +466,7 @@ svg{
 
 .nav__filter {
   position: fixed;
-  inset: 0 0 0 0;
+  inset: 9rem 0 0 0;
   background-color: grey;
   opacity: 50%;
   z-index: 10;
@@ -499,6 +498,10 @@ svg{
 }*/
 .overflow-y-hidden {
   overflow-y: hidden;
+}
+
+.overflow-x-hidden {
+  overflow-x: hidden;
 }
 
 .text-hover:hover {
@@ -643,7 +646,7 @@ svg{
     gap: 1rem;
     height: 17rem;
     padding-block: initial;
-    margin-block: 3rem 1rem;
+    padding-block: 3rem 1rem;
   }
   .categories-partial__item {
     margin-top: 0;
@@ -946,7 +949,7 @@ svg{
   height: 9rem;
   background-color: var(--black-100);
   align-self: flex-start;
-  width: 1440px;
+  max-width: 1440px;
 }
 
 .heroText--cat {
@@ -954,7 +957,8 @@ svg{
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 1440px;
+  max-width: 1440px;
+  width: 100%;
   height: 10rem;
 }
 
@@ -982,6 +986,9 @@ svg{
 }
 
 @media only screen and (min-width: 1025px) {
+  .heading__img-container--cat {
+    width: 1440px;
+  }
   .categories__product__text {
     justify-content: center;
     align-items: flex-start;

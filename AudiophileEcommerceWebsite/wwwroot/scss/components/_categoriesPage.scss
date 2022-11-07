@@ -4,7 +4,7 @@
     height: 9rem;
     background-color: var(--black-100);
     align-self: flex-start;
-    width: b.$desktop-point-outer;
+    max-width: b.$desktop-point-outer;
 }
 
 .heroText--cat {
@@ -12,7 +12,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: b.$desktop-point-outer;
+    max-width: b.$desktop-point-outer;
+    width: 100%;
     height: 10rem;
 }
 
@@ -42,9 +43,13 @@
 }
 
 @media only screen and (min-width: b.$tablet-point) {
+    .heading__img-container--cat {
+        width: b.$desktop-point-outer;
+    }
+
     .categories__product__text {
         justify-content: center;
-        align-items: flex-start; 
+        align-items: flex-start;
         text-align: initial;
     }
 
