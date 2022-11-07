@@ -91,3 +91,30 @@
         flex-basis: 70%;
     }
 }
+
+.products__gallery {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.products__gallery__small {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+@media only screen and (min-width: b.$mobile-point) {
+    .products__gallery {
+        flex-direction: row;
+        justify-content: center;
+    }
+}
+
+.products__related-data {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+}

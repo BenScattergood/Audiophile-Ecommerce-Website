@@ -47,16 +47,55 @@
 				}
 				</ul>
 			</article>
-			<div>
+		</article >
+		<article class="products__gallery">
+			<div class="products__gallery__small">
 				<div>
 				<picture>
 					<source media="(min-width: 1025px)"
-							srcset="@Model.Gallery.First" />
+							srcset="@Model.Gallery.First.Desktop" />
 					<source media="(min-width: 600px)"
-							srcset="@Model.Gallery.First" />
-					<img class="border-radius image-reset" src="@Model.Image.Mobile" />
+							srcset="@Model.Gallery.First.Tablet" />
+					<img class="border-radius image-reset" src="@Model.Gallery.First.Mobile" />
 				</picture>
 				</div>
+				<div>
+					<picture>
+					<source media="(min-width: 1025px)"
+							srcset="@Model.Gallery.Second.Desktop" />
+					<source media="(min-width: 600px)"
+							srcset="@Model.Gallery.Second.Tablet" />
+					<img class="border-radius image-reset" src="@Model.Gallery.Second.Mobile" />
+					</picture>
+				</div>
+			</div>
+			<div>
+			<picture>
+				<source media="(min-width: 1025px)"
+						srcset="@Model.Gallery.Third.Desktop" />
+				<source media="(min-width: 600px)"
+						srcset="@Model.Gallery.Third.Tablet" />
+				<img class="border-radius image-reset" src="@Model.Gallery.Third.Mobile" />
+			</picture>
 			</div>
 		</article>
+		<article class="products__related-data">
+			<h2 class="text-black-100 fs-products-h2 fw-700 lh-h2 ls-h2 uppercase">You may also like</h2>
+			@foreach (var otherProduct in Model.RelatedData)
+		{
+			<article>
+				<div>
+				<picture>
+					<source media="(min-width: 1025px)"
+							srcset="@otherProduct.Images.Desktop" />
+					<source media="(min-width: 600px)"
+							srcset="@otherProduct.Images.Tablet" />
+						<img class="border-radius image-reset" src="@otherProduct.Images.Mobile" />
+				</picture>
+				</div>
+				<h3 class="text-black-100 fs-products-h3 lh-h3 fw-700 uppercase">@otherProduct.Name</h3>
+				<a asp-controller="Product" asp-action="Product" asp-route-id="" class="margin-t-15 button-main button-main--beige fw-700 text-white-100 fs-button ls-button uppercase">See Product</a>
+			</article>
+		}
+	</article>
 	</main>
