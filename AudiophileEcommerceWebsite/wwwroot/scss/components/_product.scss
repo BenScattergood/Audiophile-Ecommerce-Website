@@ -1,6 +1,12 @@
 ﻿@use '../globals/_breakpoints' as b;
 
 
+.products__product-outer {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
 .products__product {
     display: flex;
     flex-direction: column;
@@ -76,6 +82,7 @@
 @media only screen and (min-width: b.$tablet-point) {
     .products__details {
         flex-direction: row;
+        gap: 12rem;
     }
 
     .products__details__accessories {
@@ -112,9 +119,44 @@
     }
 }
 
+.products__related-data-outer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5rem;
+}
+
 .products__related-data {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 3rem;
+    gap: 5rem;
+}
+
+.products__related-data__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+@media only screen and (min-width: b.$mobile-point) {
+    .products__related-data {
+        flex-direction: row;
+        gap: 1rem;
+    }
+    
+    .products__related-data__item {
+        gap: 3rem;
+    }
+}
+
+@media only screen and (min-width: b.$tablet-point) {
+    .products__related-data-outer {
+        gap: 6rem;
+    }
+
+    .products__related-data {
+        gap: 3rem;
+    }
 }

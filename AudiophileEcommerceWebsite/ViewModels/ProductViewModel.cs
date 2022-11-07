@@ -17,6 +17,6 @@ namespace AudiophileEcommerceWebsite.ViewModels
         public string Features { get; set; }
         public List<Accessory> Accessories { get; set; }
         public Gallery? Gallery { get; set; }
-        public List<RelatedData> RelatedData { get; set; }
+        public List<RelatedDataViewModel> RelatedData { get; set; }
     }
 }

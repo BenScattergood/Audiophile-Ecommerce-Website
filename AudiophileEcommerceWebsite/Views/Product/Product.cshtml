@@ -5,29 +5,29 @@
 	</div>
 }
 
-	<main role="main" class="wrapper container-categories">
-		<div>
-			<a><p class="fw-500 text-black-100 opacity-05 lh-p fs-main-p">Go Back</p></a>
-		</div>
-		<article class="products__product">
-			<div class="categories__product__img-container">
-				<picture>
-					<source media="(min-width: 1025px)"
-						srcset="@Model.Image.Desktop" />
-					<source media="(min-width: 600px)"
-						srcset="@Model.Image.Tablet" />
-					<img class="border-radius image-reset" src="@Model.Image.Mobile" />
-				</picture>
-			</div>
-			<div class="products__product__text">
-			@if (Model.isNew)
-			{
-				<h5 class="margin-b--2 fw-400 text-beige-100 fs-main-h5 ls-h5 uppercase">New Product</h5>
-			}
-				<h3 class="width-50-tablet text-black-100 fs-main-h3 ls-h3 lh-h3 fw-700 uppercase">@Model.Name</h3>
-				<p class="fw-500 fs-main-p text-black-100 opacity-05 lh-p">@Model.Description</p>
-				<p class="fw-700 fs-main-price ls-h1 text-black-100">$ @Model.Price</p>
-				<button>add to cart</button>
+	<main role="main" class="wrapper container container--product">
+		<article class="products__product-outer">
+			<a href="##" onclick="history.go(-1); return false;" class="fw-500 text-black-100 opacity-05 lh-p fs-main-p">Go Back</a>
+			<div class="products__product">
+				<div class="categories__product__img-container">
+					<picture>
+						<source media="(min-width: 1025px)"
+							srcset="@Model.Image.Desktop" />
+						<source media="(min-width: 600px)"
+							srcset="@Model.Image.Tablet" />
+						<img class="border-radius image-reset" src="@Model.Image.Mobile" />
+					</picture>
+				</div>
+				<div class="products__product__text">
+				@if (Model.isNew)
+				{
+					<h5 class="margin-b--2 fw-400 text-beige-100 fs-main-h5 ls-h5 uppercase">New Product</h5>
+				}
+					<h3 class="width-50-tablet text-black-100 fs-main-h3 ls-h3 lh-h3 fw-700 uppercase">@Model.Name</h3>
+					<p class="fw-500 fs-main-p text-black-100 opacity-05 lh-p">@Model.Description</p>
+					<p class="fw-700 fs-main-price ls-h1 text-black-100">$ @Model.Price</p>
+					<button>add to cart</button>
+				</div>
 			</div>
 		</article>
 		<article class="products__details">
@@ -79,23 +79,28 @@
 			</picture>
 			</div>
 		</article>
-		<article class="products__related-data">
+		<article class="products__related-data-outer">
 			<h2 class="text-black-100 fs-products-h2 fw-700 lh-h2 ls-h2 uppercase">You may also like</h2>
-			@foreach (var otherProduct in Model.RelatedData)
-		{
-			<article>
-				<div>
-				<picture>
-					<source media="(min-width: 1025px)"
-							srcset="@otherProduct.Images.Desktop" />
-					<source media="(min-width: 600px)"
-							srcset="@otherProduct.Images.Tablet" />
-						<img class="border-radius image-reset" src="@otherProduct.Images.Mobile" />
-				</picture>
-				</div>
-				<h3 class="text-black-100 fs-products-h3 lh-h3 fw-700 uppercase">@otherProduct.Name</h3>
-				<a asp-controller="Product" asp-action="Product" asp-route-id="" class="margin-t-15 button-main button-main--beige fw-700 text-white-100 fs-button ls-button uppercase">See Product</a>
-			</article>
-		}
-	</article>
+			<div class="products__related-data">
+			
+				@foreach (var otherProduct in Model.RelatedData)
+			{
+				<article class="products__related-data__item">
+					<div>
+					<picture>
+						<source media="(min-width: 1025px)"
+								srcset="@otherProduct.Images.Desktop" />
+						<source media="(min-width: 600px)"
+								srcset="@otherProduct.Images.Tablet" />
+							<img class="border-radius image-reset" src="@otherProduct.Images.Mobile" />
+					</picture>
+					</div>
+					<h3 class="text-black-100 fs-products-h3 lh-h3 fw-700 uppercase">@otherProduct.Name</h3>
+					<a asp-controller="Product" asp-action="Product" asp-route-id="@otherProduct.ProductId" class="button-main button-main--beige fw-700 text-white-100 fs-button ls-button uppercase">See Product</a>
+				</article>
+			}
+			</div>
+		</article>
+	<partial name="_CategoriesWithWrapper" />
+	<partial name="_BestGearPartial" />
 	</main>

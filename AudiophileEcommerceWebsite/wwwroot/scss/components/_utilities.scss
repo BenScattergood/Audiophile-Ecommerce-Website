@@ -81,20 +81,6 @@
     overflow-y: hidden;
 }
 
-.main-container {
-    display: flex;
-    flex-direction: column;
-    gap: 10rem;
-    align-content: center;
-    margin-block: 10rem;
-}
-
-@media only screen and (min-width: b.$tablet-point){
-    .main-container {
-        gap: clamp(10rem, 10vw, 20rem);
-    }
-}
-
 .text-hover:hover {
     cursor: pointer;
     color: var(--beige-100);

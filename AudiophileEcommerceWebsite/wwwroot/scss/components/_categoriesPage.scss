@@ -26,13 +26,6 @@
     }
 }
 
-.container-categories {
-    display: flex;
-    flex-direction: column;
-    gap: clamp(8rem, 10vw, 12rem);
-    margin-block: clamp(8rem, 10vw, 12rem);
-}
-
 .categories__product__text {
     display: flex;
     flex-direction: column;
@@ -61,11 +54,6 @@
 
     .categories__product__text--reverse {
         padding-right: 5rem;
-    }
-
-    .container-categories {
-        gap: clamp(10rem, 10vw, 16rem);
-        margin-block: clamp(10rem, 10vw, 16rem);
     }
 
     .categories__product {

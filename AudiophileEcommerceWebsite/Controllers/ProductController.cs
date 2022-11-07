@@ -43,6 +43,9 @@ namespace AudiophileEcommerceWebsite.Controllers
             var product = productRepository.GetProductById(id);
 
             var viewModel = _mapper.Map<ProductViewModel>(product);
+
+            productRepository.ProvideProductIdToRelatedDataVM(viewModel);
+
             return View(viewModel);
         }
 

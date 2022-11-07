@@ -30,8 +30,7 @@ namespace AudiophileEcommerceWebsite.ViewModels
 
         public Product GetProductById(int id)
         {
-            return
-                _audiophileDbContext.Products
+            return _audiophileDbContext.Products
                 .Include(c => c.Category)
                 .Include(c => c.Image)
                 .Include(c => c.CategoryImages)
@@ -41,8 +40,19 @@ namespace AudiophileEcommerceWebsite.ViewModels
                 .Include(c => c.Gallery.Third)
                 .Include(c => c.RelatedData)
                 .ThenInclude(r => r.Images)
-                .ThenInclude(r => r.ProductImageId)
                 .SingleOrDefault(c => c.ProductId == id);
+                
+        }
+
+        public void ProvideProductIdToRelatedDataVM(ProductViewModel product)
+        {
+            foreach (var data in product.RelatedData)
+            {
+                data.ProductId =
+                    _audiophileDbContext.Products
+                    .FirstOrDefault(p => p.Slug == data.Slug)
+                    .ProductId;
+            }
         }
     }
 }
