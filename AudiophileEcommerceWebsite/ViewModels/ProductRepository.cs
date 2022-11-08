@@ -54,5 +54,10 @@ namespace AudiophileEcommerceWebsite.ViewModels
                     .ProductId;
             }
         }
+        public Product ReturnShallowProductFromName(string productName)
+        {
+            return _audiophileDbContext.Products
+                .SingleOrDefault(p => p.ProductName == productName);
+        }
     }
 }

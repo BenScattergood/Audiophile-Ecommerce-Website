@@ -23,10 +23,18 @@
 				{
 					<h5 class="margin-b--2 fw-400 text-beige-100 fs-main-h5 ls-h5 uppercase">New Product</h5>
 				}
-					<h3 class="width-50-tablet text-black-100 fs-main-h3 ls-h3 lh-h3 fw-700 uppercase">@Model.Name</h3>
+					<h3 id="product-name" class="width-50-tablet text-black-100 fs-main-h3 ls-h3 lh-h3 fw-700 uppercase">@Model.Name</h3>
 					<p class="fw-500 fs-main-p text-black-100 opacity-05 lh-p">@Model.Description</p>
 					<p class="fw-700 fs-main-price ls-h1 text-black-100">$ @Model.Price</p>
-					<button>add to cart</button>
+					<div class="add-to-basket-container">
+						<div class="item-incrementer">
+							<p class="fw-700 opacity-025 text-black-100 fs-button">-</p>
+							<p id="incrementer-value" class="fw-700 text-black-100 fs-button">1</p>
+						<p class="fw-700 opacity-025 text-black-100">+</p>
+						</div>
+					<a id="add-to-cart" class="uppercase button-main button-main--beige fs-button fw-700 ls-button">add to cart</a>
+					</div>
+					
 				</div>
 			</div>
 		</article>

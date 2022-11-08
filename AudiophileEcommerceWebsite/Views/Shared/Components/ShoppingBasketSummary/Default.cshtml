@@ -1,0 +1,16 @@
+﻿@model List<ShoppingBasketItemViewModel>
+
+<div class="basket-summary__heading">
+    <h3 class="fw-700 fs-checkout-h3 ls-h4 text-black-100 uppercase">Cart (3)</h3>
+    <p class="underline fw-500 fs-checkout-h4 text-black-100 opacity-05">Remove All</p>
+</div>
+@foreach (var item in Model)
+{
+    var path = $"image-{item.Product.Slug}.jpg";
+    <article>
+        <div>
+        <img src="/assets/cart/@path">
+    </div>
+</article>
+}
+    

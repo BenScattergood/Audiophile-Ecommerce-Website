@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "5P4B+4mdmyif1ywdVIJW0hcYqBpqLziK7vZeMv4UP1Q=",
+  "Hash": "T7CpgZwjw9e1/Xth8TO8RcBK5CwxE8gRFGFziTwDwTc=",
   "Source": "AudiophileEcommerceWebsite",
   "BasePath": "_content/AudiophileEcommerceWebsite",
   "Mode": "Default",
@@ -3517,6 +3517,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Identity": "C:\\Users\\Ben\\Documents\\Ben\\Coding\\WebDev\\FrontEndMentor\\Level 5\\Audiophile e-commerce website\\AudiophileEcommerceWebsite\\AudiophileEcommerceWebsite\\wwwroot\\scss\\components\\_basket.scss",
+      "SourceId": "AudiophileEcommerceWebsite",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Ben\\Documents\\Ben\\Coding\\WebDev\\FrontEndMentor\\Level 5\\Audiophile e-commerce website\\AudiophileEcommerceWebsite\\AudiophileEcommerceWebsite\\wwwroot\\",
+      "BasePath": "_content/AudiophileEcommerceWebsite",
+      "RelativePath": "scss/components/_basket.scss",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\scss\\components\\_basket.scss"
     },
     {
       "Identity": "C:\\Users\\Ben\\Documents\\Ben\\Coding\\WebDev\\FrontEndMentor\\Level 5\\Audiophile e-commerce website\\AudiophileEcommerceWebsite\\AudiophileEcommerceWebsite\\wwwroot\\scss\\components\\_bestGear.scss",

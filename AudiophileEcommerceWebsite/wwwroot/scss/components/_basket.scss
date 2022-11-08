@@ -1,0 +1,48 @@
+﻿@use '../globals/_breakpoints' as b;
+
+.basket-summary {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 10rem;
+    left: 2rem;
+    right: 2rem;
+    height: 20rem;
+    background-color: white;
+    border-radius: 1rem;
+    padding: 2rem;
+}
+
+@media only screen and (min-width: b.$mobile-point) {
+    .basket-summary {
+       right: 0;
+       left: initial;
+       top: 7.5rem;
+       width: 38rem;
+    }
+}
+
+.basket-summary__heading {
+    display: flex;
+    justify-content: space-between;
+}
+
+.add-to-basket-container {
+    display: flex;
+    gap: 1.6rem;
+
+}
+
+.item-incrementer {
+    display: flex;
+    gap: 3rem;
+    padding-inline: 2rem;
+    background-color: var(--white-94);
+    align-items: center;
+    justify-content: center;
+    width: 12rem;
+}
+
+#add-to-cart {
+    justify-content: center;
+}

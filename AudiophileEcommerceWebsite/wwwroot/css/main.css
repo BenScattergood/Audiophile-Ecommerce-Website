@@ -15,6 +15,10 @@
   --fs-main-h5: 1.4rem;
   --fs-products-h2: 2.4rem;
   --fs-products-h3: 2.4rem;
+  --fs-checkout-h2: 2.8rem;
+  --fs-checkout-h3: 1.8rem;
+  --fs-checkout-h4: 1.5rem;
+  --fs-checkout-h5: 1.2rem;
   --fs-button: 1.3rem;
   --fs-main-p: 1.5rem;
   --fs-main-price: 1.8rem;
@@ -36,6 +40,7 @@
   --fw-400: 400;
   --fw-500: 500;
   --fw-700: 700;
+  --opacity-025: 0.25;
   --opacity-05: 0.5;
   --opacity-075: 0.75;
 }
@@ -44,6 +49,7 @@
     --fs-main-h1: 5.6rem;
     --fs-main-h2: 4rem;
     --fs-products-h2: 3.2rem;
+    --fs-checkout-h2: 3.2rem;
     --lh-h1: 5.8rem;
     --lh-h2: 4.4rem;
     --ls-h1: 0.2rem;
@@ -150,6 +156,22 @@
   font-size: var(--fs-products-h3);
 }
 
+.fs-checkout-h2 {
+  font-size: var(--fs-checkout-h2);
+}
+
+.fs-checkout-h3 {
+  font-size: var(--fs-checkout-h3);
+}
+
+.fs-checkout-h4 {
+  font-size: var(--fs-checkout-h4);
+}
+
+.fs-checkout-h5 {
+  font-size: var(--fs-checkout-h5);
+}
+
 .fs-button {
   font-size: var(--fs-button);
 }
@@ -232,6 +254,10 @@
 
 .fw-700 {
   font-weight: var(--fw-700);
+}
+
+.opacity-025 {
+  opacity: var(--opacity-025);
 }
 
 .opacity-05 {
@@ -344,6 +370,7 @@ svg{
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  position: relative;
   /*height: 100%;*/
   z-index: 100;
 }
@@ -391,6 +418,7 @@ svg{
   }
   .navbar__cart-icon {
     margin-left: auto;
+    position: relative;
   }
 }
 @media only screen and (min-width: 1025px) {
@@ -539,6 +567,10 @@ svg{
   top: 0;
   left: 0;
   z-index: 1;
+}
+
+.underline {
+  text-decoration: underline;
 }
 
 .heroText {
@@ -1198,6 +1230,51 @@ svg{
     gap: clamp(10rem, 10vw, 20rem);
   }
 }
+.basket-summary {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 10rem;
+  left: 2rem;
+  right: 2rem;
+  height: 20rem;
+  background-color: white;
+  border-radius: 1rem;
+  padding: 2rem;
+}
+
+@media only screen and (min-width: 600px) {
+  .basket-summary {
+    right: 0;
+    left: initial;
+    top: 7.5rem;
+    width: 38rem;
+  }
+}
+.basket-summary__heading {
+  display: flex;
+  justify-content: space-between;
+}
+
+.add-to-basket-container {
+  display: flex;
+  gap: 1.6rem;
+}
+
+.item-incrementer {
+  display: flex;
+  gap: 3rem;
+  padding-inline: 2rem;
+  background-color: var(--white-94);
+  align-items: center;
+  justify-content: center;
+  width: 12rem;
+}
+
+#add-to-cart {
+  justify-content: center;
+}
+
 body {
   font-size: 1.6rem;
   display: flex;
