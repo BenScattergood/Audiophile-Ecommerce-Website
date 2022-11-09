@@ -39,6 +39,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Ben/Documents/Ben/Coding/WebDev/FrontEndMentor/Level 5/Audiophile e-commerce website/AudiophileEcommerceWebsite/AudiophileEcommerceWebsite/Views/Shared/_BasketBasketIncrementer.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9CYXNrZXRCYXNrZXRJbmNyZW1lbnRlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Ben/Documents/Ben/Coding/WebDev/FrontEndMentor/Level 5/Audiophile e-commerce website/AudiophileEcommerceWebsite/AudiophileEcommerceWebsite/Views/Shared/_BestGearPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9CZXN0R2VhclBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -57,6 +61,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Ben/Documents/Ben/Coding/WebDev/FrontEndMentor/Level 5/Audiophile e-commerce website/AudiophileEcommerceWebsite/AudiophileEcommerceWebsite/Views/Shared/_CatPageProdReverse.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9DYXRQYWdlUHJvZFJldmVyc2UuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Ben/Documents/Ben/Coding/WebDev/FrontEndMentor/Level 5/Audiophile e-commerce website/AudiophileEcommerceWebsite/AudiophileEcommerceWebsite/Views/Shared/_ProductBasketIncrementer.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Qcm9kdWN0QmFza2V0SW5jcmVtZW50ZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Ben/Documents/Ben/Coding/WebDev/FrontEndMentor/Level 5/Audiophile e-commerce website/AudiophileEcommerceWebsite/AudiophileEcommerceWebsite/Views/Shared/_ValidationScriptsPartial.cshtml]

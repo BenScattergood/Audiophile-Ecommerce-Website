@@ -411,6 +411,11 @@ svg{
   height: 9rem;
 }
 
+.navbar__cart-icon {
+  cursor: pointer;
+  padding: 0.1rem;
+}
+
 @media only screen and (min-width: 600px) {
   .navbar {
     justify-content: flex-start;
@@ -502,6 +507,10 @@ svg{
 
 .hidden {
   display: none !important;
+}
+
+.invisible {
+  visibility: hidden;
 }
 
 .pointer {
@@ -600,6 +609,7 @@ svg{
 }
 .button-main {
   display: inline-block;
+  text-align: center;
   padding: 1.5rem 3rem;
   border: none;
   cursor: pointer;
@@ -1237,10 +1247,11 @@ svg{
   top: 10rem;
   left: 2rem;
   right: 2rem;
-  height: 20rem;
+  height: auto;
   background-color: white;
   border-radius: 1rem;
   padding: 2rem;
+  gap: 2rem;
 }
 
 @media only screen and (min-width: 600px) {
@@ -1254,6 +1265,7 @@ svg{
 .basket-summary__heading {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 1rem;
 }
 
 .add-to-basket-container {
@@ -1261,18 +1273,48 @@ svg{
   gap: 1.6rem;
 }
 
+#add-to-cart {
+  justify-content: center;
+}
+
+.basket-item {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.basket-item__img-wrapper {
+  width: 6.4rem;
+  min-width: 6.4rem;
+}
+
+.basket-summary__totals {
+  display: flex;
+  justify-content: space-between;
+}
+
 .item-incrementer {
   display: flex;
-  gap: 3rem;
   padding-inline: 2rem;
   background-color: var(--white-94);
   align-items: center;
   justify-content: center;
-  width: 12rem;
 }
 
-#add-to-cart {
-  justify-content: center;
+.item-incrementer--product {
+  width: 12rem;
+  gap: 2rem;
+}
+
+.item-incrementer--basket {
+  width: 9rem;
+  margin-left: auto;
+  gap: 1.5rem;
+}
+
+.item-incrementer__btn {
+  padding: 1rem;
+  cursor: pointer;
 }
 
 body {

@@ -25,8 +25,8 @@ namespace AudiophileEcommerceWebsite.ViewModels
         {
             var shoppingBasketItem =
                 _audiophileDbContext.ShoppingBasketItems
-                .Where(item => item.ShoppingBasketId == ShoppingBasketId)
-                .SingleOrDefault(item => item.Product.ProductId == product.ProductId);
+                .SingleOrDefault(item => item.ShoppingBasketId == ShoppingBasketId
+                && item.Product.ProductId == product.ProductId);
 
             if (shoppingBasketItem is null)
             {
@@ -47,7 +47,31 @@ namespace AudiophileEcommerceWebsite.ViewModels
 
         public void RemoveFromBasket(Product product)
         {
-            throw new NotImplementedException();
+            var shoppingBasketItem =
+                _audiophileDbContext.ShoppingBasketItems
+                .SingleOrDefault(item => item.ShoppingBasketId == ShoppingBasketId
+                && item.Product.ProductId == product.ProductId);
+
+            if (shoppingBasketItem.Quantity == 1)
+            {
+                _audiophileDbContext.ShoppingBasketItems.Remove(shoppingBasketItem);
+            }
+            else
+            {
+                shoppingBasketItem.Quantity--;
+            }
+
+            _audiophileDbContext.SaveChanges();
+        }
+
+        public void ClearBasket()
+        {
+            var items = _audiophileDbContext.ShoppingBasketItems
+                .Where(i => i.ShoppingBasketId == ShoppingBasketId)
+                .ToList();
+
+            _audiophileDbContext.RemoveRange(items);
+            _audiophileDbContext.SaveChanges();
         }
 
         public List<ShoppingBasketItem> GetShoppingBasketItems()
@@ -55,7 +79,6 @@ namespace AudiophileEcommerceWebsite.ViewModels
             return _audiophileDbContext.ShoppingBasketItems
                 .Where(item => item.ShoppingBasketId == ShoppingBasketId)
                 .Include(item => item.Product)
-                .OrderBy(item => item.Quantity)
                 .ToList();
         }
     }

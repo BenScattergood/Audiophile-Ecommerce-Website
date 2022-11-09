@@ -3,7 +3,8 @@
     public interface IShoppingBasket
     {
         void AddToBasket(Product product, int quantity);
-        void RemoveFromBasket(Product product);
         List<ShoppingBasketItem> GetShoppingBasketItems();
+        void RemoveFromBasket(Product product);
+        void ClearBasket();
     }
 }

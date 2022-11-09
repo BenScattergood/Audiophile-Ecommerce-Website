@@ -1,0 +1,26 @@
+﻿@use '../globals/_breakpoints' as b;
+
+.item-incrementer {
+    display: flex;
+    
+    padding-inline: 2rem;
+    background-color: var(--white-94);
+    align-items: center;
+    justify-content: center;
+}
+
+.item-incrementer--product {
+    width: 12rem;
+    gap: 2rem;
+}
+
+.item-incrementer--basket {
+    width: 9rem;
+    margin-left: auto;
+    gap: 1.5rem;
+}
+
+.item-incrementer__btn {
+    padding: 1rem;
+    cursor: pointer;
+}
