@@ -15,6 +15,8 @@ namespace AudiophileEcommerceWebsite.Entities
         public DbSet<Product> Products { get; set; }
         public DbSet<Accessory> Details { get; set; }
         public DbSet<ShoppingBasketItem> ShoppingBasketItems { get; set; }
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<OrderDetail> OrderDetails { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

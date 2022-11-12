@@ -12,6 +12,8 @@
     border-radius: 1rem;
     padding: 2rem;
     gap: 2rem;
+    overflow-y: auto;
+    max-height: calc(100vh - 10rem);
 }
 
 @media only screen and (min-width: b.$mobile-point) {

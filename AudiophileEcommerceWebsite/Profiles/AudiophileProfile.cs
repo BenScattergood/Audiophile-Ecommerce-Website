@@ -16,6 +16,9 @@ namespace AudiophileEcommerceWebsite.Profiles
             CreateMap<RelatedData, RelatedDataViewModel>();
 
             CreateMap<ShoppingBasketItem, ShoppingBasketItemViewModel>();
+
+            CreateMap<Order, OrderViewModel>()
+                .ReverseMap();
         }
     }
 }
