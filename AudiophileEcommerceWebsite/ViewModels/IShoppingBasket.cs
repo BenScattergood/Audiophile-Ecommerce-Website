@@ -6,5 +6,6 @@
         List<ShoppingBasketItem> GetShoppingBasketItems();
         void RemoveFromBasket(Product product);
         void ClearBasket();
+        decimal GetShoppingBasketTotal();
     }
 }

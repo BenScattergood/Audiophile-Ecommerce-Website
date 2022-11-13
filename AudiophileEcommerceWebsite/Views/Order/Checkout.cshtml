@@ -1,0 +1,157 @@
+﻿@model OrderViewModel
+
+@section heroImage {
+	<div class="heading__img-container heading__img-container--cat">
+	</div>
+}
+
+@section Scripts {
+	<partial name="_ValidationScriptsPartial" />
+}
+
+	<main role="main" class="wrapper container container--checkout bg-white-98">
+		<a href="##" onclick="history.go(-1); return false;" class="fw-500 text-black-100 opacity-05 lh-p fs-main-p">Go Back</a>
+		<article class="checkout-page">
+			<form id="form" asp-action="Checkout" method="post" role="form" class="checkout-page__section--checkout checkout-page__section bg-white-100">
+				<h1 class="fw-700 fs-checkout-h2 text-black-100 lh-h2 uppercase">Checkout</h1>
+				<div class="form__section">
+					<h3 class="fw-700 text-beige-100 fs-button lh-button uppercase ls-button">Billing Details</h3>
+					<div class="form__section__inner">
+						<div class="input-wrapper">
+							<div class="validation-wrapper">
+								<span class="fw-500 fs-checkout-h5 text-red-100" asp-validation-for="Name"></span>
+								<label class="fw-700 fs-checkout-h5 text-black-100" asp-for="Name"></label>
+							</div>
+							<input class="fw-700 fs-main-h5 text-black-100 input-fields" asp-for="Name" placeholder="Alexie Ward"/>
+						</div>
+						<div class="input-wrapper">
+							<div class="validation-wrapper">
+								<span class="fw-500 fs-checkout-h5 text-red-100" asp-validation-for="EmailAddress"></span>
+								<label class="fw-700 fs-checkout-h5 text-black-100" asp-for="EmailAddress"></label>
+							</div>
+							<input class="fw-700 fs-main-h5 text-black-100 input-fields" asp-for="EmailAddress" placeholder="alexei@mail.com"/>
+						</div>
+					</div>
+					<div class="input-wrapper">
+						<div class="validation-wrapper">
+							<span class="fw-500 fs-checkout-h5 text-red-100" asp-validation-for="PhoneNumber"></span>
+							<label class="fw-700 fs-checkout-h5 text-black-100" asp-for="PhoneNumber"></label>
+						</div>
+						<input class="fw-700 fs-main-h5 text-black-100 input-fields" asp-for="PhoneNumber" placeholder="+1 202-555-0136"/>
+					</div>
+				</div>
+				<div class="form__section">
+					<h3 class="fw-700 text-beige-100 fs-button lh-button uppercase ls-button">Shipping Info</h3>
+					<div class="input-wrapper">
+						<div class="validation-wrapper">
+							<span class="fw-500 fs-checkout-h5 text-red-100" asp-validation-for="Address"></span>
+							<label class="fw-700 fs-checkout-h5 text-black-100" asp-for="Address"></label>
+						</div>
+						<input class="fw-700 fs-main-h5 text-black-100 input-fields" asp-for="Address" placeholder="1137 Williams Avenue"/>
+					</div>
+					<div class="form__section__inner">
+						<div class="input-wrapper">
+							<div class="validation-wrapper">
+								<span class="fw-500 fs-checkout-h5 text-red-100" asp-validation-for="ZIPCode"></span>
+								<label class="fw-700 fs-checkout-h5 text-black-100" asp-for="ZIPCode"></label>
+							</div>
+							<input class="fw-700 fs-main-h5 text-black-100 input-fields" asp-for="ZIPCode" placeholder="10001"/>
+						</div>
+						<div class="input-wrapper">
+							<div class="validation-wrapper">
+								<span class="fw-500 fs-checkout-h5 text-red-100" asp-validation-for="City"></span>
+								<label class="fw-700 fs-checkout-h5 text-black-100" asp-for="City"></label>
+							</div>
+							<input class="fw-700 fs-main-h5 text-black-100 input-fields" asp-for="City" placeholder="New York"/>
+						</div>
+					</div>
+					<div class="input-wrapper">
+						<div class="validation-wrapper">
+							<span class="fw-500 fs-checkout-h5 text-red-100" asp-validation-for="Country"></span>
+							<label class="fw-700 fs-checkout-h5 text-black-100" asp-for="Country"></label>
+						</div>
+						<input class="fw-700 fs-main-h5 text-black-100 input-fields" asp-for="Country" placeholder="United States"/>
+					</div>
+				</div>
+				<div class="form__section">
+					<div>
+						<h3 class="fw-700 text-beige-100 fs-button lh-button uppercase ls-button">Payment Details</h3>
+					</div>
+					<div class="form__section--radio">
+						<div>
+							<Legend class="fw-700 fs-checkout-h5 text-black-100">Payment Method</Legend>
+						</div>
+						<di class="form__section--radio__inner">
+							<div id="e-money" class="beige-border radio-btn-wrapper">
+								<input class="e-money-radio pointer fw-700 fs-checkout-h5 text-black-100" asp-for="PaymentMethod" type="radio" value="eMoney" name="PaymentMethod" />
+								<label asp-for="PaymentMethod" class="fw-700 fs-checkout-h5 text-black-100">e-Money</label>
+							</div>
+							<div id="cash" class="radio-btn-wrapper">
+								<input class="cash-radio pointer fw-700 fs-checkout-h5 text-black-100" asp-for="PaymentMethod" type="radio" value="cash" name="PaymentMethod" />
+								<label asp-for="PaymentMethod" class="fw-700 fs-checkout-h5 text-black-100">Cash on Delivery</label>
+							</div>
+						</div>
+					</div>
+					<div class="form__section__inner form__section__e-money">
+						<div class="input-wrapper">
+							<div class="validation-wrapper">
+								<span class="fw-500 fs-checkout-h5 text-red-100" asp-validation-for="eMoneyNumber"></span>
+								<label class="fw-700 fs-checkout-h5 text-black-100" asp-for="eMoneyNumber"></label>
+							</div>
+							<input class="fw-700 fs-main-h5 text-black-100 input-fields" asp-for="eMoneyNumber" placeholder="238521993"/>
+						</div>
+						<div class="input-wrapper">
+							<div class="validation-wrapper">
+								<span class="fw-500 fs-checkout-h5 text-red-100" asp-validation-for="eMoneyPIN"></span>
+								<label class="fw-700 fs-checkout-h5 text-black-100" asp-for="eMoneyPIN"></label>
+							</div>
+							<input class="fw-700 fs-main-h5 text-black-100 input-fields" asp-for="eMoneyPIN" placeholder="6891"/>
+						</div>
+					</div>
+				<div class="form__section__inner form__section__cash hidden">
+						<div class="cash__wrapper">
+							<div>
+								<img src="/assets/Cash.png" />
+							</div>
+							<p class="fs-checkout-h4 text-black-100 opacity-05 fs-500 lh-h4">The ‘Cash on Delivery’ option enables you to pay in cash when our delivery courier arrives at your residence. Just make sure your address is correct so that your order will not be cancelled.</p>
+						</div>
+				</div>
+			</form>
+			<article class="checkout-page__section--summary checkout-page__section bg-white-100">
+				<h2 class="fs-checkout-h3 text-black-100 fw-700 ls-h4 uppercase">Summary</h2>
+			@foreach (var item in Model.OrderDetails)
+			{
+				var path = $"image-{item.Product.Slug}.jpg";
+				<article class="basket-item">
+					<div class="basket-item__img-wrapper">
+						<img class="border-radius image-reset" src="/assets/cart/@path">
+					</div>
+					<div>
+						<h4 class="fs-checkout-h4 text-black-100 fw-700 lh-h4">@item.Product.ProductName</h4>
+						<p class="fs-main-h5 text-black-100 fw-700 opacity-05">@item.Product.Price</p>
+					</div>
+					<h4 class="margin-l-auto fs-checkout-h4 fw-700 text-black-100 opacity-05">x @item.Quantity</h4>
+				</article>
+			}
+				<div class="checkout-page__section--summary__calc">
+					<div class="summary__calc__info">
+						<h4 class="fw-500 text-black-100 fs-main-h5 opacity-05 uppercase">Total</h4>
+						<p class="text-black-100 fw-700 uppercase fs-checkout-h3">@Model.OrderProductTotal</p>
+					</div>
+					<div class="summary__calc__info">
+						<h4 class="fw-500 text-black-100 fs-main-h5 opacity-05 uppercase">Shipping</h4>
+						<p class="text-black-100 fw-700 uppercase fs-checkout-h3">@Model.Shipping</p>
+					</div>
+					<div class="summary__calc__info">
+						<h4 class="fw-500 text-black-100 fs-main-h5 opacity-05 uppercase">VAT (Included)</h4>
+						<p class="text-black-100 fw-700 uppercase fs-checkout-h3">@Model.VAT</p>
+					</div>
+				</div>
+				<div class="summary__calc__info">
+					<h4 class="fw-500 text-black-100 fs-main-h5 opacity-05 uppercase">Grand Total</h4>
+					<p class="text-black-100 fw-700 uppercase fs-checkout-h3">@Model.OrderGrandTotal</p>
+				</div>
+			<input form="form" type="submit" value="Continue & Pay" class="button-main button-main--beige text-white-100 fw-700 lh-button ls-button uppercase fs-button" />
+			</article>
+		</article>
+	</main>

@@ -4,26 +4,26 @@
     <h3 class="fw-700 fs-checkout-h3 ls-h4 text-black-100 uppercase">Cart (3)</h3>
     <p id="clear-basket" class="pointer underline fw-500 fs-checkout-h4 text-black-100 opacity-05">Remove All</p>
 </div>
-@foreach (var item in Model)
-{
-    var path = $"image-{item.Product.Slug}.jpg";
-    <article class="basket-item">
-        <div class="basket-item__img-wrapper">
-            <img class="border-radius image-reset" src="/assets/cart/@path">
-        </div>
-        <div>
-            <h4 class="fs-checkout-h4 text-black-100 fw-700 lh-h4">@item.Product.Name</h4>
-            <p class="fs-main-h5 text-black-100 fw-700 opacity-05">@item.Product.Price</p>
-        </div>
-        <div class="item-incrementer item-incrementer--basket">
-            <partial name="_BasketBasketIncrementer" model="@item.Quantity" />
-        </div>
-    </article>
-}
+    @foreach (var item in Model)
+    {
+        var path = $"image-{item.Product.Slug}.jpg";
+        <article class="basket-item">
+            <div class="basket-item__img-wrapper">
+                <img class="border-radius image-reset" src="/assets/cart/@path">
+            </div>
+            <div>
+                <h4 class="fs-checkout-h4 text-black-100 fw-700 lh-h4">@item.Product.Name</h4>
+                <p class="fs-main-h5 text-black-100 fw-700 opacity-05">@item.Product.Price</p>
+            </div>
+            <div class="item-incrementer item-incrementer--basket">
+                <partial name="_BasketBasketIncrementer" model="@item.Quantity" />
+            </div>
+        </article>
+    }
 
 <div class="basket-summary__totals">
     <h4 class="text-black-100 opacity-05 fw-500 fs-checkout-h4 uppercase">Total</h4>
     <h4 class="text-black-100 fw-700 fs-checkout-h3">@Model.Sum(x => x.Product.Price * x.Quantity)</h4>
 </div>
-<a class="button-main button-main--beige text-white-100 fw-700 lh-button ls-button uppercase fs-button">Checkout</a>
+<a asp-controller="Order" asp-action="Checkout" class="button-main button-main--beige text-white-100 fw-700 lh-button ls-button uppercase fs-button">Checkout</a>
     

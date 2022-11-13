@@ -9,13 +9,16 @@ var connectionString = builder.Configuration.GetConnectionString
     ("Connection string 'AudiophileEcommerceWebsite' not found.");
 
 // Add services to the container.
-builder.Services.AddControllersWithViews();
+builder.Services.AddControllersWithViews()
+    .AddFluentValidation(cfg => cfg.RegisterValidatorsFromAssemblyContaining<OrderViewModelValidator>());
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
-
+builder.Services.AddScoped<IOrderRepository, OrderRepository>();    
 builder.Services.AddScoped<IShoppingBasket, ShoppingBasket>(sp => new ShoppingBasket(sp));
+
 builder.Services.AddSession();
 builder.Services.AddHttpContextAccessor();
 
+//builder.Services.AddFluentValidationAutoValidation().AddFluentValidationClientsideAdapters();
 builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
 
 builder.Services.AddDbContext<AudiophileDbContext>(options =>

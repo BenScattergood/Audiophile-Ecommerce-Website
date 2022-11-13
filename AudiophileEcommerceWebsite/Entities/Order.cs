@@ -10,7 +10,12 @@
         public string ZIPCode { get; set; }
         public string City { get; set; }
         public string Country { get; set; }
-        public List<OrderDetail> OrderDetails { get; set; }
+        public decimal Shipping => 50;
+        public decimal VAT => Math.Round(OrderProductTotal * (decimal)0.2, 2);
+        public decimal OrderProductTotal { get; set; }
+        public decimal OrderGrandTotal => OrderProductTotal + Shipping;
+        public DateTime OrderTime { get; set; }
+        public List<OrderDetail> OrderDetails { get; set; } = new List<OrderDetail>();
     }
 
     

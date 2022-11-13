@@ -81,5 +81,12 @@ namespace AudiophileEcommerceWebsite.ViewModels
                 .Include(item => item.Product)
                 .ToList();
         }
+
+        public decimal GetShoppingBasketTotal()
+        {
+            return _audiophileDbContext.ShoppingBasketItems
+                .Where(s => s.ShoppingBasketId == ShoppingBasketId)
+                .Sum(s => s.Product.Price * s.Quantity);
+        }
     }
 }

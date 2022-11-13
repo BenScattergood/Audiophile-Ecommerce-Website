@@ -9,6 +9,10 @@
     incrementerValue: document.querySelector("#incrementer-value"),
     RemoveAllBasket: document.querySelector("#clear-basket"),
     cartIcon: document.querySelector("#shopping-cart-icon"),
+    sectionEMoney: document.querySelector(".form__section__e-money"),
+    sectionCash: document.querySelector(".form__section__cash"),
+    radioDivEMoney: document.querySelector("#e-money"),
+    radioDivCash: document.querySelector("#cash"),
 }
 
 const incrementer = {
@@ -77,6 +81,22 @@ document.addEventListener('click', function (e) {
         app.navMenu.classList.contains("hidden")) {
         ToggleBasket();
         return;
+    }
+
+    if (event.target.id == "e-money") {
+        document.querySelector(".e-money-radio").click();
+        app.sectionEMoney.classList.remove("hidden");
+        app.sectionCash.classList.add("hidden");
+        app.radioDivEMoney.classList.add("beige-border");
+        app.radioDivCash.classList.remove("beige-border");
+    }
+
+    if (event.target.id == "cash") {
+        document.querySelector(".cash-radio").click();
+        app.sectionEMoney.classList.add("hidden");
+        app.sectionCash.classList.remove("hidden");
+        app.radioDivCash.classList.add("beige-border");
+        app.radioDivEMoney.classList.remove("beige-border");
     }
 
     //removeAll

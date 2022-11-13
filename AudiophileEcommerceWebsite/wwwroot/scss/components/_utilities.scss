@@ -76,11 +76,13 @@
     margin-bottom: -2rem;
 }
 
+.margin-l-auto {
+    margin-left: auto;
+}
 /*.empty {
     content: "";
     height: 9rem;
 }*/
-
 .overflow-y-hidden {
     overflow-y: hidden;
 }
@@ -130,4 +132,12 @@
 
 .underline {
     text-decoration: underline;
+}
+
+.beige-border {
+    border: 1px solid var(--beige-100) !important;
+}
+
+input[type='radio']:checked {
+    accent-color: var(--beige-100);
 }
