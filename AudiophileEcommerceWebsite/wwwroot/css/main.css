@@ -315,6 +315,7 @@ html:focus-within {
 html,
 body {
   min-height: 100vh;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -373,6 +374,7 @@ svg{
   display: flex;
   flex-direction: column;
   align-items: center;
+  z-index: 99;
 }
 
 .heading__img {
@@ -515,9 +517,9 @@ svg{
   text-decoration: none;
 }
 
-.nav__filter {
+.filter {
   position: fixed;
-  inset: 9rem 0 0 0;
+  inset: 0 0 0 0;
   background-color: grey;
   opacity: 50%;
   z-index: 10;

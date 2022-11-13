@@ -1,6 +1,7 @@
 ﻿const app = {
     hamburger: document.querySelector(".hamburger"),
     navFilter: document.querySelector(".nav__filter"),
+    navFilterAll: document.querySelector(".nav__filter-all"),
     navMenu: document.querySelector(".navbar__menu"),
     body: document.querySelector(".body"),
     ShoppingBasketSummary: document.querySelector("#ShoppingBasketSummary"),
@@ -33,6 +34,11 @@ function CurrentQuantityToNum() {
 //incrementerbasket
 
 document.addEventListener('click', function (e) {
+    if (!app.ShoppingBasketSummary.contains(e.target) &&
+        !app.ShoppingBasketSummary.classList.contains("invisible")) {
+        HideBasket();
+        return;
+    }
     if (event.target.classList.contains('basket-increment')) {
         const pieName = event.target.parentElement
             .parentElement.children[1].children[0]
@@ -73,6 +79,7 @@ document.addEventListener('click', function (e) {
         AjaxShoppingBasketRefresh(
             incrementer.productIncrementerValue.textContent,
             app.productName.textContent);
+        window.scrollTo({ top: 0, behaviour: 'smooth' });
         ToggleBasket();
         return;
     }
@@ -117,11 +124,6 @@ document.addEventListener('click', function (e) {
             }
         })
     }
-    else if (!app.ShoppingBasketSummary.contains(e.target) &&
-        !app.ShoppingBasketSummary.classList.contains("invisible")) {
-        HideBasket();
-        return;
-    }
 })
 
 //Ajax AddValueToBasket
@@ -155,46 +157,50 @@ app.hamburger.addEventListener("click", function () {
         //currently closed
         app.navMenu.classList.remove("hidden");
         CloseBasket();
+        app.navFilter.classList.remove("hidden");
         OpenPopup();
     }
     else {
         //currently open
         app.navMenu.classList.add("hidden");
         ClosePopup();
+        app.navFilter.classList.add("hidden");
     }
     
 });
+
+//basket
 
 function ToggleBasket() {
     if (app.ShoppingBasketSummary.classList.contains("invisible")) {
         //currently closed
         app.ShoppingBasketSummary.classList.remove("invisible");
+        app.navFilterAll.classList.remove("hidden");
         OpenPopup();
     }
     else {
         //currently open
-        CloseBasket();
-        ClosePopup();
+        HideBasket();
     }
 }
 
 function HideBasket() {
     CloseBasket();
     ClosePopup();
+    app.navFilterAll.classList.add("hidden");
 }
 
 function OpenPopup() {
     
-    app.navFilter.classList.remove("hidden");
     app.body.classList.add("overflow-y-hidden");
-    app.body.classList.remove("overflow-x-hidden");
+    /*app.body.classList.remove("overflow-x-hidden");*/
 }
 
 function ClosePopup() {
-    
+    app.navFilterAll.classList.add("hidden");
     app.navFilter.classList.add("hidden");
     app.body.classList.remove("overflow-y-hidden");
-    app.body.classList.add("overflow-x-hidden");
+    /*app.body.classList.add("overflow-x-hidden");*/
 }
 
 function CloseBasket() {
