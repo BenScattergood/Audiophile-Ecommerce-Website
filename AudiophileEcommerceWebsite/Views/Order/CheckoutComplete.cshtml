@@ -1,1 +1,9 @@
-﻿<h2>hia</h2>
+﻿@model OrderViewModel;
+
+@section heroImage {
+	<div class="heading__img-container heading__img-container--cat">
+	</div>
+}
+
+<partial name="_CheckoutPartial" model="@Model"/>
+<partial name="_CheckoutCompletePartial" model="@Model" />

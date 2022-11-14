@@ -43,6 +43,7 @@ $variables-mobile: (
     lh-button: 1.8rem,
     lh-p: 2.5rem,
     lh-footer: 2.5rem,
+    lh-checkout: 2.8rem,
     ),
 
     letter-spacing: (
@@ -53,6 +54,7 @@ $variables-mobile: (
     ls-h5: 1rem,
     ls-button: 0.1rem,
     ls-footer: 0.2rem,
+    ls-checkout: 0.08rem,
     ),
 
     font-weight: (
@@ -79,11 +81,13 @@ $variables-tablet: (
     line-height: (
     lh-h1: 5.8rem,
     lh-h2: 4.4rem,
+    lh-checkout: 3.6rem,
     ),
 
     letter-spacing: (
     ls-h1: 0.2rem,
     ls-h2: 0.14rem,
+    ls-checkout: 0.11rem,
     )
 );
 

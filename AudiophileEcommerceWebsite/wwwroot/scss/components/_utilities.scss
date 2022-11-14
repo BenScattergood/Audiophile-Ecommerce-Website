@@ -48,7 +48,7 @@
     position: fixed;
     inset: 0 0 0 0;
     background-color: grey;
-    opacity: 50%;
+    opacity: 60%;
     z-index: 10;
 }
 
@@ -78,6 +78,10 @@
 
 .margin-l-auto {
     margin-left: auto;
+}
+
+.padding-t-1 {
+    padding-top: 1rem;
 }
 /*.empty {
     content: "";
@@ -140,4 +144,8 @@
 
 input[type='radio']:checked {
     accent-color: var(--beige-100);
+}
+
+.text-align-center {
+    text-align: center;
 }

@@ -49,12 +49,14 @@ namespace AudiophileEcommerceWebsite.Controllers
 
             orderRepository.CreateOrder(order);
 
-            return RedirectToAction("CheckoutComplete");
+            return RedirectToAction("CheckoutComplete", order);
         }
 
-        public IActionResult CheckoutComplete()
+        public IActionResult CheckoutComplete(Order order)
         {
-            return View();
+            orderRepository.GetOrderSummary(order);
+            var orderViewModel = mapper.Map<OrderViewModel>(order);
+            return View(orderViewModel);
         }
     }
 }
