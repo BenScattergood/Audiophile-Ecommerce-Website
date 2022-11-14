@@ -2,6 +2,7 @@ using AudiophileEcommerceWebsite.Entities;
 using AudiophileEcommerceWebsite.ViewModels;
 using Microsoft.EntityFrameworkCore;
 using System.Reflection;
+using Microsoft.AspNetCore.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString
@@ -11,6 +12,7 @@ var connectionString = builder.Configuration.GetConnectionString
 // Add services to the container.
 builder.Services.AddControllersWithViews()
     .AddFluentValidation(cfg => cfg.RegisterValidatorsFromAssemblyContaining<OrderViewModelValidator>());
+
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
 builder.Services.AddScoped<IOrderRepository, OrderRepository>();    
 builder.Services.AddScoped<IShoppingBasket, ShoppingBasket>(sp => new ShoppingBasket(sp));
@@ -26,6 +28,10 @@ builder.Services.AddDbContext<AudiophileDbContext>(options =>
     options.UseSqlServer(connectionString);
 });
 
+builder.Services.AddDefaultIdentity<IdentityUser>(/*options => */
+    /*options.SignIn.RequireConfirmedAccount = true*/)
+    .AddEntityFrameworkStores<AudiophileDbContext>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -40,11 +46,13 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseSession();
+app.UseAuthentication();
 
 app.UseRouting();
 
 app.UseAuthorization();
 
+app.MapRazorPages();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Product}/{action=Index}/{id?}");
