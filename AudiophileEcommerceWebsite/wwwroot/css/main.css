@@ -451,6 +451,25 @@ svg{
 .navbar__cart-icon-wrapper {
   display: flex;
   gap: 2rem;
+  position: relative;
+  align-items: center;
+}
+
+.LoginPartial__Logout-form {
+  position: absolute;
+  top: 5.8rem;
+  left: -50%;
+}
+
+.LoginPartial__Logout-form__btn {
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  border: none;
+  background-color: var(--beige-100);
+}
+
+.LoginPartial__Logout-form__btn:hover {
+  background-color: var(--beige-200);
 }
 
 @media only screen and (min-width: 600px) {
@@ -464,6 +483,9 @@ svg{
   .navbar__cart-icon-wrapper {
     margin-left: auto;
   }
+  .LoginPartial__Logout-form {
+    top: 6.1rem;
+  }
 }
 @media only screen and (min-width: 1025px) {
   .navbar {
@@ -472,6 +494,10 @@ svg{
   }
   .navbar__cart-icon-wrapper {
     margin-left: initial;
+  }
+  .LoginPartial__Logout-form {
+    top: 7.6rem;
+    left: -20%;
   }
 }
 .navbar__links {
@@ -512,7 +538,7 @@ svg{
 }
 
 .nav__avatar:hover > .nav__avatar-img {
-  border-color: var(--red-100);
+  border-color: var(--beige-100);
 }
 
 /*.btn-login {
@@ -1318,8 +1344,8 @@ input[type=radio]:checked {
 }
 
 .container--authentication {
-  gap: 2rem;
   margin-block: 5rem;
+  align-items: flex-start;
 }
 
 .main-container {
@@ -1682,6 +1708,15 @@ input[type=radio]:checked {
     justify-content: center;
   }
 }
+.authentication {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 50rem;
+  width: 100%;
+}
+
 .authentication__form {
   display: flex;
   flex-direction: column;
@@ -1692,6 +1727,18 @@ input[type=radio]:checked {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+}
+
+.authentication__alternative-link {
+  align-self: flex-start;
+}
+
+.authentication__alternative-link:hover {
+  color: var(--beige-100);
+}
+
+.validation-summary li {
+  list-style: none;
 }
 
 body {

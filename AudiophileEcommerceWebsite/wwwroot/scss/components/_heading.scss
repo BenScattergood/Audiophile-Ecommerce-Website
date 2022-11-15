@@ -92,8 +92,26 @@
 .navbar__cart-icon-wrapper {
     display: flex;
     gap: 2rem;
+    position: relative;
+    align-items: center;
 }
 
+.LoginPartial__Logout-form {
+    position: absolute;
+    top: 5.8rem;
+    left: -50%;
+}
+
+.LoginPartial__Logout-form__btn {
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    border: none;
+    background-color: var(--beige-100);
+}
+
+.LoginPartial__Logout-form__btn:hover {
+    background-color: var(--beige-200);
+}
 
 @media only screen and (min-width: b.$mobile-point) {
     .navbar {
@@ -108,6 +126,10 @@
     .navbar__cart-icon-wrapper {
         margin-left: auto;
     }
+
+    .LoginPartial__Logout-form {
+        top: 6.1rem;
+    }
 }
 
 @media only screen and (min-width: b.$tablet-point) {
@@ -118,6 +140,11 @@
 
     .navbar__cart-icon-wrapper {
         margin-left: initial;
+    }
+
+    .LoginPartial__Logout-form {
+        top: 7.6rem;
+        left: -20%;
     }
 }
 
@@ -145,6 +172,7 @@
     }
 }
 
+//nav avatar
 
 .nav__avatar {
     display: flex;
@@ -161,7 +189,7 @@
 }
 
 .nav__avatar:hover > .nav__avatar-img {
-    border-color: var(--red-100);
+    border-color: var(--beige-100);
 }
 
 /*.btn-login {

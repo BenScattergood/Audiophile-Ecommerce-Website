@@ -8,8 +8,8 @@
     <div class="nav__avatar">
         <img class="nav__avatar-img" runat="server" src="/assets/image-avatar.png" alt="profile picture" />
     </div>
-    <form id="logoutForm" class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
-        <button id="logout" type="submit" class="nav-link btn btn-link text-dark">Logout</button>
+    <form id="logoutForm" class="LoginPartial__Logout-form hidden" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Product", new { area = "" })">
+        <button id="logout" type="submit" class=" pointer LoginPartial__Logout-form__btn fw-500 text-white-100 fs-button ls-button uppercase">Logout</button>
     </form>
 }
 else

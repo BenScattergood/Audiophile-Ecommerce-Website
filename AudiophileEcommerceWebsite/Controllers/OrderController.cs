@@ -1,8 +1,10 @@
 ﻿using AudiophileEcommerceWebsite.ViewModels;
+
 using Microsoft.AspNetCore.Mvc;
 
 namespace AudiophileEcommerceWebsite.Controllers
 {
+    [Authorize]
     public class OrderController : Controller
     {
         private readonly IOrderRepository orderRepository;

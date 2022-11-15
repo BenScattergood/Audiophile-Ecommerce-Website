@@ -25,8 +25,8 @@
 }
 
 .container--authentication {
-    gap: 2rem;
     margin-block: 5rem;
+    align-items: flex-start;
 }
 
 .main-container {
@@ -52,10 +52,6 @@
         margin-top: 8rem;
         margin-bottom: clamp(10rem, 10vw, 16rem);
         gap: clamp(10rem, 10vw, 16rem);
-    }
-
-    .container {
-        
     }
 
     .main-container {

@@ -9,24 +9,27 @@
     </div>
 }
     <main class="wrapper container container--authentication">
-        <h1 class="fs-products-h2 fw-700 ls-checkout text-black-100 lh-checkout">@ViewData["Title"]</h1>
-        <form id=account method="post" class="authentication__form">
-            <div class="validation-wrapper">
-                <span asp-validation-for="Input.Email" class="fw-500 fs-checkout-h5 text-red-100"></span>
-                <label asp-for="Input.Email" class="fw-700 fs-checkout-h5 text-black-100"></label>
-            </div>
-            <input asp-for="Input.Email" class="fw-700 fs-main-h5 text-black-100 input-fields" autocomplete="username" aria-required="true" />
-            <div class="validation-wrapper">
-                <span asp-validation-for="Input.Password" class="fw-500 fs-checkout-h5 text-red-100"></span>
-                <label asp-for="Input.Password" class="fw-700 fs-checkout-h5 text-black-100"></label>
-            </div>
-            <input asp-for="Input.Password" class="fw-700 fs-main-h5 text-black-100 input-fields" autocomplete="current-password" aria-required="true" />
+        <article class="bg-white-100 authentication">
+            <h1 class="fs-products-h2 fw-700 ls-checkout text-black-100 lh-checkout">@ViewData["Title"]</h1>
+            <form id=account method="post" class="authentication__form">
+                <div asp-validation-summary="ModelOnly" class="validation-summary fw-500 fs-checkout-h3 text-red-100"></div>
+                <div class="validation-wrapper">
+                    <span asp-validation-for="Input.Email" class="fw-500 fs-checkout-h5 text-red-100"></span>
+                    <label asp-for="Input.Email" class="fw-700 fs-checkout-h5 text-black-100"></label>
+                </div>
+                <input asp-for="Input.Email" class="fw-700 fs-main-h5 text-black-100 input-fields" autocomplete="username" aria-required="true" />
+                <div class="validation-wrapper">
+                    <span asp-validation-for="Input.Password" class="fw-500 fs-checkout-h5 text-red-100"></span>
+                    <label asp-for="Input.Password" class="fw-700 fs-checkout-h5 text-black-100"></label>
+                </div>
+                <input asp-for="Input.Password" class="fw-700 fs-main-h5 text-black-100 input-fields" autocomplete="current-password" aria-required="true" />
             
-        </form>
-        <div class="authentication__submit-btn">
-            <button href="#account" id="login-submit" type="submit" class="button-main button-main--black fw-700 text-white-100 fs-button ls-button uppercase">Log in</button>
-            <a class="text-black-100 fs-main-p lh-p" asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">Register as a new user</a>
-        </div>
+            </form>
+            <div class="authentication__submit-btn">
+                <input form="account" id="login-submit" value="Log in" type="submit" class="button-main button-main--black fw-700 text-white-100 fs-button ls-button uppercase">
+                <a class="authentication__alternative-link underline text-black-100 fs-main-p lh-p" asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">Register as a new user</a>
+            </div>
+        </article>
     </main>
 
 @section Scripts {

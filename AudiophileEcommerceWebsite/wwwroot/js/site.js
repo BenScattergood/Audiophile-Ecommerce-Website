@@ -14,6 +14,8 @@
     sectionCash: document.querySelector(".form__section__cash"),
     radioDivEMoney: document.querySelector("#e-money"),
     radioDivCash: document.querySelector("#cash"),
+    logoutPopup: document.querySelector(".LoginPartial__Logout-form"),
+    userAvatar: document.querySelector(".nav__avatar-img"),
 }
 
 const incrementer = {
@@ -39,6 +41,22 @@ document.addEventListener('click', function (e) {
         HideBasket();
         return;
     }
+
+    //avatar popup
+    if (document.querySelector(".LoginPartial__Logout-form") != null) {
+        if (!app.logoutPopup.contains(e.target) &&
+            !app.logoutPopup.classList.contains("hidden")) {
+            HideLogoutPopup();
+            return;
+        }
+        if (app.userAvatar.contains(e.target) &&
+            app.logoutPopup.classList.contains("hidden")) {
+            app.logoutPopup.classList.toggle("hidden");
+            return;
+        }
+    }
+    //
+
     if (event.target.classList.contains('basket-increment')) {
         const pieName = event.target.parentElement
             .parentElement.children[1].children[0]
@@ -205,4 +223,18 @@ function ClosePopup() {
 
 function CloseBasket() {
     app.ShoppingBasketSummary.classList.add("invisible");
+}
+
+//logout popup
+
+//app.userAvatar.addEventListener("click", function () {
+//    app.logoutPopup.classList.toggle("hidden");
+//})
+
+function ShowLogoutPopup() {
+    app.logoutPopup.classList.remove("hidden");
+}
+
+function HideLogoutPopup() {
+    app.logoutPopup.classList.add("hidden");
 }
