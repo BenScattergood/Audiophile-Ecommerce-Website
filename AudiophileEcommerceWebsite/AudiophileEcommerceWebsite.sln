@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32929.385
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AudiophileEcommerceWebsite", "AudiophileEcommerceWebsite.csproj", "{80392CC8-EC4E-41CC-89FF-BFFC47FF8A5E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AudiophileEcommerceWebsite", "AudiophileEcommerceWebsite.csproj", "{80392CC8-EC4E-41CC-89FF-BFFC47FF8A5E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AudiophileEcommerceWebsite_Tests", "..\AudiophileEcommerceWebsite_Tests\AudiophileEcommerceWebsite_Tests.csproj", "{265FBCB1-2FCB-4938-BEBA-94F489E5EC95}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{80392CC8-EC4E-41CC-89FF-BFFC47FF8A5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{80392CC8-EC4E-41CC-89FF-BFFC47FF8A5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{80392CC8-EC4E-41CC-89FF-BFFC47FF8A5E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{265FBCB1-2FCB-4938-BEBA-94F489E5EC95}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{265FBCB1-2FCB-4938-BEBA-94F489E5EC95}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{265FBCB1-2FCB-4938-BEBA-94F489E5EC95}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{265FBCB1-2FCB-4938-BEBA-94F489E5EC95}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

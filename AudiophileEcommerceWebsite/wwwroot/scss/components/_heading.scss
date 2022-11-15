@@ -92,14 +92,14 @@
 .navbar__cart-icon-wrapper {
     display: flex;
     gap: 2rem;
-    position: relative;
-    align-items: center;
+    align-items: flex-end;
 }
 
 .LoginPartial__Logout-form {
     position: absolute;
-    top: 5.8rem;
-    left: -50%;
+    top: 9rem;
+    /*left: -50%;*/
+    right: 3rem;
 }
 
 .LoginPartial__Logout-form__btn {
@@ -125,10 +125,12 @@
 
     .navbar__cart-icon-wrapper {
         margin-left: auto;
+        position: relative;
     }
 
     .LoginPartial__Logout-form {
         top: 6.1rem;
+        right: initial;
     }
 }
 
@@ -140,6 +142,7 @@
 
     .navbar__cart-icon-wrapper {
         margin-left: initial;
+        align-items: center;
     }
 
     .LoginPartial__Logout-form {
@@ -181,8 +184,8 @@
 }
 
 .nav__avatar-img {
-    width: 2.4rem;
-    height: 2.4rem;
+    width: 3.2rem;
+    height: 3.2rem;
     aspect-ratio: 1;
     border-radius: 50%;
     border: 1px solid var(--white-100);
@@ -190,17 +193,6 @@
 
 .nav__avatar:hover > .nav__avatar-img {
     border-color: var(--beige-100);
-}
-
-/*.btn-login {
-    margin-left: auto;
-}*/
-
-@media only screen and (min-width: b.$mobile-point) {
-    .nav__avatar-img {
-        width: 3.2rem;
-        height: 3.2rem;
-    }
 }
 
 @media only screen and (min-width: b.$tablet-point) {
