@@ -7,3 +7,5 @@ global using Microsoft.EntityFrameworkCore;
 global using FluentValidation.AspNetCore;
 global using AudiophileEcommerceWebsite.Validators;
 global using Microsoft.AspNetCore.Authorization;
+global using AudiophileEcommerceWebsite.Entities.SeedData;
+global using AudiophileEcommerceWebsite.Helpers;
