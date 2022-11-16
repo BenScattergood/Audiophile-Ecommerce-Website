@@ -22,7 +22,8 @@ public static class DbInitializer
 
         if (!_context.Products.Any())
         {
-            _context.AddRange(JsonProductsDeserializer.DeserializeJson(Categories.categories));
+            _context.AddRange(JsonProductsDeserializer.DeserializeJson
+                ("Entities/SeedData/data.json"));
         }
 
         _context.SaveChanges();

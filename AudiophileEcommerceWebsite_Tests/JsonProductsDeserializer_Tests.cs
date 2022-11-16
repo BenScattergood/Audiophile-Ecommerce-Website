@@ -1,18 +1,39 @@
-using AudiophileEcommerceWebsite.Entities;
-
 namespace AudiophileEcommerceWebsite_Tests
 {
-    public class JsonProductsDeserializer_Tests
+    public class JsonProductsDeserializer_Tests : 
+        IClassFixture<JsonProductsDeserializerFixture>
     {
-        [Fact]
-        public void Test1()
+        private readonly JsonProductsDeserializerFixture _productsFixture;
+        
+        public JsonProductsDeserializer_Tests(JsonProductsDeserializerFixture
+            jsonProductsDeserializerFixture)
         {
-            var genresList = new Category[]
+            this._productsFixture = jsonProductsDeserializerFixture;
+        }
+
+        [Fact]
+        public void DeserializeJson_ProductsContains6Items_Test()
+        {   
+            Assert.True(_productsFixture.Products.Count() == 6);
+        }
+
+        public static IEnumerable<Object[]> JsonProductTestData
+        {
+            get
+            {
+                return new List<Object[]>
                 {
-                        new Category { CategoryName = "headphones" },
-                        new Category { CategoryName = "earphones" },
-                        new Category { CategoryName = "speakers" },
+                    new object[] { _products, "1" }
                 };
+            }
+        }
+
+        [Theory]
+        [MemberData(nameof(JsonProductTestData))]
+        public void DeserializeJson_Product(string actual,
+            string expected)
+        {
+            Assert.Equal(expected, actual);
         }
     }
 }

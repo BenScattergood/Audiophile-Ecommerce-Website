@@ -26,7 +26,6 @@ C:\Users\Ben\Documents\Ben\Coding\WebDev\FrontEndMentor\Level 5\Audiophile e-com
 C:\Users\Ben\Documents\Ben\Coding\WebDev\FrontEndMentor\Level 5\Audiophile e-commerce website\AudiophileEcommerceWebsite\AudiophileEcommerceWebsite\obj\Debug\net6.0\AudiophileEcommerceWebsite.pdb
 C:\Users\Ben\Documents\Ben\Coding\WebDev\FrontEndMentor\Level 5\Audiophile e-commerce website\AudiophileEcommerceWebsite\AudiophileEcommerceWebsite\obj\Debug\net6.0\AudiophileEcommerceWebsite.genruntimeconfig.cache
 C:\Users\Ben\Documents\Ben\Coding\WebDev\FrontEndMentor\Level 5\Audiophile e-commerce website\AudiophileEcommerceWebsite\AudiophileEcommerceWebsite\obj\Debug\net6.0\ref\AudiophileEcommerceWebsite.dll
-C:\Users\Ben\Documents\Ben\Coding\WebDev\FrontEndMentor\Level 5\Audiophile e-commerce website\AudiophileEcommerceWebsite\AudiophileEcommerceWebsite\bin\Debug\net6.0\data.json
 C:\Users\Ben\Documents\Ben\Coding\WebDev\FrontEndMentor\Level 5\Audiophile e-commerce website\AudiophileEcommerceWebsite\AudiophileEcommerceWebsite\bin\Debug\net6.0\Humanizer.dll
 C:\Users\Ben\Documents\Ben\Coding\WebDev\FrontEndMentor\Level 5\Audiophile e-commerce website\AudiophileEcommerceWebsite\AudiophileEcommerceWebsite\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.Internal.dll
 C:\Users\Ben\Documents\Ben\Coding\WebDev\FrontEndMentor\Level 5\Audiophile e-commerce website\AudiophileEcommerceWebsite\AudiophileEcommerceWebsite\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
@@ -278,3 +277,4 @@ C:\Users\Ben\Documents\Ben\Coding\WebDev\FrontEndMentor\Level 5\Audiophile e-com
 C:\Users\Ben\Documents\Ben\Coding\WebDev\FrontEndMentor\Level 5\Audiophile e-commerce website\AudiophileEcommerceWebsite\AudiophileEcommerceWebsite\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
 C:\Users\Ben\Documents\Ben\Coding\WebDev\FrontEndMentor\Level 5\Audiophile e-commerce website\AudiophileEcommerceWebsite\AudiophileEcommerceWebsite\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\Ben\Documents\Ben\Coding\WebDev\FrontEndMentor\Level 5\Audiophile e-commerce website\AudiophileEcommerceWebsite\AudiophileEcommerceWebsite\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+C:\Users\Ben\Documents\Ben\Coding\WebDev\FrontEndMentor\Level 5\Audiophile e-commerce website\AudiophileEcommerceWebsite\AudiophileEcommerceWebsite\bin\Debug\net6.0\Entities\SeedData\data.json

@@ -11,12 +11,11 @@ namespace AudiophileEcommerceWebsite.Helpers
         private static List<Gallery> galleries = new List<Gallery>();
         private static List<RelatedData> relatedData = new List<RelatedData>();
         private static List<Product> products = new List<Product>();
-        private static Dictionary<string, Category> categories = new Dictionary<string, Category>();
+        private static Dictionary<string, Category> categories = Categories.categories;
 
-        public static List<Product> DeserializeJson(Dictionary<string, Category> Categories)
+        public static List<Product> DeserializeJson(string filePath)
         {
-            categories = Categories;
-            var jsonStr = File.ReadAllText("data.json");
+            var jsonStr = File.ReadAllText(filePath);
 
             products = JsonSerializer.Deserialize<List<Product>>(jsonStr, options);
 
