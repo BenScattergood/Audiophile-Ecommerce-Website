@@ -9,16 +9,12 @@ public static class DbInitializer
 {
     private static AudiophileDbContext _context;
     
-    public static void Seed(IApplicationBuilder application)
+    public static void Seed(AudiophileDbContext _audiophileDbContext)
     {
-        _context = application.ApplicationServices
-            .CreateScope().ServiceProvider
-            .GetRequiredService<AudiophileDbContext>();
-
-        if (!_context.Categories.Any())
-        {
-            _context.Categories.AddRange(Categories.GetCategories());
-        }
+        _context = _audiophileDbContext;
+        //_context = application.ApplicationServices
+        //    .CreateScope().ServiceProvider
+        //    .GetRequiredService<AudiophileDbContext>();
 
         if (!_context.Products.Any())
         {

@@ -41,7 +41,6 @@ namespace AudiophileEcommerceWebsite.ViewModels
                 .Include(c => c.RelatedData)
                 .ThenInclude(r => r.Images)
                 .SingleOrDefault(c => c.ProductId == id);
-                
         }
 
         public void ProvideProductIdToRelatedDataVM(ProductViewModel product)

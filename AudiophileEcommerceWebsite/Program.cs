@@ -3,6 +3,7 @@ using AudiophileEcommerceWebsite.ViewModels;
 using Microsoft.EntityFrameworkCore;
 using System.Reflection;
 using Microsoft.AspNetCore.Identity;
+using static System.Net.Mime.MediaTypeNames;
 
 var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString
@@ -57,6 +58,10 @@ app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Product}/{action=Index}/{id?}");
 
+IApplicationBuilder appBuilder = (IApplicationBuilder)app;
+//DbInitializer.Seed(app);
 
-DbInitializer.Seed(app);
+DbInitializer.Seed(appBuilder.ApplicationServices.CreateScope().ServiceProvider
+            .GetRequiredService<AudiophileDbContext>());
+
 app.Run();
