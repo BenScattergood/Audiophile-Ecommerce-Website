@@ -8,11 +8,9 @@ namespace AudiophileEcommerceWebsite.ViewModels
         private readonly AudiophileDbContext _audiophileDbContext;
         public string? ShoppingBasketId { get; set; }
 
-        public ShoppingBasket(IServiceProvider services)
+        public ShoppingBasket(ISession session, AudiophileDbContext dbContext)
         {
-            ISession? session = services.GetRequiredService<IHttpContextAccessor>()?.HttpContext?.Session;
-
-            this._audiophileDbContext = services.GetService<AudiophileDbContext>() ?? throw new Exception("Error initializing");
+            _audiophileDbContext = dbContext;
 
             string basketId = session?.GetString("BasketId") ?? Guid.NewGuid().ToString();
 

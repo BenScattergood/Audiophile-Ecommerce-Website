@@ -13,15 +13,7 @@ namespace AudiophileEcommerceWebsite_Tests.Fixtures
         public List<Category> categories { get; }
         public ProductRepositoryFixture()
         {
-            var connection = new SqliteConnection("Data Source=:memory:");
-            connection.Open();
-
-            var optionsBuilder = new DbContextOptionsBuilder<AudiophileDbContext>()
-                        .UseSqlite(connection);
-
-            var dbContext = new AudiophileDbContext(optionsBuilder.Options);
-            dbContext.Database.EnsureCreated();
-
+            var dbContext = DatabaseConnection._dbContext;
 
             //maybe change this...
             DbInitializer.Seed(dbContext);

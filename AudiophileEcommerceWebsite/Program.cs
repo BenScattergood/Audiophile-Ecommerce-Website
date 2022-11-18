@@ -16,7 +16,9 @@ builder.Services.AddControllersWithViews()
 
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
 builder.Services.AddScoped<IOrderRepository, OrderRepository>();    
-builder.Services.AddScoped<IShoppingBasket, ShoppingBasket>(sp => new ShoppingBasket(sp));
+builder.Services.AddScoped<IShoppingBasket, ShoppingBasket>(sp => new ShoppingBasket(
+    sp.GetRequiredService<IHttpContextAccessor>()?.HttpContext?.Session,
+    sp.GetService<AudiophileDbContext>()));
 
 builder.Services.AddSession();
 builder.Services.AddHttpContextAccessor();
