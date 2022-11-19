@@ -16,7 +16,7 @@ namespace AudiophileEcommerceWebsite_Tests.Fixtures
             var dbContext = DatabaseConnection._dbContext;
 
             //maybe change this...
-            DbInitializer.Seed(dbContext);
+            
 
             productRepository = new ProductRepository(dbContext);
             categories = dbContext.Categories.ToList();

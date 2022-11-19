@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace AudiophileEcommerceWebsite_Tests
 {
+    [Collection("sequential")]
     public class ProductRepository_Tests : 
         IClassFixture<ProductRepositoryFixture>
     {

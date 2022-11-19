@@ -15,14 +15,12 @@ namespace AudiophileEcommerceWebsite_Tests.Fixtures
         public ShoppingBasketFixture()
         {
             var dbContext = DatabaseConnection._dbContext;
+            var sessionMock = new Mock<ISession>();
 
-            var httpContext = new DefaultHttpContext();
+            sessionMock
+                .Setup(s => s.TryGetValue(It.IsAny<string>(), out DatabaseConnection.idBytes));
 
-            var serviceCollection = new ServiceCollection();
-            var sp = serviceCollection.BuildServiceProvider();
-            var session = new Mock<ISession>();
-
-            //mock session, ithought
+            ISession session = sessionMock.Object;
 
             shoppingBasket = new ShoppingBasket(session, dbContext);
         }
