@@ -1,5 +1,6 @@
 namespace AudiophileEcommerceWebsite_Tests
 {
+    [Collection("sequential")]
     public class JsonProductsDeserializer_Tests : 
         IClassFixture<JsonProductsDeserializerFixture>
     {

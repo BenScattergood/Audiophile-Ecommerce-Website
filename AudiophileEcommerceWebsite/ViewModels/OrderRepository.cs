@@ -14,7 +14,7 @@
             this.mapper = mapper;
         }
 
-        public void GetOrderSummary(Order order)
+        public void UpdateOrderDetails(Order order)
         {
             order.OrderProductTotal = shoppingBasket.GetShoppingBasketTotal();
             var shoppingBasketItems = shoppingBasket.GetShoppingBasketItems();

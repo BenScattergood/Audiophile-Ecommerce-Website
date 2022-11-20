@@ -1,5 +1,6 @@
 ﻿using AudiophileEcommerceWebsite.ViewModels;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,34 +12,23 @@ namespace AudiophileEcommerceWebsite_Tests.Fixtures
     public static class DatabaseConnection
     {
         public static AudiophileDbContext _dbContext { get; }
-        private static readonly object _lock = new object();
-        private static bool _databaseInitialized = false;
-        public static byte[] idBytes;
+        public static string idString;
 
         static DatabaseConnection()
         {
-            lock (_lock)
+            if (_dbContext is null)     
             {
-                if (!_databaseInitialized)
-                {
-                    if (_dbContext is null)     
-                    {
-                        var connection = new SqliteConnection("Data Source=:memory:");
-                        connection.Open();
+                var connection = new SqliteConnection("Data Source=:memory:");
+                connection.Open();
 
-                        var optionsBuilder = new DbContextOptionsBuilder<AudiophileDbContext>()
-                                  .UseSqlite(connection);
+                var optionsBuilder = new DbContextOptionsBuilder<AudiophileDbContext>()
+                            .UseSqlite(connection);
 
-                        _dbContext = new AudiophileDbContext(optionsBuilder.Options);
-                        _dbContext.Database.EnsureCreated();
+                _dbContext = new AudiophileDbContext(optionsBuilder.Options);
+                _dbContext.Database.EnsureCreated();
 
-                        string idString = Guid.NewGuid().ToString();
-                        idBytes = Encoding.UTF8.GetBytes(idString);
-                        SeedTestData(idString);
-                    }
-
-                    _databaseInitialized = true;
-                }
+                idString = Guid.NewGuid().ToString();
+                SeedTestData(idString);
             }
             
         }
@@ -68,6 +58,27 @@ namespace AudiophileEcommerceWebsite_Tests.Fixtures
             });
 
             _dbContext.SaveChanges();
+        }
+
+        public static void ResetDb()
+        {
+            var tableNames = _dbContext.Model.GetEntityTypes()
+                .OrderByDescending(t => t.GetDeclaredForeignKeys().Count())
+            //.Select(t => t.GetTableName())
+                .Distinct()
+                .ToList();
+            _dbContext.Database.ExecuteSqlRaw($"DELETE FROM {tableNames[8].GetTableName()}");
+            _dbContext.Database.ExecuteSqlRaw($"DELETE FROM {tableNames[15].GetTableName()}");
+
+            //foreach (var tableName in tableNames)
+            //{
+            //    //_dbContext.Database.ExecuteSqlRaw("SET foreign_key_checks=0");
+            //    _dbContext.Database.ExecuteSqlRaw($"DELETE FROM {tableName.GetTableName()}");
+            //}
+
+            _dbContext.SaveChanges();
+            SeedTestData(idString);
+            Console.WriteLine();
         }
     }
 }

@@ -13,7 +13,7 @@
         public decimal Shipping => 50;
         public decimal VAT => Math.Round(OrderProductTotal * (decimal)0.2, 2);
         public decimal OrderProductTotal { get; set; }
-        public decimal OrderGrandTotal => OrderProductTotal + Shipping;
+        public decimal OrderGrandTotal => OrderProductTotal + VAT + Shipping;
         public DateTime OrderTime { get; set; }
         public List<OrderDetail> OrderDetails { get; set; } = new List<OrderDetail>();
     }

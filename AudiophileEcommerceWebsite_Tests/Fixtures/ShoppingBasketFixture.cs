@@ -12,13 +12,17 @@ namespace AudiophileEcommerceWebsite_Tests.Fixtures
     public class ShoppingBasketFixture : IDisposable
     {
         public ShoppingBasket shoppingBasket { get; }
+        public AudiophileDbContext dbContext { get; }
+        public string basketId { get; set; }
         public ShoppingBasketFixture()
         {
-            var dbContext = DatabaseConnection._dbContext;
-            var sessionMock = new Mock<ISession>();
+            dbContext = DatabaseConnection._dbContext;
 
+            basketId = DatabaseConnection.idString;
+            var sessionMock = new Mock<ISession>();
+            var idBytes = Encoding.UTF8.GetBytes(basketId);
             sessionMock
-                .Setup(s => s.TryGetValue(It.IsAny<string>(), out DatabaseConnection.idBytes));
+                .Setup(s => s.TryGetValue(It.IsAny<string>(), out idBytes));
 
             ISession session = sessionMock.Object;
 
@@ -27,7 +31,7 @@ namespace AudiophileEcommerceWebsite_Tests.Fixtures
 
         public void Dispose()
         {
-            //dispose of db?
+            //nr
         }
     }
 }

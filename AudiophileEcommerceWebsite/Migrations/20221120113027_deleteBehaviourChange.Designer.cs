@@ -4,6 +4,7 @@ using AudiophileEcommerceWebsite.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AudiophileEcommerceWebsite.Migrations
 {
     [DbContext(typeof(AudiophileDbContext))]
-    partial class AudiophileDbContextModelSnapshot : ModelSnapshot
+    [Migration("20221120113027_deleteBehaviourChange")]
+    partial class deleteBehaviourChange
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -34,7 +36,7 @@ namespace AudiophileEcommerceWebsite.Migrations
 
                     b.HasIndex("ProductsProductId");
 
-                    b.ToTable("AccessoryProduct", (string)null);
+                    b.ToTable("AccessoryProduct");
                 });
 
             modelBuilder.Entity("AudiophileEcommerceWebsite.Entities.Accessory", b =>
@@ -54,7 +56,7 @@ namespace AudiophileEcommerceWebsite.Migrations
 
                     b.HasKey("AccessoryId");
 
-                    b.ToTable("Details", (string)null);
+                    b.ToTable("Details");
                 });
 
             modelBuilder.Entity("AudiophileEcommerceWebsite.Entities.Category", b =>
@@ -71,7 +73,7 @@ namespace AudiophileEcommerceWebsite.Migrations
 
                     b.HasKey("CategoryId");
 
-                    b.ToTable("Categories", (string)null);
+                    b.ToTable("Categories");
                 });
 
             modelBuilder.Entity("AudiophileEcommerceWebsite.Entities.Gallery", b =>
@@ -105,7 +107,7 @@ namespace AudiophileEcommerceWebsite.Migrations
 
                     b.HasIndex("ThirdId");
 
-                    b.ToTable("Gallery", (string)null);
+                    b.ToTable("Gallery");
                 });
 
             modelBuilder.Entity("AudiophileEcommerceWebsite.Entities.Image", b =>
@@ -141,7 +143,7 @@ namespace AudiophileEcommerceWebsite.Migrations
                         .IsUnique()
                         .HasFilter("[ProductImageId] IS NOT NULL");
 
-                    b.ToTable("Image", (string)null);
+                    b.ToTable("Image");
                 });
 
             modelBuilder.Entity("AudiophileEcommerceWebsite.Entities.Order", b =>
@@ -188,7 +190,7 @@ namespace AudiophileEcommerceWebsite.Migrations
 
                     b.HasKey("OrderId");
 
-                    b.ToTable("Orders", (string)null);
+                    b.ToTable("Orders");
                 });
 
             modelBuilder.Entity("AudiophileEcommerceWebsite.Entities.OrderDetail", b =>
@@ -217,7 +219,7 @@ namespace AudiophileEcommerceWebsite.Migrations
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("OrderDetails", (string)null);
+                    b.ToTable("OrderDetails");
                 });
 
             modelBuilder.Entity("AudiophileEcommerceWebsite.Entities.Product", b =>
@@ -257,7 +259,7 @@ namespace AudiophileEcommerceWebsite.Migrations
 
                     b.HasIndex("CategoryId");
 
-                    b.ToTable("Products", (string)null);
+                    b.ToTable("Products");
                 });
 
             modelBuilder.Entity("AudiophileEcommerceWebsite.Entities.RelatedData", b =>
@@ -283,7 +285,7 @@ namespace AudiophileEcommerceWebsite.Migrations
 
                     b.HasIndex("ImagesId");
 
-                    b.ToTable("RelatedData", (string)null);
+                    b.ToTable("RelatedData");
                 });
 
             modelBuilder.Entity("AudiophileEcommerceWebsite.Entities.ShoppingBasketItem", b =>
@@ -307,7 +309,7 @@ namespace AudiophileEcommerceWebsite.Migrations
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("ShoppingBasketItems", (string)null);
+                    b.ToTable("ShoppingBasketItems");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -524,7 +526,7 @@ namespace AudiophileEcommerceWebsite.Migrations
 
                     b.HasIndex("RelatedDataId");
 
-                    b.ToTable("ProductRelatedData", (string)null);
+                    b.ToTable("ProductRelatedData");
                 });
 
             modelBuilder.Entity("AccessoryProduct", b =>

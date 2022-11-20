@@ -22,7 +22,7 @@ namespace AudiophileEcommerceWebsite.Controllers
         {
             var order = new Order();
             //get current details perhaps
-            orderRepository.GetOrderSummary(order);
+            orderRepository.UpdateOrderDetails(order);
             if (order.OrderDetails.Count() < 1)
             {
                 return RedirectToAction("Index", "Product");
@@ -36,7 +36,7 @@ namespace AudiophileEcommerceWebsite.Controllers
         {
             //take payment
             var order = mapper.Map<Order>(orderViewModel);
-            orderRepository.GetOrderSummary(order);
+            orderRepository.UpdateOrderDetails(order);
 
             if (order.OrderDetails.Count() < 1)
             {
@@ -56,7 +56,7 @@ namespace AudiophileEcommerceWebsite.Controllers
 
         public IActionResult CheckoutComplete(Order order)
         {
-            orderRepository.GetOrderSummary(order);
+            orderRepository.UpdateOrderDetails(order);
             var orderViewModel = mapper.Map<OrderViewModel>(order);
             return View(orderViewModel);
         }

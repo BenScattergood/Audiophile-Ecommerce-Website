@@ -1,5 +1,6 @@
 ﻿using AudiophileEcommerceWebsite.Entities;
 using AudiophileEcommerceWebsite.Helpers;
+using Microsoft.EntityFrameworkCore;
 using System.Text.Json;
 using System.Xml.Linq;
 using static System.Net.Mime.MediaTypeNames;
@@ -15,11 +16,14 @@ public static class DbInitializer
         //_context = application.ApplicationServices
         //    .CreateScope().ServiceProvider
         //    .GetRequiredService<AudiophileDbContext>();
-
         if (!_context.Products.Any())
         {
             _context.AddRange(JsonProductsDeserializer.DeserializeJson
                 ("Entities/SeedData/data.json"));
+        }
+        if (!_context.Categories.Any())
+        {
+            _context.AddRange(Categories.GetCategories());
         }
 
         _context.SaveChanges();
