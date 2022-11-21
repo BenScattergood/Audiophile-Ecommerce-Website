@@ -1,0 +1,73 @@
+﻿@use "../globals/breakpoints" as b;
+
+.heading__img-container--cat {
+    height: 9rem;
+    background-color: var(--black-100);
+    align-self: flex-start;
+    max-width: b.$desktop-point-outer;
+}
+
+.heroText--cat {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: b.$desktop-point-outer;
+    width: 100%;
+    height: 10rem;
+}
+
+@media only screen and (min-width: b.$mobile-point) {
+    .heading__img-container--cat {
+        height: 9rem;
+    }
+
+    .heroText--cat {
+        height: 24rem;
+    }
+}
+
+.categories__product__text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 3rem;
+    margin-inline: auto;
+}
+
+.categories__product {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+@media only screen and (min-width: b.$tablet-point) {
+    .heading__img-container--cat {
+        width: b.$desktop-point-outer;
+    }
+
+    .categories__product__text {
+        justify-content: center;
+        align-items: flex-start;
+        text-align: initial;
+    }
+
+    .categories__product__text--normal {
+        padding-left: 5rem;
+    }
+
+    .categories__product__text--reverse {
+        padding-right: 5rem;
+    }
+
+    .categories__product {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+    .reverse-grid-order {
+        order: -1;
+    }
+}
+

@@ -1,0 +1,23 @@
+﻿
+
+.input-fields.input-validation-error {
+    border: 2px solid var(--red-100);
+}
+
+.validation-wrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    gap: 3rem;
+    align-items: flex-end;
+}
+
+.field-validation-error + label {
+    color: var(--red-100);
+}
+
+.field-validation-error {
+    text-align: right;
+    margin-bottom: auto;
+    /*height: 0px;*/
+}

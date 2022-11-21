@@ -1,0 +1,36 @@
+﻿.button-main {
+    display: inline-block;
+    text-align: center;
+    padding: 1.5rem 3rem;
+    border: none;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.button-main--black {
+    background-color: var(--black-100);
+}
+
+.button-main--black:hover {
+    background-color: var(--black-200);
+}
+
+.button-main--beige {
+    background-color: var(--beige-100);
+}
+
+.button-main--beige:hover {
+    background-color: var(--beige-200);
+}
+
+.button-main--transparent {
+    background-color: transparent;
+    border: 1px solid;
+    color: var(--black-100);
+}
+
+.button-main--transparent:hover {
+    background-color: var(--black-100);
+    border: 1px solid;
+    color: var(--white-100);
+}

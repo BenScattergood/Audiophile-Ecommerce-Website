@@ -1,0 +1,128 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = AudiophileEcommerceWebsite
+build_property.RootNamespace = AudiophileEcommerceWebsite
+build_property.ProjectDir = C:\Users\Ben\Documents\Ben\Coding\WebDev\FrontEndMentor\Level 5\Audiophile e-commerce website\AudiophileEcommerceWebsite\AudiophileEcommerceWebsite\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\Ben\Documents\Ben\Coding\WebDev\FrontEndMentor\Level 5\Audiophile e-commerce website\AudiophileEcommerceWebsite\AudiophileEcommerceWebsite
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/Ben/Documents/Ben/Coding/WebDev/FrontEndMentor/Level 5/Audiophile e-commerce website/AudiophileEcommerceWebsite/AudiophileEcommerceWebsite/Areas/Identity/Pages/Account/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Ben/Documents/Ben/Coding/WebDev/FrontEndMentor/Level 5/Audiophile e-commerce website/AudiophileEcommerceWebsite/AudiophileEcommerceWebsite/Areas/Identity/Pages/Account/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Ben/Documents/Ben/Coding/WebDev/FrontEndMentor/Level 5/Audiophile e-commerce website/AudiophileEcommerceWebsite/AudiophileEcommerceWebsite/Areas/Identity/Pages/Account/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxfVmlld0ltcG9ydHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Ben/Documents/Ben/Coding/WebDev/FrontEndMentor/Level 5/Audiophile e-commerce website/AudiophileEcommerceWebsite/AudiophileEcommerceWebsite/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZhbGlkYXRpb25TY3JpcHRzUGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Ben/Documents/Ben/Coding/WebDev/FrontEndMentor/Level 5/Audiophile e-commerce website/AudiophileEcommerceWebsite/AudiophileEcommerceWebsite/Areas/Identity/Pages/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Ben/Documents/Ben/Coding/WebDev/FrontEndMentor/Level 5/Audiophile e-commerce website/AudiophileEcommerceWebsite/AudiophileEcommerceWebsite/Areas/Identity/Pages/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Ben/Documents/Ben/Coding/WebDev/FrontEndMentor/Level 5/Audiophile e-commerce website/AudiophileEcommerceWebsite/AudiophileEcommerceWebsite/Views/Order/Checkout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJcQ2hlY2tvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Ben/Documents/Ben/Coding/WebDev/FrontEndMentor/Level 5/Audiophile e-commerce website/AudiophileEcommerceWebsite/AudiophileEcommerceWebsite/Views/Order/CheckoutComplete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJcQ2hlY2tvdXRDb21wbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Ben/Documents/Ben/Coding/WebDev/FrontEndMentor/Level 5/Audiophile e-commerce website/AudiophileEcommerceWebsite/AudiophileEcommerceWebsite/Views/Product/Category.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxDYXRlZ29yeS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Ben/Documents/Ben/Coding/WebDev/FrontEndMentor/Level 5/Audiophile e-commerce website/AudiophileEcommerceWebsite/AudiophileEcommerceWebsite/Views/Product/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Ben/Documents/Ben/Coding/WebDev/FrontEndMentor/Level 5/Audiophile e-commerce website/AudiophileEcommerceWebsite/AudiophileEcommerceWebsite/Views/Product/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Ben/Documents/Ben/Coding/WebDev/FrontEndMentor/Level 5/Audiophile e-commerce website/AudiophileEcommerceWebsite/AudiophileEcommerceWebsite/Views/Product/Product.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxQcm9kdWN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Ben/Documents/Ben/Coding/WebDev/FrontEndMentor/Level 5/Audiophile e-commerce website/AudiophileEcommerceWebsite/AudiophileEcommerceWebsite/Views/Shared/Components/ShoppingBasketSummary/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcU2hvcHBpbmdCYXNrZXRTdW1tYXJ5XERlZmF1bHQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Ben/Documents/Ben/Coding/WebDev/FrontEndMentor/Level 5/Audiophile e-commerce website/AudiophileEcommerceWebsite/AudiophileEcommerceWebsite/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Ben/Documents/Ben/Coding/WebDev/FrontEndMentor/Level 5/Audiophile e-commerce website/AudiophileEcommerceWebsite/AudiophileEcommerceWebsite/Views/Shared/_BasketBasketIncrementer.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9CYXNrZXRCYXNrZXRJbmNyZW1lbnRlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Ben/Documents/Ben/Coding/WebDev/FrontEndMentor/Level 5/Audiophile e-commerce website/AudiophileEcommerceWebsite/AudiophileEcommerceWebsite/Views/Shared/_BestGearPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9CZXN0R2VhclBhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Ben/Documents/Ben/Coding/WebDev/FrontEndMentor/Level 5/Audiophile e-commerce website/AudiophileEcommerceWebsite/AudiophileEcommerceWebsite/Views/Shared/_CategoriesPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9DYXRlZ29yaWVzUGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Ben/Documents/Ben/Coding/WebDev/FrontEndMentor/Level 5/Audiophile e-commerce website/AudiophileEcommerceWebsite/AudiophileEcommerceWebsite/Views/Shared/_CategoriesWithWrapper.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9DYXRlZ29yaWVzV2l0aFdyYXBwZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Ben/Documents/Ben/Coding/WebDev/FrontEndMentor/Level 5/Audiophile e-commerce website/AudiophileEcommerceWebsite/AudiophileEcommerceWebsite/Views/Shared/_CatPageProd.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9DYXRQYWdlUHJvZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Ben/Documents/Ben/Coding/WebDev/FrontEndMentor/Level 5/Audiophile e-commerce website/AudiophileEcommerceWebsite/AudiophileEcommerceWebsite/Views/Shared/_CatPageProdReverse.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9DYXRQYWdlUHJvZFJldmVyc2UuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Ben/Documents/Ben/Coding/WebDev/FrontEndMentor/Level 5/Audiophile e-commerce website/AudiophileEcommerceWebsite/AudiophileEcommerceWebsite/Views/Shared/_CheckoutCompletePartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9DaGVja291dENvbXBsZXRlUGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Ben/Documents/Ben/Coding/WebDev/FrontEndMentor/Level 5/Audiophile e-commerce website/AudiophileEcommerceWebsite/AudiophileEcommerceWebsite/Views/Shared/_CheckoutPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9DaGVja291dFBhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Ben/Documents/Ben/Coding/WebDev/FrontEndMentor/Level 5/Audiophile e-commerce website/AudiophileEcommerceWebsite/AudiophileEcommerceWebsite/Views/Shared/_LoginPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Ben/Documents/Ben/Coding/WebDev/FrontEndMentor/Level 5/Audiophile e-commerce website/AudiophileEcommerceWebsite/AudiophileEcommerceWebsite/Views/Shared/_ProductBasketIncrementer.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Qcm9kdWN0QmFza2V0SW5jcmVtZW50ZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Ben/Documents/Ben/Coding/WebDev/FrontEndMentor/Level 5/Audiophile e-commerce website/AudiophileEcommerceWebsite/AudiophileEcommerceWebsite/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Ben/Documents/Ben/Coding/WebDev/FrontEndMentor/Level 5/Audiophile e-commerce website/AudiophileEcommerceWebsite/AudiophileEcommerceWebsite/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Ben/Documents/Ben/Coding/WebDev/FrontEndMentor/Level 5/Audiophile e-commerce website/AudiophileEcommerceWebsite/AudiophileEcommerceWebsite/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Ben/Documents/Ben/Coding/WebDev/FrontEndMentor/Level 5/Audiophile e-commerce website/AudiophileEcommerceWebsite/AudiophileEcommerceWebsite/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-onq57525rf

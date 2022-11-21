@@ -1,0 +1,61 @@
+﻿@use '../globals/_breakpoints' as b;
+
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.container--categories {
+    margin-block: clamp(8rem, 10vw, 12rem);
+    gap: clamp(8rem, 10vw, 12rem);
+}
+
+.container--product {
+    margin-top: 1rem;
+    margin-bottom: 12rem;
+    gap: clamp(8rem, 10vw, 12rem);
+}
+
+.container--checkout {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    margin-top: 1.6rem;
+    margin-bottom: 9rem;
+}
+
+.container--authentication {
+    margin-block: 5rem;
+    align-items: flex-start;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10rem;
+    margin-block: 10rem;
+}
+
+@media only screen and (min-width: b.$mobile-point) {
+    .container--product {
+        margin-top: 3rem;
+    }
+}
+
+@media only screen and (min-width: b.$tablet-point) {
+    .container-categories {
+        margin-block: clamp(10rem, 10vw, 16rem);
+        gap: clamp(10rem, 10vw, 16rem);
+    }
+
+    .container--product {
+        margin-top: 8rem;
+        margin-bottom: clamp(10rem, 10vw, 16rem);
+        gap: clamp(10rem, 10vw, 16rem);
+    }
+
+    .main-container {
+        gap: clamp(10rem, 10vw, 20rem);
+    }
+}
+

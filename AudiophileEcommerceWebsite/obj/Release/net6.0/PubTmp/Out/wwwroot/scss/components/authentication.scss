@@ -1,0 +1,34 @@
+﻿@use '../globals/breakpoints.scss' as b;
+
+.authentication {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 50rem;
+    width: 100%;
+}
+
+.authentication__form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.authentication__submit-btn {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.authentication__alternative-link {
+    align-self: flex-start;
+}
+
+.authentication__alternative-link:hover {
+    color: var(--beige-100);
+}
+
+.validation-summary li{
+    list-style: none;
+}

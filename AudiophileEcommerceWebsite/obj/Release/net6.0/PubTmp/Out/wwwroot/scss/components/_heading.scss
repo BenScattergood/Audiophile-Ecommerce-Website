@@ -1,0 +1,207 @@
+﻿@use "../globals/breakpoints" as b;
+
+
+.heading {
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    display: grid;
+    width: 100%;
+}
+
+.heading__img-container,
+.heading__nav-container {
+    grid-area: 1/-1;
+}
+
+.heading__img-container--img {
+    max-height: 60rem;
+}
+.heading__img-container {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 99;
+}
+
+.heading__img {
+    margin-top: -10rem;
+    max-width: 100%;
+    max-height: 100%;
+    min-width: 40rem;
+}
+
+.heading__nav-container {
+    align-self: flex-start;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    /*height: 100%;*/
+    z-index: 100;
+}
+
+.line {
+    width: min(100%, b.$desktop-point-outer);
+    height: 1px;
+    background-color: var(--white-100);
+    opacity: 10%;
+    position: absolute;
+    top: 9rem;
+}
+
+@media only screen and (min-width: b.$mobile-point) {
+    .heading__img-container {
+        max-height: 72rem;
+    }
+
+    .heading__img {
+        margin-top: -5rem;
+        min-width: 66rem;
+    }
+}
+
+@media only screen and (min-width: b.$tablet-point) {
+    .heading__img-container {
+        max-height: 100rem;
+    }
+    
+    .heading__img {
+        margin-top: 0;
+        width: 100%;
+        min-width: 115rem;
+    }
+}
+
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    height: 9rem;
+}
+
+.navbar__cart-icon {
+    cursor: pointer;
+    padding: 0.1rem;
+}
+
+.navbar__cart-icon-wrapper {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-end;
+}
+
+.LoginPartial__Logout-form {
+    position: absolute;
+    top: 9rem;
+    /*left: -50%;*/
+    right: 3rem;
+}
+
+.LoginPartial__Logout-form__btn {
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    border: none;
+    background-color: var(--beige-100);
+}
+
+.LoginPartial__Logout-form__btn:hover {
+    background-color: var(--beige-200);
+}
+
+@media only screen and (min-width: b.$mobile-point) {
+    .navbar {
+        justify-content: flex-start;
+        gap: 4.2rem;
+    }
+
+    .navbar__cart-icon {
+        position: relative;
+    }
+
+    .navbar__cart-icon-wrapper {
+        margin-left: auto;
+        position: relative;
+    }
+
+    .LoginPartial__Logout-form {
+        top: 6.1rem;
+        right: initial;
+    }
+}
+
+@media only screen and (min-width: b.$tablet-point) {
+    .navbar {
+        justify-content: space-between;
+        gap: 1rem;
+    }
+
+    .navbar__cart-icon-wrapper {
+        margin-left: initial;
+        align-items: center;
+    }
+
+    .LoginPartial__Logout-form {
+        top: 7.6rem;
+        left: -20%;
+    }
+}
+
+.navbar__links {
+    text-transform: uppercase;
+    display: flex;
+    gap: 3.4rem;
+}
+
+.navbar__menu {
+    position: absolute;
+    top: 9rem;
+    left: 0;
+    border-radius: 0 0 1rem 1rem;
+    background-color: var(--white-100);
+    z-index: 100;
+    padding-block: 7rem 3rem;
+    max-height: calc(100vh - 9rem);
+    overflow-y: auto;
+}
+
+@media only screen and (min-width: b.$mobile-point) {
+    .navbar__menu {
+        height: 34rem !important;
+    }
+}
+
+//nav avatar
+
+.nav__avatar {
+    display: flex;
+    align-content: center;
+    cursor: pointer;
+}
+
+.nav__avatar-img {
+    width: 3.2rem;
+    height: 3.2rem;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: 1px solid var(--white-100);
+}
+
+.nav__avatar:hover > .nav__avatar-img {
+    border-color: var(--beige-100);
+}
+
+@media only screen and (min-width: b.$tablet-point) {
+    .nav__avatar {
+        padding: 1rem;
+    }
+
+    .nav__avatar-img {
+        width: 4rem;
+        height: 4rem;
+    }
+}

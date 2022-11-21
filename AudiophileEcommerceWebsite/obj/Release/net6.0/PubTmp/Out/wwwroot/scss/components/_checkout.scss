@@ -1,0 +1,155 @@
+﻿@use "../globals/breakpoints" as b;
+
+.checkout-page {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.checkout-page__section {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    border-radius: 1rem;
+}
+
+.checkout-page__section--checkout {
+    gap: 3rem;
+}
+
+.checkout-page__section--summary {
+    gap: 3rem;
+}
+
+.form__section {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.form__section__inner {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.form__section--radio {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.form__section--radio__inner {
+    display: flex;
+    flex-direction: column;
+    gap: 1.7rem;
+}
+
+.input-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.input-fields {
+    padding: 1.7rem 2.4rem 1.7rem 2.4rem;
+    border-radius: 1rem;
+    border: 1px solid var(--white-81);
+    width: 100%;
+}
+
+.input-fields:focus,
+.input-fields:hover {
+    outline: none !important;
+    border: 1px solid var(--beige-100);
+}
+
+.input-fields::placeholder {
+    opacity: 0.4;
+}
+
+.radio-btn-wrapper {
+    display: flex;
+    gap: 2rem;
+    height: 5.5rem;
+    padding: 2rem;
+    border: 1px solid var(--white-81);
+    border-radius: 1rem;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.radio-btn-wrapper:hover, .radio-btn-wrapper:focus {
+    border: 1px solid var(--beige-100);
+    cursor: pointer;
+}
+
+.checkout-page__section--summary__calc {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.summary__calc__info {
+    display: flex;
+    justify-content: space-between;
+}
+
+.cash__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    text-align: center;
+}
+
+@media only screen and (min-width: b.$mobile-point) {
+    .checkout-page__section {
+        padding: 2.8rem;
+    }
+
+    .checkout-page__section--checkout {
+        gap: 5rem;
+    }
+
+    .form__section__inner {
+        flex-direction: row;
+        gap: 1.6rem;
+        align-items: flex-end;
+    }
+
+    .form__section__inner > * {
+        width: 100%;
+    }
+
+    .form__section--radio {
+        flex-direction: row;
+        gap: 1.6rem;
+    }
+
+    .form__section--radio > * {
+        width: 100%;
+    }
+
+    .cash__wrapper {
+        flex-direction: row;
+        gap: 3rem;
+        align-items: initial;
+        text-align: initial;
+    }
+}
+
+@media only screen and (min-width: b.$tablet-point) {
+    .checkout-page {
+        flex-direction: row;
+    }
+
+    .checkout-page__section--checkout {
+        flex-basis: 66%;
+        padding: 4rem;
+    }
+
+    .checkout-page__section--summary {
+        flex-basis: 34%;
+    }
+}
