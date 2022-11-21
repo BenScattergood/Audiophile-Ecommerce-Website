@@ -17,36 +17,36 @@
             return ViewComponent("ShoppingBasketSummary");
         }
 
-        public RedirectToActionResult UpdateShoppingBasketItemHome(int quantity, string pieName)
+        public RedirectToActionResult UpdateShoppingBasketItemHome(int quantity, string productName)
         {
             if (quantity > 0)
             {
                 return RedirectToAction("AddToShoppingBasket", new
                 {
                     quantity = quantity,
-                    pieName = pieName
+                    productName = productName
                 });
             }
 
             return RedirectToAction("DecrementFromShoppingBasket",new
             {
                 quantity = quantity,
-                pieName = pieName
+                productName = productName
             });
         }
 
-        public RedirectToActionResult AddToShoppingBasket(int quantity, string pieName)
+        public RedirectToActionResult AddToShoppingBasket(int quantity, string productName)
         {
-            var product = productRepository.ReturnShallowProductFromName(pieName);
+            var product = productRepository.ReturnShallowProductFromName(productName);
             shoppingBasket.AddToBasket(product, quantity);
 
             return RedirectToAction("Index");
             //redirect to index
         }
 
-        public RedirectToActionResult DecrementFromShoppingBasket(int quantity, string pieName)
+        public RedirectToActionResult DecrementFromShoppingBasket(int quantity, string productName)
         {
-            var product = productRepository.ReturnShallowProductFromName(pieName);
+            var product = productRepository.ReturnShallowProductFromName(productName);
             shoppingBasket.RemoveFromBasket(product);
 
             return RedirectToAction("Index");

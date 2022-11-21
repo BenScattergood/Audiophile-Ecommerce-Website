@@ -1,5 +1,6 @@
 ﻿using AudiophileEcommerceWebsite.Controllers;
 using AudiophileEcommerceWebsite.Entities.SeedData;
+using AudiophileEcommerceWebsite_Tests.Fixtures.ControllerFixtures;
 using AudiophileEcommerceWebsite_Tests.Services;
 using Microsoft.AspNetCore.Mvc;
 using Moq;
@@ -45,16 +46,16 @@ namespace AudiophileEcommerceWebsite_Tests.ControllerTests
             Assert.Equal(3, viewModelList.Count);
         }
 
-        //[Fact]
-        //public void Product_ReturnsCorrectViewModel_Test()
-        //{
-        //    var result = productController.Product(1);
+        [Fact]
+        public void Product_ReturnsCorrectViewModel_Test()
+        {
+            var result = productController.Product(1);
 
-        //    var viewResult = Assert.IsType<ViewResult>(result);
-        //    var viewModel = Assert.IsType<ProductViewModel>(viewResult.Model);
+            var viewResult = Assert.IsType<ViewResult>(result);
+            var viewModel = Assert.IsType<ProductViewModel>(viewResult.Model);
 
-        //    Assert.Equal("xx59-headphones", viewModel.Slug);
-        //}
+            Assert.Equal("xx59-headphones", viewModel.Slug);
+        }
 
         public void Dispose()
         {

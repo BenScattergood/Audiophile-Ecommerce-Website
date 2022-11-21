@@ -9,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AudiophileEcommerceWebsite_Tests.Fixtures
+namespace AudiophileEcommerceWebsite_Tests.Fixtures.ControllerFixtures
 {
     public class ProductControllerFixture : IDisposable
     {
@@ -33,7 +33,7 @@ namespace AudiophileEcommerceWebsite_Tests.Fixtures
                 .Where(p => p.Category.CategoryName.ToLower() == "headphones")
                 .ToList());
             productRepositoryMock.Setup(c => c.GetProductById(It.IsAny<int>()))
-                .Returns(products[0]);
+                .Returns(products[1]);
 
             productController = new ProductController(productRepositoryMock.Object,
                 ConfigureMapper.mapper);

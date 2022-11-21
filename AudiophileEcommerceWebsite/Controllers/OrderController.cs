@@ -25,6 +25,7 @@ namespace AudiophileEcommerceWebsite.Controllers
             orderRepository.UpdateOrderDetails(order);
             if (order.OrderDetails.Count() < 1)
             {
+                //this won't be available to user
                 return RedirectToAction("Index", "Product");
             }
             var orderViewModel = mapper.Map<OrderViewModel>(order);
