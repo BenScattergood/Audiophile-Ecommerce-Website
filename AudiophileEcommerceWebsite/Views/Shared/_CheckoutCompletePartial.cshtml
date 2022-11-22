@@ -20,15 +20,18 @@
 					</div>
 					<div>
 						<h4 class="fs-checkout-h4 text-black-100 fw-700 lh-h4">@item.Product.ProductName</h4>
-						<p class="fs-main-h5 text-black-100 fw-700 opacity-05">@item.Product.Price</p>
+						<p class="fs-main-h5 text-black-100 fw-700 opacity-05">@item.Product.Price.ToString("C", Cultures.UnitedKingdom)</p>
 					</div>
-					<h4 class="margin-l-auto fs-checkout-h4 fw-700 text-black-100 opacity-05 uppercase">x @item.Quantity</h4>
+					@{
+						string quantity = String.Concat("x", item.Quantity.ToString());
+					}
+					<h4 class="margin-l-auto fs-checkout-h4 fw-700 text-black-100 opacity-05 uppercase">@quantity</h4>
 				</article>
 				<p class="padding-t-1 text-align-center fw-700 opacity-05 text-black-100 fs-main-h5">and @numberOtherItems other item(s)</p>
 			</article>
 			<div class="checkout-complete__order-overview__total">
 				<p class="fs-main-p text-white-100 opacity-05 lh-p fw-500 uppercase">Grand Total</p>
-				<h4 class="fs-checkout-h3 text-white-100 fw-700 uppercase">@Model.OrderGrandTotal</h4>
+				<h4 class="fs-checkout-h3 text-white-100 fw-700 uppercase">@Model.OrderGrandTotal.ToString("C", Cultures.UnitedKingdom)</h4>
 			</div>
 		</article>
 		<a asp-controller="Product" asp-action="Index" class="button-main button-main--beige fw-700 text-white-100 fs-button ls-button uppercase">Back To Home</a>

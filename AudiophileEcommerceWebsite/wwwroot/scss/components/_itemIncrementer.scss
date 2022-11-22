@@ -23,4 +23,12 @@
 .item-incrementer__btn {
     padding: 1rem;
     cursor: pointer;
+    -webkit-user-select: none; /*Safari */
+    -ms-user-select: none; /*IE 10 and IE 11 */
+    user-select: none; /*Standard syntax */
+}
+
+.item-incrementer__btn:hover {
+    color: var(--beige-100);
+    opacity: 1;
 }

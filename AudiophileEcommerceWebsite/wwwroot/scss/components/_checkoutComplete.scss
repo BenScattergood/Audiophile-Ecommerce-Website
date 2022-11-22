@@ -25,9 +25,11 @@
     padding: 3rem;
     display: flex;
     flex-direction: column;
-    border-radius: 1rem;
+    border-radius: var(--border-radius-1);
     gap: 2rem;
     min-width: 32rem;
+    overflow-y: auto;
+    max-height: calc(100vh - 4rem);
 }
 
 .checkout__tick-wrapper {
@@ -58,13 +60,13 @@
 .checkout-complete__order-overview__product {
     background-color: var(--white-94);
     padding: 2.4rem;
-    border-radius: 1rem 1rem 0 0;
+    border-radius: var(--border-radius-1) var(--border-radius-1) 0 0;
 }
 
 .checkout-complete__order-overview__total {
     background-color: var(--black-100);
     padding: 2.4rem;
-    border-radius: 0 0 1rem 1rem;
+    border-radius: 0 0 var(--border-radius-1) var(--border-radius-1);
     gap: 1rem;
     display: flex;
     flex-direction: column;
@@ -81,13 +83,13 @@
     }
 
     .checkout-complete__order-overview__product {
-        border-radius: 1rem 0 0 1rem;
+        border-radius: var(--border-radius-1) 0 0 var(--border-radius-1);
         flex-basis: 60%;
         justify-content: center;
     }
 
     .checkout-complete__order-overview__total {
-        border-radius: 0 1rem 1rem 0;
+        border-radius: 0 var(--border-radius-1) var(--border-radius-1) 0;
         flex-basis: 40%;
         justify-content: center;
     }

@@ -9,11 +9,12 @@
     right: 2rem;
     height: auto;
     background-color: white;
-    border-radius: 1rem;
+    border-radius: var(--border-radius-1);
     padding: 2rem;
     gap: 2rem;
     overflow-y: auto;
     max-height: calc(100vh - 10rem);
+    z-index: 90;
 }
 
 @media only screen and (min-width: b.$mobile-point) {
@@ -34,7 +35,12 @@
 .add-to-basket-container {
     display: flex;
     gap: 1.6rem;
+}
 
+.add-to-basket-container > p {
+    -webkit-user-select: none;
+    -ms-user-select: none; 
+    user-select: none; 
 }
 
 #add-to-cart {

@@ -14,13 +14,13 @@
 <body class="body overflow-x-hidden">
     <header class="heading">
         @RenderSection("heroImage", true)
-        <div class="heading__nav-container">
+        <div class="heading__nav-container highlight-off">
             <nav class="wrapper navbar">
                 <div class="hamburger tablet-only pointer">
                     <img src="/assets/shared/tablet/icon-hamburger.svg"/>
                 </div>
                 <div class="navbar__logo">
-                    <a asp-controller="Product" asp-action="Index"><img src="/assets/shared/desktop/logo.svg" /></a>
+                    <a asp-controller="Product" asp-action="Index"><img class="navbar__logo__img" src="/assets/shared/desktop/logo.svg" /></a>
                 </div>
                 <div class="desktop-only navbar__links text-white-100 fs-button fw-700 ls-h3">
                     <a class="text-hover" asp-controller="Product" asp-action="Index">Home</a>
@@ -49,7 +49,7 @@
     </header>
     @RenderBody()
     
-    <footer class="bg-black-300 footer-container">
+    <footer class="bg-black-300 footer-container highlight-off">
         <article class="wrapper footer-wrapper">
             <div class="footer-nav">
                 <div class="navbar__logo">

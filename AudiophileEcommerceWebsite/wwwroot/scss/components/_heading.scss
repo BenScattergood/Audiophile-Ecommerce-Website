@@ -22,7 +22,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    z-index: 99;
+    z-index: 60;
 }
 
 .heading__img {
@@ -77,11 +77,23 @@
 
 
 .navbar {
-    display: flex;
-    justify-content: space-between;
+    /*display: flex;
+    justify-content: space-between;*/
     align-items: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(5px, 1fr));
     gap: 1rem;
     height: 9rem;
+}
+
+.navbar__logo {
+    justify-self: center;
+    text-align: center;
+    align-items: center;
+}
+
+.navbar__logo__img:hover {
+    filter: invert(55%) sepia(32%) saturate(849%) hue-rotate(338deg) brightness(95%) contrast(89%);
 }
 
 .navbar__cart-icon {
@@ -92,7 +104,8 @@
 .navbar__cart-icon-wrapper {
     display: flex;
     gap: 2rem;
-    align-items: flex-end;
+    justify-content: flex-end;
+    align-items: center;
 }
 
 .LoginPartial__Logout-form {
@@ -115,6 +128,7 @@
 
 @media only screen and (min-width: b.$mobile-point) {
     .navbar {
+        display: flex;
         justify-content: flex-start;
         gap: 4.2rem;
     }
@@ -161,7 +175,7 @@
     position: absolute;
     top: 9rem;
     left: 0;
-    border-radius: 0 0 1rem 1rem;
+    border-radius: 0 0 var(--border-radius-1) var(--border-radius-1);
     background-color: var(--white-100);
     z-index: 100;
     padding-block: 7rem 3rem;

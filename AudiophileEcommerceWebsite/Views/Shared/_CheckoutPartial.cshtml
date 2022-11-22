@@ -72,14 +72,14 @@
 						<div>
 							<Legend class="fw-700 fs-checkout-h5 text-black-100">Payment Method</Legend>
 						</div>
-						<di class="form__section--radio__inner">
+						<div class="form__section--radio__inner">
 							<div id="e-money" class="beige-border radio-btn-wrapper">
-								<input class="e-money-radio pointer fw-700 fs-checkout-h5 text-black-100" asp-for="PaymentMethod" type="radio" value="eMoney" name="PaymentMethod" />
-								<label asp-for="PaymentMethod" class="fw-700 fs-checkout-h5 text-black-100">e-Money</label>
+							<input id="e-money-radio" class="e-money-radio radio-btn pointer fw-700 fs-checkout-h5 text-black-100" asp-for="PaymentMethod" type="radio" value="eMoney" name="PaymentMethod" />
+							<label id="e-money-text" for="e-money-radio" asp-for="PaymentMethod" class="pointer fw-700 fs-checkout-h5 text-black-100">e-Money</label>
 							</div>
 							<div id="cash" class="radio-btn-wrapper">
-								<input class="cash-radio pointer fw-700 fs-checkout-h5 text-black-100" asp-for="PaymentMethod" type="radio" value="cash" name="PaymentMethod" />
-								<label asp-for="PaymentMethod" class="fw-700 fs-checkout-h5 text-black-100">Cash on Delivery</label>
+							<input id="cash-radio" class="cash-radio radio-btn pointer fw-700 fs-checkout-h5 text-black-100" asp-for="PaymentMethod" type="radio" value="cash" name="PaymentMethod" />
+								<label id="cash-text" for="cash-radio" asp-for="PaymentMethod" class="pointer fw-700 fs-checkout-h5 text-black-100">Cash on Delivery</label>
 							</div>
 						</div>
 					</div>
@@ -119,28 +119,31 @@
 					</div>
 					<div>
 						<h4 class="fs-checkout-h4 text-black-100 fw-700 lh-h4">@item.Product.ProductName</h4>
-						<p class="fs-main-h5 text-black-100 fw-700 opacity-05">@item.Product.Price</p>
+						<p class="fs-main-h5 text-black-100 fw-700 opacity-05">@item.Product.Price.ToString("C", Cultures.UnitedKingdom)</p>
 					</div>
-					<h4 class="margin-l-auto fs-checkout-h4 fw-700 text-black-100 opacity-05">x @item.Quantity</h4>
+					@{
+						string quantity = String.Concat("x", item.Quantity.ToString());
+					}
+					<h4 class="margin-l-auto fs-checkout-h4 fw-700 text-black-100 opacity-05">@quantity</h4>
 				</article>
 			}
 				<div class="checkout-page__section--summary__calc">
 					<div class="summary__calc__info">
 						<h4 class="fw-500 text-black-100 fs-main-h5 opacity-05 uppercase">Total</h4>
-						<p class="text-black-100 fw-700 uppercase fs-checkout-h3">@Model.OrderProductTotal</p>
+					<p class="text-black-100 fw-700 uppercase fs-checkout-h3">@Model.OrderProductTotal.ToString("C", Cultures.UnitedKingdom)</p>
 					</div>
 					<div class="summary__calc__info">
 						<h4 class="fw-500 text-black-100 fs-main-h5 opacity-05 uppercase">Shipping</h4>
-						<p class="text-black-100 fw-700 uppercase fs-checkout-h3">@Model.Shipping</p>
+					<p class="text-black-100 fw-700 uppercase fs-checkout-h3">@Model.Shipping.ToString("C", Cultures.UnitedKingdom)</p>
 					</div>
 					<div class="summary__calc__info">
 						<h4 class="fw-500 text-black-100 fs-main-h5 opacity-05 uppercase">VAT (Included)</h4>
-						<p class="text-black-100 fw-700 uppercase fs-checkout-h3">@Model.VAT</p>
+					<p class="text-black-100 fw-700 uppercase fs-checkout-h3">@Model.VAT.ToString("C", Cultures.UnitedKingdom)</p>
 					</div>
 				</div>
 				<div class="summary__calc__info">
 					<h4 class="fw-500 text-black-100 fs-main-h5 opacity-05 uppercase">Grand Total</h4>
-					<p class="text-black-100 fw-700 uppercase fs-checkout-h3">@Model.OrderGrandTotal</p>
+				<p class="text-black-100 fw-700 uppercase fs-checkout-h3">@Model.OrderGrandTotal.ToString("C", Cultures.UnitedKingdom)</p>
 				</div>
 			<input form="form" type="submit" value="Continue & Pay" class="button-main button-main--beige text-white-100 fw-700 lh-button ls-button uppercase fs-button" />
 			</article>

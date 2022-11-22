@@ -1,6 +1,12 @@
 ﻿@use "../globals/breakpoints" as b;
 
 
+.highlight-off {
+    -webkit-user-select: none; /*Safari */
+    -ms-user-select: none; /*IE 10 and IE 11 */
+    user-select: none; /*Standard syntax */
+}
+
 @media only screen and (min-width: b.$tablet-point) {
     .tablet-only {
         display: none !important;
@@ -49,7 +55,7 @@
     inset: 0 0 0 0;
     background-color: grey;
     opacity: 60%;
-    z-index: 10;
+    z-index: 90;
 }
 
 .hidden {
@@ -106,7 +112,7 @@
 }
 
 .border-radius {
-    border-radius: 1rem;
+    border-radius: var(--border-radius-1);
 }
 
 @media only screen and (max-width: b.$mobile-point--max) {
@@ -148,4 +154,8 @@ input[type='radio']:checked {
 
 .text-align-center {
     text-align: center;
+}
+
+.line-breaks {
+    white-space: pre-line;
 }

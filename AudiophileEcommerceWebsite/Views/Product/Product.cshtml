@@ -25,12 +25,12 @@
 				}
 					<h3 id="product-name" class="width-50-tablet text-black-100 fs-main-h3 ls-h3 lh-h3 fw-700 uppercase">@Model.Name</h3>
 					<p class="fw-500 fs-main-p text-black-100 opacity-05 lh-p">@Model.Description</p>
-					<p class="fw-700 fs-main-price ls-h1 text-black-100">$ @Model.Price</p>
+				<p class="fw-700 fs-main-price ls-h1 text-black-100">@Model.Price.ToString("C", Cultures.UnitedKingdom)</p>
 					<div class="add-to-basket-container">
 						<div class="item-incrementer item-incrementer--product">
 							<partial name="_ProductBasketIncrementer" model="1"/>
 						</div>
-					<a id="add-to-cart" class="uppercase button-main button-main--beige fs-button fw-700 ls-button">add to cart</a>
+						<a id="add-to-cart" class="uppercase button-main button-main--beige fs-button fw-700 ls-button">add to cart</a>
 					</div>
 					
 				</div>
@@ -39,15 +39,16 @@
 		<article class="products__details">
 			<article class="products__details__features">
 				<h2 class="fw-700 ls-h2 text-black-100 fs-products-h2 uppercase">Features</h2>
-				<p class="fw-500 fs-main-p text-black-100 opacity-05 lh-p">@Model.Features</p>
+				<p class="line-breaks fw-500 fs-main-p text-black-100 opacity-05 lh-p">@Model.Features</p>
 			</article>
 			<article class="products__details__accessories">
 				<h2 class="fw-700 ls-h2 text-black-100 fs-products-h2 uppercase">In The Box</h2>
 				<ul role="list" class="accessories__list">
 					@foreach (var accessory in Model.Accessories)
 				{
+					string quantity = String.Concat(accessory.Quantity.ToString(), "x");
 					<li class="accessories__list__item">
-						<p class="fw-700 fs-main-p text-beige-100">@accessory.Quantity x</p>
+						<p class="fw-700 fs-main-p text-beige-100">@quantity</p>
 						<p class="fw-500 fs-main-p text-black-100 opacity-05">@accessory.Item</p>
 					</li>
 				}

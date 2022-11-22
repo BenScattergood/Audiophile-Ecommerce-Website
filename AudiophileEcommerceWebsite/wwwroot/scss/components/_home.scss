@@ -23,7 +23,7 @@
     flex-direction: column;
     gap: 3rem;
     background-color: var(--beige-100);
-    border-radius: 1rem;
+    border-radius: var(--border-radius-1);
     align-items: center;
     text-align: center;
     padding-block: 4rem;
@@ -112,7 +112,7 @@
     justify-content: center;
     gap: 3rem;
     align-items: flex-start;
-    border-radius: 1rem;
+    border-radius: var(--border-radius-1);
 }
 
 .home__feature-other--pri {
@@ -133,7 +133,7 @@
 }
 
 .home__feature-other__img-container {
-    border-radius: 1rem;
+    border-radius: var(--border-radius-1);
 }
 
 @media only screen and (min-width: b.$mobile-point) {

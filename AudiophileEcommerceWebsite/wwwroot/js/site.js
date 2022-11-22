@@ -35,6 +35,14 @@ function CurrentQuantityToNum() {
 
 //incrementerbasket
 
+document.onwheel = function (e) {
+    if (!app.ShoppingBasketSummary.contains(e.target) &&
+        !app.ShoppingBasketSummary.classList.contains("invisible")) {
+        HideBasket();
+        return;
+    }
+}
+
 document.addEventListener('click', function (e) {
     if (!app.ShoppingBasketSummary.contains(e.target) &&
         !app.ShoppingBasketSummary.classList.contains("invisible")) {
@@ -58,19 +66,19 @@ document.addEventListener('click', function (e) {
     //
 
     if (event.target.classList.contains('basket-increment')) {
-        const pieName = event.target.parentElement
+        const productName = event.target.parentElement
             .parentElement.children[1].children[0]
             .textContent;
 
-        AjaxShoppingBasketRefresh(1, pieName);
+        AjaxShoppingBasketRefresh(1, productName);
     }
 
     if (event.target.classList.contains('basket-decrement')) {
-        const pieName = event.target.parentElement
+        const productName = event.target.parentElement
             .parentElement.children[1].children[0]
             .textContent;
 
-        AjaxShoppingBasketRefresh(-1, pieName);
+        AjaxShoppingBasketRefresh(-1, productName);
     }
 
     if (event.target.id == 'product-increment') {
@@ -108,21 +116,25 @@ document.addEventListener('click', function (e) {
         return;
     }
 
-    if (event.target.id == "e-money") {
-        document.querySelector(".e-money-radio").click();
-        app.sectionEMoney.classList.remove("hidden");
-        app.sectionCash.classList.add("hidden");
-        app.radioDivEMoney.classList.add("beige-border");
-        app.radioDivCash.classList.remove("beige-border");
-    }
-
-    if (event.target.id == "cash") {
-        document.querySelector(".cash-radio").click();
+    if (event.target.id == "cash" || event.target.id == "cash-text") {        
         app.sectionEMoney.classList.add("hidden");
         app.sectionCash.classList.remove("hidden");
         app.radioDivCash.classList.add("beige-border");
         app.radioDivEMoney.classList.remove("beige-border");
+        document.querySelector(".cash-radio").click();
+        return;
     }
+
+    if (event.target.id == "e-money" || event.target.id == "e-money-text") {
+        app.sectionCash.classList.add("hidden");
+        app.sectionEMoney.classList.remove("hidden");
+        app.radioDivEMoney.classList.add("beige-border");
+        app.radioDivCash.classList.remove("beige-border");
+        document.querySelector(".e-money-radio").click();
+        return;
+    }
+
+    
 
     //removeAll
     if (event.target.id == "clear-basket") {
@@ -146,12 +158,12 @@ document.addEventListener('click', function (e) {
 
 //Ajax AddValueToBasket
 
-function AjaxShoppingBasketRefresh(incrementValue, pieName) {
+function AjaxShoppingBasketRefresh(incrementValue, productName) {
     $.ajax({
         url: "/ShoppingBasket/UpdateShoppingBasketItemHome",
         type: "Get",
         data: {
-            pieName: pieName,
+            productName: productName,
             quantity: incrementValue,
         },
         success: function (response) {
