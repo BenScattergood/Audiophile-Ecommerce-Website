@@ -278,3 +278,5 @@ C:\Users\Ben\Documents\Ben\Coding\WebDev\FrontEndMentor\Level 5\Audiophile e-com
 C:\Users\Ben\Documents\Ben\Coding\WebDev\FrontEndMentor\Level 5\Audiophile e-commerce website\AudiophileEcommerceWebsite\AudiophileEcommerceWebsite\obj\Release\net6.0\AudiophileEcommerceWebsite.pdb
 C:\Users\Ben\Documents\Ben\Coding\WebDev\FrontEndMentor\Level 5\Audiophile e-commerce website\AudiophileEcommerceWebsite\AudiophileEcommerceWebsite\obj\Release\net6.0\AudiophileEcommerceWebsite.genruntimeconfig.cache
 C:\Users\Ben\Documents\Ben\Coding\WebDev\FrontEndMentor\Level 5\Audiophile e-commerce website\AudiophileEcommerceWebsite\AudiophileEcommerceWebsite\obj\Release\net6.0\ref\AudiophileEcommerceWebsite.dll
+C:\Users\Ben\Documents\Ben\Coding\WebDev\FrontEndMentor\Level 5\Audiophile e-commerce website\AudiophileEcommerceWebsite\AudiophileEcommerceWebsite\obj\Release\net6.0\AudiophileEcommerceWebsite.Properties.Resources.resources
+C:\Users\Ben\Documents\Ben\Coding\WebDev\FrontEndMentor\Level 5\Audiophile e-commerce website\AudiophileEcommerceWebsite\AudiophileEcommerceWebsite\obj\Release\net6.0\AudiophileEcommerceWebsite.csproj.GenerateResource.cache

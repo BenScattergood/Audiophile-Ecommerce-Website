@@ -1,7 +1,9 @@
 ﻿using AutoMapper;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -11,16 +13,27 @@ namespace AudiophileEcommerceWebsite_Tests
     public class OrderRepository_Tests :
         IClassFixture<OrderRepositoryFixture>, IDisposable
     {
-        private OrderRepository orderRepository;
+        private OrderRepository orderRepository_WithMock;
         private AudiophileDbContext _dbContext;
         private Mapper _mapper;
+        private Order order;
+        private string basketId;
+        private OrderRepository orderRepository_WithIntegration;
+        private OrderRepository orderRepository_WithError;
 
         public OrderRepository_Tests(
             OrderRepositoryFixture orderRepositoryFixture)
-        {
-            this.orderRepository = orderRepositoryFixture.orderRepository;
+        {   
             _dbContext = orderRepositoryFixture.dbContext;
             _mapper = orderRepositoryFixture.mapper;
+            order = orderRepositoryFixture.order;
+            basketId = orderRepositoryFixture.basketId;
+            this.orderRepository_WithMock = 
+                orderRepositoryFixture.orderRepository_WithMock;
+            orderRepository_WithIntegration = 
+                orderRepositoryFixture.orderRepository_WithIntegration;
+            orderRepository_WithError = 
+                orderRepositoryFixture.orderRepository_WithError;
         }
 
         [Fact]
@@ -38,52 +51,19 @@ namespace AudiophileEcommerceWebsite_Tests
         [Fact]
         public void CreateOrder_AddsNewOrder_Test()
         {
-            var products = _dbContext.Products
-                .Select(c => c)
-                .ToList();
-
-            List<OrderDetail> orderDetails = new List<OrderDetail>();
-            orderDetails.Add(new OrderDetail()
-            {
-                Product = products[0],
-                Quantity = 1,
-                Price = products[0].Price,
-            });
-            orderDetails.Add(new OrderDetail()
-            {
-                Product = products[2],
-                Quantity = 2,
-                Price = products[2].Price * 2,
-            });
-
-            var order = new Order()
-            {
-                Name = "John Smith",
-                EmailAddress = "JohnSmith@outlook.com",
-                PhoneNumber = "07921588822",
-                Address = "66 Highfield Drive",
-                ZIPCode = "CW9 5TP",
-                City = "Crewe",
-                Country = "England",
-                OrderProductTotal = 4099,
-                OrderTime = DateTime.Now,
-                OrderDetails = orderDetails,
-            };
-
-            orderRepository.CreateOrder(order);
+            orderRepository_WithMock.CreateOrder(order);
 
             var actual = _dbContext.Orders
-                .Single(c => c.Address == "66 Highfield Drive")
-                .OrderGrandTotal;
+                .Single(c => c.Address == "66 Highfield Drive");
 
-            Assert.True((Decimal)4968.8 == actual);
+            Assert.True((Decimal)4968.8 == actual.OrderGrandTotal);
         }
 
         [Fact]
-        public void GetOrderSummary_PopulatedPriceCorrectly_Test()
+        public void RetrieveOrderDetails_PopulatedPriceCorrectly_Test()
         {
             var order = new Order();
-            orderRepository.UpdateOrderDetails(order);
+            orderRepository_WithMock.RetrieveOrderDetails(order);
 
             var actual = order.OrderDetails[2].Price;
 
@@ -91,14 +71,41 @@ namespace AudiophileEcommerceWebsite_Tests
         }
 
         [Fact]
-        public void GetOrderSummary_CorrectCountOfOrderDetail_Test()
+        public void RetrieveOrderDetails_CorrectCountOfOrderDetail_Test()
         {
             var order = new Order();
-            orderRepository.UpdateOrderDetails(order);
+            orderRepository_WithMock.RetrieveOrderDetails(order);
 
             var actual = order.OrderDetails.Count;
 
             Assert.Equal(3, actual);
+        }
+
+        [Fact]
+        public void ProcessOrder_ProcessedCorrectly_IntegrationTest()
+        {
+            var emailAddress = order.EmailAddress;
+            orderRepository_WithIntegration.ProcessOrder(order);
+
+            var actual = _dbContext.Orders.FirstOrDefault(o => o.EmailAddress == emailAddress);
+            Assert.NotNull(actual);
+        }
+
+        [Fact]
+        public void ProcessOrder_ClearsShoppingBasket_IntegrationTest()
+        {
+            orderRepository_WithIntegration.ProcessOrder(order);
+            var items = _dbContext.ShoppingBasketItems.Where(item => item.ShoppingBasketId == basketId);
+            Assert.Empty(items);
+        }
+
+        [Fact]
+        public void ProcessOrder_OnErrorRollsBackChanges_IntegrationTest()
+        {
+            var emailAddress = order.EmailAddress;
+
+            Assert.Throws<DbUpdateConcurrencyException>(() => orderRepository_WithError.ProcessOrder(order));
+            Assert.Empty(_dbContext.Orders.Where(o => o.EmailAddress == emailAddress));
         }
         public void Dispose()
         {

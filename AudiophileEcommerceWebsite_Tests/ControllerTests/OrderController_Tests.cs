@@ -35,7 +35,7 @@ namespace AudiophileEcommerceWebsite_Tests.ControllerTests
         public void Checkout_BasketItemCountMoreThanOne_ReturnsView_Test()
         {
             var orderRepositoryMock = new Mock<IOrderRepository>();
-            orderRepositoryMock.Setup(m => m.UpdateOrderDetails(It.IsAny<Order>()))
+            orderRepositoryMock.Setup(m => m.RetrieveOrderDetails(It.IsAny<Order>()))
                 .Callback<Order>(o => o.OrderDetails.AddRange(orderDetails));
 
             orderController = new OrderController(orderRepositoryMock.Object,
@@ -51,7 +51,7 @@ namespace AudiophileEcommerceWebsite_Tests.ControllerTests
         public void Checkout_BasketItemCountLessThanOne_RedirectsToHome_Test()
         {
             var orderRepositoryMock = new Mock<IOrderRepository>();
-            orderRepositoryMock.Setup(m => m.UpdateOrderDetails(It.IsAny<Order>()));
+            orderRepositoryMock.Setup(m => m.RetrieveOrderDetails(It.IsAny<Order>()));
 
             orderController = new OrderController(orderRepositoryMock.Object,
                 ConfigureMapper.mapper);

@@ -14,7 +14,7 @@
             this.mapper = mapper;
         }
 
-        public void UpdateOrderDetails(Order order)
+        public void RetrieveOrderDetails(Order order)
         {
             order.OrderProductTotal = shoppingBasket.GetShoppingBasketTotal();
             var shoppingBasketItems = shoppingBasket.GetShoppingBasketItems();
@@ -24,6 +24,15 @@
                 orderDetail.Price = item.Product.Price * item.Quantity;
                 order.OrderDetails.Add(orderDetail);
             }
+        }
+        public void ProcessOrder(Order order)
+        {
+            using var transaction = _audiophileDbContext.Database.BeginTransaction();
+
+            CreateOrder(order);
+            shoppingBasket.ClearBasket();
+
+            transaction.Commit();
         }
 
         public void CreateOrder(Order order)
