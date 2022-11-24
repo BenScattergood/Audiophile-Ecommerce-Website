@@ -28,7 +28,7 @@ namespace AudiophileEcommerceWebsite.ViewModels
                 .ToList();
         }
 
-        public Product GetProductById(int id)
+        public Product? GetProductById(int id)
         {
             return _audiophileDbContext.Products
                 .Include(c => c.Category)

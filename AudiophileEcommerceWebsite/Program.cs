@@ -13,6 +13,10 @@ var connectionString = builder.Configuration.GetConnectionString
 // Add services to the container.
 builder.Services.AddControllersWithViews()
     .AddFluentValidation(cfg => cfg.RegisterValidatorsFromAssemblyContaining<OrderViewModelValidator>());
+builder.Services.AddHsts(hstsOpts =>
+{
+    hstsOpts.IncludeSubDomains = true;
+});
 
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
 builder.Services.AddScoped<IOrderRepository, OrderRepository>();    
@@ -41,8 +45,8 @@ var app = builder.Build();
 //if (!app.Environment.IsDevelopment())
 //{
     app.UseExceptionHandler("/Product/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-    //app.UseHsts();
+// The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
+app.UseHsts();
 //}
 
 app.UseHttpsRedirection();

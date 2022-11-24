@@ -33,4 +33,12 @@ namespace AudiophileEcommerceWebsite.Validators
 
         }
 	}
+
+	public class CategoryValidator : AbstractValidator<String>
+	{
+		public CategoryValidator()
+		{
+
+		}
+	}
 }
