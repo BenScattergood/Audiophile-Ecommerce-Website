@@ -41,7 +41,7 @@ namespace AudiophileEcommerceWebsite.Controllers
 
             if (order.OrderDetails.Count() < 1)
             {
-                return View(order);
+                return RedirectToAction("Index","Product");
             }
 
             if (!ModelState.IsValid)

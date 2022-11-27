@@ -378,3 +378,10 @@ C:\Users\Ben\Documents\Ben\Coding\WebDev\FrontEndMentor\Level 5\Audiophile e-com
 C:\Users\Ben\Documents\Ben\Coding\WebDev\FrontEndMentor\Level 5\Audiophile e-commerce website\AudiophileEcommerceWebsite\AudiophileEcommerceWebsite_Tests\obj\Release\net6.0\AudiophileEcommerceWebsite_Tests.pdb
 C:\Users\Ben\Documents\Ben\Coding\WebDev\FrontEndMentor\Level 5\Audiophile e-commerce website\AudiophileEcommerceWebsite\AudiophileEcommerceWebsite_Tests\obj\Release\net6.0\AudiophileEcommerceWebsite_Tests.genruntimeconfig.cache
 C:\Users\Ben\Documents\Ben\Coding\WebDev\FrontEndMentor\Level 5\Audiophile e-commerce website\AudiophileEcommerceWebsite\AudiophileEcommerceWebsite_Tests\obj\Release\net6.0\ref\AudiophileEcommerceWebsite_Tests.dll
+C:\Users\Ben\Documents\Ben\Coding\WebDev\FrontEndMentor\Level 5\Audiophile e-commerce website\AudiophileEcommerceWebsite\AudiophileEcommerceWebsite_Tests\bin\Release\net6.0\System.Web.Mvc.dll
+C:\Users\Ben\Documents\Ben\Coding\WebDev\FrontEndMentor\Level 5\Audiophile e-commerce website\AudiophileEcommerceWebsite\AudiophileEcommerceWebsite_Tests\bin\Release\net6.0\System.Web.Razor.dll
+C:\Users\Ben\Documents\Ben\Coding\WebDev\FrontEndMentor\Level 5\Audiophile e-commerce website\AudiophileEcommerceWebsite\AudiophileEcommerceWebsite_Tests\bin\Release\net6.0\System.Web.Helpers.dll
+C:\Users\Ben\Documents\Ben\Coding\WebDev\FrontEndMentor\Level 5\Audiophile e-commerce website\AudiophileEcommerceWebsite\AudiophileEcommerceWebsite_Tests\bin\Release\net6.0\System.Web.WebPages.Deployment.dll
+C:\Users\Ben\Documents\Ben\Coding\WebDev\FrontEndMentor\Level 5\Audiophile e-commerce website\AudiophileEcommerceWebsite\AudiophileEcommerceWebsite_Tests\bin\Release\net6.0\System.Web.WebPages.Razor.dll
+C:\Users\Ben\Documents\Ben\Coding\WebDev\FrontEndMentor\Level 5\Audiophile e-commerce website\AudiophileEcommerceWebsite\AudiophileEcommerceWebsite_Tests\bin\Release\net6.0\System.Web.WebPages.dll
+C:\Users\Ben\Documents\Ben\Coding\WebDev\FrontEndMentor\Level 5\Audiophile e-commerce website\AudiophileEcommerceWebsite\AudiophileEcommerceWebsite_Tests\bin\Release\net6.0\Microsoft.Web.Infrastructure.dll

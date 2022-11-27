@@ -16,32 +16,30 @@ namespace AudiophileEcommerceWebsite_Tests.ControllerTests
         IClassFixture<OrderControllerFixture>, IDisposable
     {
         public List<Product> products;
-        public OrderController orderController;
+        public OrderController orderControllerWithCallback;
+        public OrderController orderControllerWithoutCallback;
         public AudiophileDbContext dbContext;
         public string idString;
         public List<OrderDetail> orderDetails;
+        public OrderViewModel orderViewModel;
 
         public OrderController_Tests(
             OrderControllerFixture orderControllerFixture)
         {
             products = orderControllerFixture.products;
-            orderController = orderControllerFixture.orderController;
+            orderControllerWithCallback = orderControllerFixture.orderControllerWithCallback;
+            orderControllerWithoutCallback = orderControllerFixture.orderControllerWithoutCallback;
             dbContext = orderControllerFixture.dbContext;
             idString = orderControllerFixture.idString;
             orderDetails = orderControllerFixture.orderDetails;
+            orderViewModel = orderControllerFixture.orderViewModel;
         }
 
         [Fact]
         public void Checkout_BasketItemCountMoreThanOne_ReturnsView_Test()
         {
-            var orderRepositoryMock = new Mock<IOrderRepository>();
-            orderRepositoryMock.Setup(m => m.RetrieveOrderDetails(It.IsAny<Order>()))
-                .Callback<Order>(o => o.OrderDetails.AddRange(orderDetails));
+            var result = orderControllerWithCallback.Checkout();
 
-            orderController = new OrderController(orderRepositoryMock.Object,
-                ConfigureMapper.mapper);
-
-            var result = orderController.Checkout();
             var viewResult = Assert.IsType<ViewResult>(result);
             var viewModel = Assert.IsType<OrderViewModel>(viewResult.Model);
             Assert.Equal(3, viewModel.OrderDetails.Count);
@@ -50,16 +48,43 @@ namespace AudiophileEcommerceWebsite_Tests.ControllerTests
         [Fact]
         public void Checkout_BasketItemCountLessThanOne_RedirectsToHome_Test()
         {
-            var orderRepositoryMock = new Mock<IOrderRepository>();
-            orderRepositoryMock.Setup(m => m.RetrieveOrderDetails(It.IsAny<Order>()));
+            var result = orderControllerWithoutCallback.Checkout();
 
-            orderController = new OrderController(orderRepositoryMock.Object,
-                ConfigureMapper.mapper);
-
-            var result = orderController.Checkout();
             var redirect = Assert.IsType<RedirectToActionResult>(result);
             Assert.Equal("Index", redirect.ActionName);
             Assert.Equal("Product", redirect.ControllerName);
+        }
+
+        [Fact]
+        public void CheckoutPost_BasketItemCountLessThanOne_ReturnsView_Test()
+        {
+            var result = orderControllerWithoutCallback.Checkout(orderViewModel);
+
+            var redirect = Assert.IsType<RedirectToActionResult>(result);
+            Assert.Equal("Index", redirect.ActionName);
+            Assert.Equal("Product", redirect.ControllerName);
+        }
+
+        [Fact]
+        public void CheckoutPost_ModelStateInvalid_ReturnsView_Test()
+        {
+            orderControllerWithCallback.ModelState.AddModelError("fake error", "this is an error");
+            var result = orderControllerWithCallback.Checkout(orderViewModel);
+
+            var viewResult = Assert.IsType<ViewResult>(result);
+            var viewModel = Assert.IsType<OrderViewModel>(viewResult.Model);
+            Assert.Equal(3, viewModel.OrderDetails.Count);
+        }
+
+        [Fact]
+        public void CheckoutPost_ModelStateValid_RedirectsToCheckoutComplete_Test()
+        {
+            orderControllerWithCallback.ModelState.AddModelError("fake error", "this is an error");
+            var result = orderControllerWithCallback.Checkout(orderViewModel);
+
+            var viewResult = Assert.IsType<ViewResult>(result);
+            var viewModel = Assert.IsType<OrderViewModel>(viewResult.Model);
+            Assert.Equal(3, viewModel.OrderDetails.Count); 
         }
 
         public void Dispose()

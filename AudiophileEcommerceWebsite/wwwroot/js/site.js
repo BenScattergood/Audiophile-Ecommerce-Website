@@ -117,21 +117,27 @@ document.addEventListener('click', function (e) {
     }
 
     if (event.target.id == "cash" || event.target.id == "cash-text") {        
-        app.sectionEMoney.classList.add("hidden");
-        app.sectionCash.classList.remove("hidden");
-        app.radioDivCash.classList.add("beige-border");
-        app.radioDivEMoney.classList.remove("beige-border");
         document.querySelector(".cash-radio").click();
         return;
     }
 
     if (event.target.id == "e-money" || event.target.id == "e-money-text") {
+        document.querySelector(".e-money-radio").click();
+        return;
+    }
+
+    if (event.target.classList.contains("cash-radio")) {
+        app.sectionEMoney.classList.add("hidden");
+        app.sectionCash.classList.remove("hidden");
+        app.radioDivCash.classList.add("beige-border");
+        app.radioDivEMoney.classList.remove("beige-border");
+    }
+
+    if (event.target.classList.contains("e-money-radio")) {
         app.sectionCash.classList.add("hidden");
         app.sectionEMoney.classList.remove("hidden");
         app.radioDivEMoney.classList.add("beige-border");
         app.radioDivCash.classList.remove("beige-border");
-        document.querySelector(".e-money-radio").click();
-        return;
     }
 
     
