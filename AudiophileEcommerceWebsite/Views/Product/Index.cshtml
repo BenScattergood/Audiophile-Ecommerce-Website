@@ -24,30 +24,32 @@
     </section>
 }
 <main role="main" class="wrapper main-container">
-    <partial name="_CategoriesWithWrapper" />
+    <section class="categories-wrapper">
+        <partial name="_CategoriesPartial" />
+    </section>
     <div class="main__features-container">
-    <article class="home__feature-main">
-        <div class="home__feature-main__img-container">
-            <picture>
-                <source media="(min-width: 1025px)"
-                    srcset="/assets/home/desktop/image-speaker-zx9.png" />
-                <source media="(min-width: 600px)"
-                    srcset="/assets/home/tablet/image-speaker-zx9.png" />
-                <img class="image-reset" src="/assets/home/mobile/image-speaker-zx9.png" />
-            </picture>
-            <img class="home__feature-main__background-img" src="/assets/home/desktop/pattern-circles.svg"/>
-        </div>
-        <div class="home__feature-main__text features-wrapper--main">
-            <h2 class="width-80-mobile fw-700 text-white-100 fs-main-h1 ls-h1 lh-h1 uppercase">@Model.SingleOrDefault(p => p.Id == 6).Name</h2>
-            <p class="fw-500 fs-main-p text-white-100 opacity-075 lh-p">Upgrade to premium speakers that are phenomenally built to deliver truly remarkable sound.</p>
-                <a asp-controller="Product" asp-action="Product" asp-route-id="@Model.SingleOrDefault(p => p.Id == 6).Id" class="button-main button-main--black fw-700 text-white-100 fs-button ls-button uppercase">See Product</a>
-        </div>
-    </article>
-    <article class="home__feature-other home__feature-other--pri features-wrapper--other">
-        <h3 class="text-black-100 fs-main-h3 ls-h3 lh-h3 fw-700 uppercase">@Model.SingleOrDefault(p => p.Id == 5).Name</h3>
-            <a asp-controller="Product" asp-action="Product" asp-route-id="@Model.SingleOrDefault(p => p.Id == 5).Id" class="button-main--transparent button-main fw-700 fs-button ls-button uppercase">See Product</a>
-    </article>
-    <article class="home__feature-other-container">
+        <article class="home__feature-main">
+            <div class="home__feature-main__img-container">
+                <picture>
+                    <source media="(min-width: 1025px)"
+                        srcset="/assets/home/desktop/image-speaker-zx9.png" />
+                    <source media="(min-width: 600px)"
+                        srcset="/assets/home/tablet/image-speaker-zx9.png" />
+                    <img class="image-reset" src="/assets/home/mobile/image-speaker-zx9.png" />
+                </picture>
+                <img class="home__feature-main__background-img" src="/assets/home/desktop/pattern-circles.svg"/>
+            </div>
+            <div class="home__feature-main__text features-wrapper--main">
+                <h2 class="width-80-mobile fw-700 text-white-100 fs-main-h1 ls-h1 lh-h1 uppercase">@Model.SingleOrDefault(p => p.Id == 6).Name</h2>
+                <p class="fw-500 fs-main-p text-white-100 opacity-075 lh-p">Upgrade to premium speakers that are phenomenally built to deliver truly remarkable sound.</p>
+                    <a asp-controller="Product" asp-action="Product" asp-route-id="@Model.SingleOrDefault(p => p.Id == 6).Id" class="button-main button-main--black fw-700 text-white-100 fs-button ls-button uppercase">See Product</a>
+            </div>
+        </article>
+        <article class="home__feature-other home__feature-other--pri features-wrapper--other">
+            <h3 class="text-black-100 fs-main-h3 ls-h3 lh-h3 fw-700 uppercase">@Model.SingleOrDefault(p => p.Id == 5).Name</h3>
+                <a asp-controller="Product" asp-action="Product" asp-route-id="@Model.SingleOrDefault(p => p.Id == 5).Id" class="button-main--transparent button-main fw-700 fs-button ls-button uppercase">See Product</a>
+        </article>
+        <article class="home__feature-other-container">
         <div class="home__feature-other__img-container">
             <picture>
                 <source media="(min-width: 1025px)"

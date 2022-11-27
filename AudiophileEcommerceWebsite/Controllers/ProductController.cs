@@ -1,4 +1,5 @@
 ﻿
+using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
@@ -8,14 +9,14 @@ namespace AudiophileEcommerceWebsite.Controllers
     {
         private readonly IProductRepository productRepository;
         private readonly IMapper _mapper;
-        //private readonly ILogger _logger;
+        private readonly ILogger _logger;
 
         public ProductController(IProductRepository productRepository,
-            IMapper mapper /*ILogger logger*/)
+            IMapper mapper, ILogger<ProductController> logger)
         {
             this.productRepository = productRepository;
             this._mapper = mapper;
-            //_logger = logger;
+            _logger = logger;
         }
 
         public IActionResult Index()
@@ -58,8 +59,11 @@ namespace AudiophileEcommerceWebsite.Controllers
         //[ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
-            //log error
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            var exceptionDetails = HttpContext.Features.Get<IExceptionHandlerPathFeature>();
+            _logger.LogError($"The path {exceptionDetails.Path}" +
+                $" threw an exception {exceptionDetails.Error}" +
+                $" at {DateTime.Now}", exceptionDetails.Path);
+            return View();
         }
     }
 }

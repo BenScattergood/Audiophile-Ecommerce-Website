@@ -645,6 +645,10 @@ svg{
   margin-bottom: -2rem;
 }
 
+.margin-t-4 {
+  margin-top: 4rem;
+}
+
 .margin-l-auto {
   margin-left: auto;
 }
@@ -790,7 +794,7 @@ input[type=radio]:checked {
 .categories-wrapper {
   display: flex;
   flex-direction: column;
-  gap: 6rem;
+  gap: 8rem;
   align-items: center;
 }
 

@@ -16,7 +16,6 @@
 
         public void RetrieveOrderDetails(Order order)
         {
-            throw new DbUpdateConcurrencyException();
             order.OrderProductTotal = shoppingBasket.GetShoppingBasketTotal();
             var shoppingBasketItems = shoppingBasket.GetShoppingBasketItems();
             foreach (var item in shoppingBasketItems)

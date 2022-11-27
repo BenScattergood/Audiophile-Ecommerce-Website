@@ -1,4 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using System.IO;
+using System.Text;
 using System.Text.Json;
 
 namespace AudiophileEcommerceWebsite.Helpers
@@ -15,27 +17,32 @@ namespace AudiophileEcommerceWebsite.Helpers
 
         public static List<Product> DeserializeJson(string filePath)
         {
-            var jsonStr = File.ReadAllText(filePath);
-
-            products = JsonSerializer.Deserialize<List<Product>>(jsonStr, options);
-
-            using (JsonDocument document = JsonDocument.Parse(jsonStr))
+            using (var fileStream = new FileStream(filePath, FileMode.Open))
             {
-                JsonElement root = document.RootElement;
-                int i = 1;
+                // read from file or write to file
+                var streamReader = new StreamReader(fileStream, Encoding.UTF8);
+                var jsonStr = streamReader.ReadToEnd();
+                //var jsonStr = File.ReadAllText(filePath);
+                products = JsonSerializer.Deserialize<List<Product>>(jsonStr, options);
 
-                foreach (var jsonProduct in root.EnumerateArray())
+                using (JsonDocument document = JsonDocument.Parse(jsonStr))
                 {
-                    Product product = products[i - 1];
+                    JsonElement root = document.RootElement;
+                    int i = 1;
 
-                    PopulateProductImageMembers(jsonProduct, product);
-                    var temp = jsonProduct.GetProperty("new");
+                    foreach (var jsonProduct in root.EnumerateArray())
+                    {
+                        Product product = products[i - 1];
 
-                    DeserializeJsonToAccessoryObject(product, jsonProduct);
-                    DeserializeJsonToGalleryObject(product, jsonProduct);
-                    DeserializeJsonToRelatedDataObject(product, jsonProduct);
-                    PopulateProductCategoryMember(jsonProduct, product);
-                    i++;
+                        PopulateProductImageMembers(jsonProduct, product);
+                        var temp = jsonProduct.GetProperty("new");
+
+                        DeserializeJsonToAccessoryObject(product, jsonProduct);
+                        DeserializeJsonToGalleryObject(product, jsonProduct);
+                        DeserializeJsonToRelatedDataObject(product, jsonProduct);
+                        PopulateProductCategoryMember(jsonProduct, product);
+                        i++;
+                    }
                 }
             }
             return products;
