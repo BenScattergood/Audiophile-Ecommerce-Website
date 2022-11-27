@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace AudiophileEcommerceWebsite_Tests.Fixtures.ControllerFixtures
 {
-    public class ShoppingBasketControllerFixture
+    public class ShoppingBasketControllerFixture : IDisposable
     {
         public List<Product> products;
         public ShoppingBasketController shoppingBasketController;
@@ -28,6 +28,11 @@ namespace AudiophileEcommerceWebsite_Tests.Fixtures.ControllerFixtures
 
             shoppingBasketController = new ShoppingBasketController(shoppingBasketMock.Object,
                 productRepositoryMock.Object);
+        }
+
+        public void Dispose()
+        {
+            //nr
         }
     }
 }

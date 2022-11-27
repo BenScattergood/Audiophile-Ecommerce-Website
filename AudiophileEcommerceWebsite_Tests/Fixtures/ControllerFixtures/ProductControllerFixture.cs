@@ -14,7 +14,7 @@ using System.Threading.Tasks;
 
 namespace AudiophileEcommerceWebsite_Tests.Fixtures.ControllerFixtures
 {
-    public class ProductControllerFixture
+    public class ProductControllerFixture : IDisposable
     {
         public List<Product> products;
         public List<Category> categories;
@@ -48,6 +48,10 @@ namespace AudiophileEcommerceWebsite_Tests.Fixtures.ControllerFixtures
             var logger = factory.CreateLogger<ProductController>();
             productController = new ProductController(productRepositoryMock.Object,
                 ConfigureMapper.mapper, logger);
+        }
+        public void Dispose()
+        {
+            //nr
         }
     }
 }

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace AudiophileEcommerceWebsite_Tests.Fixtures
 {
-    public class ProductRepositoryFixture
+    public class ProductRepositoryFixture : IDisposable
     {
         public ProductRepository productRepository { get; }
         public List<Category> categories { get; }
@@ -16,6 +16,10 @@ namespace AudiophileEcommerceWebsite_Tests.Fixtures
             var dbContext = DatabaseConnection._dbContext;
             productRepository = new ProductRepository(dbContext);
             categories = dbContext.Categories.ToList();
+        }
+        public void Dispose()
+        {
+            // NR
         }
     }
 }
