@@ -37,7 +37,7 @@ namespace AudiophileEcommerceWebsite_Tests.ViewComponentTests
                 .Returns(basketItems);
             ShoppingBasketSummary = new ShoppingBasketSummary(shoppingBasketMock.Object,
                 ConfigureMapper.mapper);
-        }
+        } 
 
         [Fact]
         public void Invoke_ViewModelHasCorrectItems_Test()
