@@ -7,11 +7,14 @@
     <div class="heading__img-container heading__img-container--cat">
     </div>
 }
-
-<h1 class="text-danger">Error.</h1>
-<h2 class="text-danger">An error occurred while processing your request.</h2>
-
-@if (Model.ShowRequestId)
+    <main class="wrapper container container--categories">
+        <div class="error-page-wrapper">
+            <h1 class="fw-700 fs-checkout-h2 text-black-100 lh-h2">Error</h1>
+            <h2 class="fs-main-p text-black-100 opacity-075 lh-p fw-500">An error occurred while processing your request, please try again later.</h2>
+            <a asp-controller="Product" asp-action="Index" class="button-main button-main--transparent fw-700 text-white-100 fs-button ls-button uppercase">Back To Home</a>
+        </div>
+    </main>
+@*@if (Model.ShowRequestId)
 {
     <p>
         <strong>Request ID:</strong> <code>@Model.RequestId</code>
@@ -27,4 +30,4 @@
     It can result in displaying sensitive information from exceptions to end users.
     For local debugging, enable the <strong>Development</strong> environment by setting the <strong>ASPNETCORE_ENVIRONMENT</strong> environment variable to <strong>Development</strong>
     and restarting the app.
-</p>
+</p>*@
