@@ -30,15 +30,6 @@ namespace AudiophileEcommerceWebsite.Validators
                                              .Length(4)
                                              .Matches(@"^[\d]+$").WithMessage("Must be a number"); ;
                 });
-
         }
-	}
-
-	public class CategoryValidator : AbstractValidator<String>
-	{
-		public CategoryValidator()
-		{
-
-		}
 	}
 }

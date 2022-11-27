@@ -43,13 +43,9 @@ document.onwheel = function (e) {
     }
 }
 
-document.addEventListener('click', function (e) {
-    if (!app.ShoppingBasketSummary.contains(e.target) &&
-        !app.ShoppingBasketSummary.classList.contains("invisible")) {
-        HideBasket();
-        return;
-    }
+//Event listeners
 
+document.addEventListener('click', function (e) {
     //avatar popup
     if (document.querySelector(".LoginPartial__Logout-form") != null) {
         if (!app.logoutPopup.contains(e.target) &&
@@ -63,7 +59,16 @@ document.addEventListener('click', function (e) {
             return;
         }
     }
-    //
+
+    //shopping basket summary
+
+    if (!app.ShoppingBasketSummary.contains(e.target) &&
+        !app.ShoppingBasketSummary.classList.contains("invisible")) {
+        HideBasket();
+        return;
+    }
+
+    //add to basket functionality
 
     if (event.target.classList.contains('basket-increment')) {
         const productName = event.target.parentElement
@@ -101,20 +106,7 @@ document.addEventListener('click', function (e) {
         incrementer.productIncrementerValue.textContent = currentQuantity;
     }
 
-    if (event.target.id == "add-to-cart") {
-        AjaxShoppingBasketRefresh(
-            incrementer.productIncrementerValue.textContent,
-            app.productName.textContent);
-        window.scrollTo({ top: 0, behaviour: 'smooth' });
-        ToggleBasket();
-        return;
-    }
-
-    if (event.target.id == "shopping-cart-icon" &&
-        app.navMenu.classList.contains("hidden")) {
-        ToggleBasket();
-        return;
-    }
+    //radio button checkout page
 
     if (event.target.id == "cash" || event.target.id == "cash-text") {        
         document.querySelector(".cash-radio").click();
@@ -140,9 +132,23 @@ document.addEventListener('click', function (e) {
         app.radioDivCash.classList.remove("beige-border");
     }
 
-    
+    //other
 
-    //removeAll
+    if (event.target.id == "add-to-cart") {
+        AjaxShoppingBasketRefresh(
+            incrementer.productIncrementerValue.textContent,
+            app.productName.textContent);
+        window.scrollTo({ top: 0, behaviour: 'smooth' });
+        ToggleBasket();
+        return;
+    }
+
+    if (event.target.id == "shopping-cart-icon" &&
+        app.navMenu.classList.contains("hidden")) {
+        ToggleBasket();
+        return;
+    }
+
     if (event.target.id == "clear-basket") {
         $.ajax({
             url: "/ShoppingBasket/ClearBasket",
@@ -244,10 +250,6 @@ function CloseBasket() {
 }
 
 //logout popup
-
-//app.userAvatar.addEventListener("click", function () {
-//    app.logoutPopup.classList.toggle("hidden");
-//})
 
 function ShowLogoutPopup() {
     app.logoutPopup.classList.remove("hidden");

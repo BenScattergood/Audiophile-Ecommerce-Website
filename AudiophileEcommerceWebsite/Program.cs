@@ -28,7 +28,6 @@ builder.Services.AddScoped<IShoppingBasket, ShoppingBasket>(sp => new ShoppingBa
 builder.Services.AddSession();
 builder.Services.AddHttpContextAccessor();
 
-//builder.Services.AddFluentValidationAutoValidation().AddFluentValidationClientsideAdapters();
 builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
 
 builder.Services.AddDbContext<AudiophileDbContext>(options =>
@@ -36,19 +35,15 @@ builder.Services.AddDbContext<AudiophileDbContext>(options =>
     options.UseSqlServer(connectionString);
 });
 
-builder.Services.AddDefaultIdentity<IdentityUser>(/*options => */
-    /*options.SignIn.RequireConfirmedAccount = true*/)
+builder.Services.AddDefaultIdentity<IdentityUser>()
     .AddEntityFrameworkStores<AudiophileDbContext>();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
-//if (!app.Environment.IsDevelopment())
-//{
+if (!app.Environment.IsDevelopment())
+{
     app.UseExceptionHandler("/Product/Error");
-// The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-    app.UseHsts();
-//}
+}
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
@@ -66,8 +61,6 @@ app.MapControllerRoute(
     pattern: "{controller=Product}/{action=Index}/{id?}");
 
 IApplicationBuilder appBuilder = (IApplicationBuilder)app;
-//DbInitializer.Seed(app);
-
 DbInitializer.Seed(appBuilder.ApplicationServices.CreateScope().ServiceProvider
             .GetRequiredService<AudiophileDbContext>());
 

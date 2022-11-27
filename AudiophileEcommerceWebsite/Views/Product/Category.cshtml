@@ -12,19 +12,19 @@
 		@{
 			int i = 0;
 			foreach (var product in Model)
+		
 		{
 			if (i % 2 == 0)
 			{
-				<partial name="_CatPageProd" model="product" />
+					<partial name="_CatPageProd" model="product" />
 			}
 			else
 			{
-				<partial name="_CatPageProdReverse" model="product" />
+					<partial name="_CatPageProdReverse" model="product" />
 			}
 			i++;
 		}
 		}
-		@*<div class="filler"></div>*@
 	<partial name="_CategoriesWithWrapper" />
 	<partial name="_BestGearPartial" />
 	</main>

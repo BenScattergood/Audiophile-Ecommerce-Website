@@ -41,7 +41,6 @@
             shoppingBasket.AddToBasket(product, quantity);
 
             return RedirectToAction("Index");
-            //redirect to index
         }
 
         public RedirectToActionResult DecrementFromShoppingBasket(int quantity, string productName)
@@ -50,7 +49,6 @@
             shoppingBasket.RemoveFromBasket(product);
 
             return RedirectToAction("Index");
-            //redirect to index
         }
 
         public RedirectToActionResult ClearBasket()
@@ -58,17 +56,5 @@
             shoppingBasket.ClearBasket();
             return RedirectToAction("Index");
         }
-
-
-
-        //public RedirectToActionResult RemoveFromShoppingBasket(int pieId)
-        //{
-        //    //redirect to index
-        //}
-
-        //public RedirectToActionResult ClearBasket()
-        //{
-        //    //redirect to index
-        //}
     }
 }

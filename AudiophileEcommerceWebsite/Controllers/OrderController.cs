@@ -28,6 +28,7 @@ namespace AudiophileEcommerceWebsite.Controllers
                 //this won't be available to user
                 return RedirectToAction("Index", "Product");
             }
+
             var orderViewModel = mapper.Map<OrderViewModel>(order);
             return View(orderViewModel);
         }
@@ -59,7 +60,7 @@ namespace AudiophileEcommerceWebsite.Controllers
         {
             orderRepository.RetrieveOrderDetails(order);
             var orderViewModel = mapper.Map<OrderViewModel>(order);
-            //
+
             return View(orderViewModel);
         }
     }

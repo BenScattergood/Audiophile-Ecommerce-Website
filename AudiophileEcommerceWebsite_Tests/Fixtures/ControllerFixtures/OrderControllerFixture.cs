@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace AudiophileEcommerceWebsite_Tests.Fixtures.ControllerFixtures
 {
-    public class OrderControllerFixture : IDisposable
+    public class OrderControllerFixture
     {
         public List<Product> products;
         public OrderController orderControllerWithCallback;
@@ -65,11 +65,6 @@ namespace AudiophileEcommerceWebsite_Tests.Fixtures.ControllerFixtures
 
             orderControllerWithCallback = new OrderController(orderRepositoryMock.Object,
                 ConfigureMapper.mapper);
-        }
-
-        public void Dispose()
-        {
-            //nr
         }
     }
 }

@@ -7,23 +7,15 @@ using System.Threading.Tasks;
 
 namespace AudiophileEcommerceWebsite_Tests.Fixtures
 {
-    public class ProductRepositoryFixture : IDisposable
+    public class ProductRepositoryFixture
     {
         public ProductRepository productRepository { get; }
         public List<Category> categories { get; }
         public ProductRepositoryFixture()
         {
             var dbContext = DatabaseConnection._dbContext;
-
-            //maybe change this...
-            
-
             productRepository = new ProductRepository(dbContext);
             categories = dbContext.Categories.ToList();
-        }
-        public void Dispose()
-        {
-            // NR
         }
     }
 }

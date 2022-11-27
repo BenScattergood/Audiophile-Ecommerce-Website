@@ -63,6 +63,7 @@ namespace AudiophileEcommerceWebsite.Controllers
             _logger.LogError($"The path {exceptionDetails.Path}" +
                 $" threw an exception {exceptionDetails.Error}" +
                 $" at {DateTime.Now}", exceptionDetails.Path);
+
             return View();
         }
     }

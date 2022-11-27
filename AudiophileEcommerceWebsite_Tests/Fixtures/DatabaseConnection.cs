@@ -62,19 +62,8 @@ namespace AudiophileEcommerceWebsite_Tests.Fixtures
 
         public static void ResetDb()
         {
-            var tableNames = _dbContext.Model.GetEntityTypes()
-                .OrderByDescending(t => t.GetDeclaredForeignKeys().Count())
-            //.Select(t => t.GetTableName())
-                .Distinct()
-                .ToList();
-            _dbContext.Database.ExecuteSqlRaw($"DELETE FROM {tableNames[8].GetTableName()}");
-            _dbContext.Database.ExecuteSqlRaw($"DELETE FROM {tableNames[15].GetTableName()}");
-
-            //foreach (var tableName in tableNames)
-            //{
-            //    //_dbContext.Database.ExecuteSqlRaw("SET foreign_key_checks=0");
-            //    _dbContext.Database.ExecuteSqlRaw($"DELETE FROM {tableName.GetTableName()}");
-            //}
+            _dbContext.Database.ExecuteSqlRaw($"DELETE FROM ShoppingBasketItems");
+            _dbContext.Database.ExecuteSqlRaw($"DELETE FROM Orders");
 
             _dbContext.SaveChanges();
             SeedTestData(idString);

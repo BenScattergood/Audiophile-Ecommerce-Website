@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace AudiophileEcommerceWebsite_Tests.Fixtures
 {
-    public class OrderRepositoryFixture : IDisposable
+    public class OrderRepositoryFixture
     {
         public AudiophileDbContext dbContext { get; }
         public string basketId { get; set; }
@@ -107,10 +107,6 @@ namespace AudiophileEcommerceWebsite_Tests.Fixtures
                 OrderProductTotal = 4099,
                 OrderDetails = orderDetails,
             };
-        }
-        public void Dispose()
-        {
-            //nr
         }
     }
 }

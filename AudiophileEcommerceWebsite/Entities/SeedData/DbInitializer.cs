@@ -13,9 +13,7 @@ public static class DbInitializer
     public static void Seed(AudiophileDbContext _audiophileDbContext)
     {
         _context = _audiophileDbContext;
-        //_context = application.ApplicationServices
-        //    .CreateScope().ServiceProvider
-        //    .GetRequiredService<AudiophileDbContext>();
+
         if (!_context.Products.Any())
         {
             _context.AddRange(JsonProductsDeserializer.DeserializeJson
