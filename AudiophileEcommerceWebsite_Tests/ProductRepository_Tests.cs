@@ -15,12 +15,14 @@ namespace AudiophileEcommerceWebsite_Tests
     {
         private ProductRepository productRepository;
         private List<Category> categories;
+        private Product Product;
 
         public ProductRepository_Tests(
             ProductRepositoryFixture productRepositoryFixture)
         {
             this.productRepository = productRepositoryFixture.productRepository;
             this.categories = productRepositoryFixture.categories;
+            this.Product = productRepositoryFixture.Product;
         }
         [Fact]
         public void GetAllProducts_ReturnsAllProducts_Test()
@@ -54,12 +56,6 @@ namespace AudiophileEcommerceWebsite_Tests
         {
             var product = productRepository.GetProductById(2).RelatedData[0].Images.Desktop;
             Assert.NotNull(product);
-        }
-
-        [Fact]
-        public void ProvideProductIdToRelatedDataVM_Test()
-        {
-            //return to
         }
 
         [Fact]

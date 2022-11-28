@@ -11,11 +11,13 @@ namespace AudiophileEcommerceWebsite_Tests.Fixtures
     {
         public ProductRepository productRepository { get; }
         public List<Category> categories { get; }
+        public Product Product { get; }
         public ProductRepositoryFixture()
         {
             var dbContext = DatabaseConnection._dbContext;
             productRepository = new ProductRepository(dbContext);
             categories = dbContext.Categories.ToList();
+            Product = dbContext.Products.Select(c => c).ToList()[0];
         }
         public void Dispose()
         {
