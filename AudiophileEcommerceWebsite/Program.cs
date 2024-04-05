@@ -2,6 +2,7 @@ using AudiophileEcommerceWebsite.Entities;
 using AudiophileEcommerceWebsite.ViewModels;
 using Microsoft.EntityFrameworkCore;
 using System.Reflection;
+using AudiophileEcommerceWebsite.Services;
 using Microsoft.AspNetCore.Identity;
 using static System.Net.Mime.MediaTypeNames;
 using Microsoft.Extensions.Logging;
@@ -18,6 +19,9 @@ builder.Services.AddHsts(hstsOpts =>
 {
     hstsOpts.IncludeSubDomains = true;
 });
+
+builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<IValidateOrder, ValidateOrder>();
 
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
 builder.Services.AddScoped<IOrderRepository, OrderRepository>();    

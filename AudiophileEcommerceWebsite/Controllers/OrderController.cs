@@ -1,4 +1,5 @@
-﻿using AudiophileEcommerceWebsite.ViewModels;
+﻿using AudiophileEcommerceWebsite.Services;
+using AudiophileEcommerceWebsite.ViewModels;
 
 using Microsoft.AspNetCore.Mvc;
 
@@ -9,12 +10,15 @@ namespace AudiophileEcommerceWebsite.Controllers
     {
         private readonly IOrderRepository orderRepository;
         private readonly IMapper mapper;
+        private readonly IValidateOrder _validateOrder;
 
         public OrderController(IOrderRepository orderRepository,
-            IMapper mapper)
+            IMapper mapper,
+            IValidateOrder validateOrder)
         {
             this.orderRepository = orderRepository;
             this.mapper = mapper;
+            _validateOrder = validateOrder;
         }
 
         [HttpGet]
@@ -34,31 +38,34 @@ namespace AudiophileEcommerceWebsite.Controllers
         }
 
         [HttpPost]
-        public IActionResult Checkout(OrderViewModel orderViewModel)
+        public async Task<IActionResult> Checkout(OrderViewModel orderViewModel)
         {
-            //take payment
             var order = mapper.Map<Order>(orderViewModel);
             orderRepository.RetrieveOrderDetails(order);
+            if (!ModelState.IsValid)
+            {
+                var orderVm = mapper.Map<OrderViewModel>(order);
+                return View(orderVm);
+            }
 
             if (order.OrderDetails.Count() < 1)
             {
                 return RedirectToAction("Index","Product");
             }
 
-            if (!ModelState.IsValid)
-            {
-                orderViewModel = mapper.Map<OrderViewModel>(order);
-                return View(orderViewModel);
-            }
+            await orderRepository.ProcessOrder(order);
 
-            orderRepository.CreateOrder(order);
-
-            return RedirectToAction("CheckoutComplete", order);
+            return RedirectToAction("CheckoutComplete", new {orderId = order.OrderId});
         }
 
-        public IActionResult CheckoutComplete(Order order)
+        public async Task<IActionResult> CheckoutComplete(int orderId)
         {
-            orderRepository.RetrieveOrderDetails(order);
+            if ((await _validateOrder.IsValid(orderId)) == false)
+            {
+                return RedirectToAction("Index","Product");
+            }
+            
+            var order = orderRepository.GetOrder(orderId);
             var orderViewModel = mapper.Map<OrderViewModel>(order);
 
             return View(orderViewModel);

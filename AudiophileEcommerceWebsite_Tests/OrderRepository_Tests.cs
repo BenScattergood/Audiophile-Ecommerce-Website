@@ -49,9 +49,9 @@ namespace AudiophileEcommerceWebsite_Tests
         }
 
         [Fact]
-        public void CreateOrder_AddsNewOrder_Test()
+        public async Task CreateOrder_AddsNewOrder_Test()
         {
-            orderRepository_WithMock.CreateOrder(order);
+            await orderRepository_WithMock.CreateOrder(order);
 
             var actual = _dbContext.Orders
                 .Single(c => c.Address == "66 Highfield Drive");
@@ -82,29 +82,29 @@ namespace AudiophileEcommerceWebsite_Tests
         }
 
         [Fact]
-        public void ProcessOrder_ProcessedCorrectly_IntegrationTest()
+        public async Task ProcessOrder_ProcessedCorrectly_IntegrationTest()
         {
             var emailAddress = order.EmailAddress;
-            orderRepository_WithIntegration.ProcessOrder(order);
+            await orderRepository_WithIntegration.ProcessOrder(order);
 
             var actual = _dbContext.Orders.FirstOrDefault(o => o.EmailAddress == emailAddress);
             Assert.NotNull(actual);
         }
 
         [Fact]
-        public void ProcessOrder_ClearsShoppingBasket_IntegrationTest()
+        public async Task ProcessOrder_ClearsShoppingBasket_IntegrationTest()
         {
-            orderRepository_WithIntegration.ProcessOrder(order);
+            await orderRepository_WithIntegration.ProcessOrder(order);
             var items = _dbContext.ShoppingBasketItems.Where(item => item.ShoppingBasketId == basketId);
             Assert.Empty(items);
         }
 
         [Fact]
-        public void ProcessOrder_OnErrorRollsBackChanges_IntegrationTest()
+        public async Task ProcessOrder_OnErrorRollsBackChanges_IntegrationTest()
         {
             var emailAddress = order.EmailAddress;
 
-            Assert.Throws<DbUpdateConcurrencyException>(() => orderRepository_WithError.ProcessOrder(order));
+            await Assert.ThrowsAsync<DbUpdateConcurrencyException>(async () => await orderRepository_WithError.ProcessOrder(order));
             Assert.Empty(_dbContext.Orders.Where(o => o.EmailAddress == emailAddress));
         }
         public void Dispose()

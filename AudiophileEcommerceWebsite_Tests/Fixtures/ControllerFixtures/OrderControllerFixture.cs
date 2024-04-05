@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AudiophileEcommerceWebsite.Services;
 
 namespace AudiophileEcommerceWebsite_Tests.Fixtures.ControllerFixtures
 {
@@ -51,20 +52,26 @@ namespace AudiophileEcommerceWebsite_Tests.Fixtures.ControllerFixtures
         private void SetupOrderControllerWithoutCallback()
         {
             var orderRepositoryMock = new Mock<IOrderRepository>();
+            var validateOrderMock = new Mock<IValidateOrder>();
             orderRepositoryMock.Setup(m => m.RetrieveOrderDetails(It.IsAny<Order>()));
+            validateOrderMock.Setup(m => m.IsValid(It.IsAny<int>()))
+                .Returns(() => true);
 
             orderControllerWithoutCallback = new OrderController(orderRepositoryMock.Object,
-                ConfigureMapper.mapper);
+                ConfigureMapper.mapper, validateOrderMock.Object);
         }
 
         private void SetupOrderControllerWithCallback()
         {
             var orderRepositoryMock = new Mock<IOrderRepository>();
+            var validateOrderMock = new Mock<IValidateOrder>();
             orderRepositoryMock.Setup(m => m.RetrieveOrderDetails(It.IsAny<Order>()))
                 .Callback<Order>(o => o.OrderDetails.AddRange(orderDetails));
+            validateOrderMock.Setup(m => m.IsValid(It.IsAny<int>()))
+                .Returns(() => true);
 
             orderControllerWithCallback = new OrderController(orderRepositoryMock.Object,
-                ConfigureMapper.mapper);
+                ConfigureMapper.mapper, validateOrderMock.Object);
         }
 
         public void Dispose()

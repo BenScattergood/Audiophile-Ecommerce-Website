@@ -1,8 +1,12 @@
-﻿namespace AudiophileEcommerceWebsite.Entities
+﻿using Microsoft.AspNetCore.Identity;
+
+namespace AudiophileEcommerceWebsite.Entities
 {
     public class Order
     {
         public int OrderId { get; set; }
+
+        public IdentityUser User { get; set; }
         public string Name { get; set; }
         public string EmailAddress { get; set; }
         public string PhoneNumber { get; set; }

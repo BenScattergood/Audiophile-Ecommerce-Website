@@ -1,16 +1,9 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore;
 
 namespace AudiophileEcommerceWebsite.Entities
 {
     public class AudiophileDbContext : IdentityDbContext
     {
-        public AudiophileDbContext(DbContextOptions<AudiophileDbContext>
-            options) : base(options)
-        {
-
-        }
-
         public DbSet<Category> Categories { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<Accessory> Details { get; set; }
@@ -18,6 +11,11 @@ namespace AudiophileEcommerceWebsite.Entities
         public DbSet<Order> Orders { get; set; }
         public DbSet<OrderDetail> OrderDetails { get; set; }
 
+        public AudiophileDbContext(DbContextOptions<AudiophileDbContext>
+            options) : base(options)
+        {
+
+        }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

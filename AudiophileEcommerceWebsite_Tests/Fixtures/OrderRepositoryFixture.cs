@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AudiophileEcommerceWebsite.Services;
 
 namespace AudiophileEcommerceWebsite_Tests.Fixtures
 {
@@ -46,9 +47,11 @@ namespace AudiophileEcommerceWebsite_Tests.Fixtures
             shoppingBasketMock
                 .Setup(m => m.GetShoppingBasketTotal())
                 .Returns(14849);
+            
+            var userServiceMock = new Mock<IUserService>();
 
             orderRepository_WithMock = new OrderRepository(dbContext,
-                shoppingBasketMock.Object, mapper);
+                shoppingBasketMock.Object, mapper, userServiceMock.Object);
         }
 
         private void ConfigureOrderRepository_WithError()
@@ -56,9 +59,13 @@ namespace AudiophileEcommerceWebsite_Tests.Fixtures
             var shoppingBasketThrowsError = new Mock<IShoppingBasket>();
             shoppingBasketThrowsError
                 .Setup(m => m.ClearBasket()).Throws(new DbUpdateConcurrencyException());
+            
+            var userServiceMock = new Mock<IUserService>();
+            userServiceMock.Setup(m => m.GetCurrentUser());
+            //Todo: this isn't setup correctly, and netiher is the other place this is called
 
             orderRepository_WithError = new OrderRepository(dbContext,
-                shoppingBasketThrowsError.Object, mapper);
+                shoppingBasketThrowsError.Object, mapper, userServiceMock.Object);
         }
 
         private void ConfigureOrderRepository_WithIntegration()
@@ -67,12 +74,13 @@ namespace AudiophileEcommerceWebsite_Tests.Fixtures
             var idBytes = Encoding.UTF8.GetBytes(basketId);
             sessionMock
                 .Setup(s => s.TryGetValue(It.IsAny<string>(), out idBytes));
-
+            var userServiceMock = new Mock<IUserService>();
+            
             ISession session = sessionMock.Object;
 
             var IntegrationShoppingBasket = new ShoppingBasket(session, dbContext);
             orderRepository_WithIntegration = new OrderRepository(dbContext,
-                IntegrationShoppingBasket, mapper);
+                IntegrationShoppingBasket, mapper, userServiceMock.Object);
         }
 
         public void ConfigureOrder()

@@ -378,3 +378,12 @@ C:\Users\Ben\Documents\Ben\Coding\WebDev\FrontEndMentor\Level 5\Audiophile e-com
 C:\Users\Ben\Documents\Ben\Coding\WebDev\FrontEndMentor\Level 5\Audiophile e-commerce website\AudiophileEcommerceWebsite\AudiophileEcommerceWebsite_Tests\bin\Debug\net6.0\runtimes\win-x86\native\e_sqlite3.dll
 C:\Users\Ben\Documents\Ben\Coding\WebDev\FrontEndMentor\Level 5\Audiophile e-commerce website\AudiophileEcommerceWebsite\AudiophileEcommerceWebsite_Tests\bin\Debug\net6.0\Castle.Core.dll
 C:\Users\Ben\Documents\Ben\Coding\WebDev\FrontEndMentor\Level 5\Audiophile e-commerce website\AudiophileEcommerceWebsite\AudiophileEcommerceWebsite_Tests\bin\Debug\net6.0\Moq.dll
+C:\Users\Ben\Documents\Ben\Coding\WebDev\FrontEndMentor\Level 5\Audiophile e-commerce website\AudiophileEcommerceWebsite\AudiophileEcommerceWebsite_Tests\bin\Debug\net6.0\System.Web.Mvc.dll
+C:\Users\Ben\Documents\Ben\Coding\WebDev\FrontEndMentor\Level 5\Audiophile e-commerce website\AudiophileEcommerceWebsite\AudiophileEcommerceWebsite_Tests\bin\Debug\net6.0\System.Web.Razor.dll
+C:\Users\Ben\Documents\Ben\Coding\WebDev\FrontEndMentor\Level 5\Audiophile e-commerce website\AudiophileEcommerceWebsite\AudiophileEcommerceWebsite_Tests\bin\Debug\net6.0\System.Web.Helpers.dll
+C:\Users\Ben\Documents\Ben\Coding\WebDev\FrontEndMentor\Level 5\Audiophile e-commerce website\AudiophileEcommerceWebsite\AudiophileEcommerceWebsite_Tests\bin\Debug\net6.0\System.Web.WebPages.Deployment.dll
+C:\Users\Ben\Documents\Ben\Coding\WebDev\FrontEndMentor\Level 5\Audiophile e-commerce website\AudiophileEcommerceWebsite\AudiophileEcommerceWebsite_Tests\bin\Debug\net6.0\System.Web.WebPages.Razor.dll
+C:\Users\Ben\Documents\Ben\Coding\WebDev\FrontEndMentor\Level 5\Audiophile e-commerce website\AudiophileEcommerceWebsite\AudiophileEcommerceWebsite_Tests\bin\Debug\net6.0\System.Web.WebPages.dll
+C:\Users\Ben\Documents\Ben\Coding\WebDev\FrontEndMentor\Level 5\Audiophile e-commerce website\AudiophileEcommerceWebsite\AudiophileEcommerceWebsite_Tests\bin\Debug\net6.0\Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.dll
+C:\Users\Ben\Documents\Ben\Coding\WebDev\FrontEndMentor\Level 5\Audiophile e-commerce website\AudiophileEcommerceWebsite\AudiophileEcommerceWebsite_Tests\bin\Debug\net6.0\Microsoft.Web.Infrastructure.dll
+C:\Users\Ben\Documents\Ben\Coding\WebDev\FrontEndMentor\Level 5\Audiophile e-commerce website\AudiophileEcommerceWebsite\AudiophileEcommerceWebsite_Tests\obj\Debug\net6.0\AudiophileEcommerceWebsite_Tests.sourcelink.json

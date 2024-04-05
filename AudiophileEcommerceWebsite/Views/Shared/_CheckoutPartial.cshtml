@@ -3,7 +3,8 @@
 <main role="main" class="wrapper container container--checkout bg-white-98">
 		<a href="##" onclick="history.go(-1); return false;" class="fw-500 text-black-100 opacity-05 lh-p fs-main-p">Go Back</a>
 		<article class="checkout-page">
-			<form id="form" asp-action="Checkout" method="post" role="form" class="checkout-page__section--checkout checkout-page__section bg-white-100">
+			<form id="form" asp-controller="Order" asp-action="Checkout" method="post" role="form" class="checkout-page__section--checkout checkout-page__section bg-white-100">
+				@Html.HiddenFor(m => m.OrderId)
 				<h1 class="fw-700 fs-checkout-h2 text-black-100 lh-h2 uppercase">Checkout</h1>
 				<div class="form__section">
 					<h3 class="fw-700 text-beige-100 fs-button lh-button uppercase ls-button">Billing Details</h3>
@@ -74,11 +75,11 @@
 						</div>
 						<div class="form__section--radio__inner">
 							<div id="e-money" class="beige-border radio-btn-wrapper">
-							<input id="e-money-radio" class="e-money-radio radio-btn pointer fw-700 fs-checkout-h5 text-black-100" asp-for="PaymentMethod" type="radio" value="eMoney" name="PaymentMethod" />
-							<label id="e-money-text" for="e-money-radio" asp-for="PaymentMethod" class="pointer fw-700 fs-checkout-h5 text-black-100">e-Money</label>
+								<input id="e-money-radio" class="e-money-radio radio-btn pointer fw-700 fs-checkout-h5 text-black-100" asp-for="PaymentMethod" type="radio" value="eMoney" name="PaymentMethod"/>
+								<label id="e-money-text" for="e-money-radio" asp-for="PaymentMethod" class="pointer fw-700 fs-checkout-h5 text-black-100">e-Money</label>
 							</div>
 							<div id="cash" class="radio-btn-wrapper">
-							<input id="cash-radio" class="cash-radio radio-btn pointer fw-700 fs-checkout-h5 text-black-100" asp-for="PaymentMethod" type="radio" value="cash" name="PaymentMethod" />
+								<input id="cash-radio" class="cash-radio radio-btn pointer fw-700 fs-checkout-h5 text-black-100" asp-for="PaymentMethod" type="radio" value="cash" name="PaymentMethod"/>
 								<label id="cash-text" for="cash-radio" asp-for="PaymentMethod" class="pointer fw-700 fs-checkout-h5 text-black-100">Cash on Delivery</label>
 							</div>
 						</div>
@@ -103,7 +104,7 @@
 				<div class="form__section__inner form__section__cash hidden">
 					<div class="cash__wrapper">
 						<div>
-							<img src="/assets/Cash.png" />
+							<img src="/assets/Cash.png"/>
 						</div>
 						<p class="fs-checkout-h4 text-black-100 opacity-05 fs-500 lh-h4">The ‘Cash on Delivery’ option enables you to pay in cash when our delivery courier arrives at your residence. Just make sure your address is correct so that your order will not be cancelled.</p>
 					</div>
