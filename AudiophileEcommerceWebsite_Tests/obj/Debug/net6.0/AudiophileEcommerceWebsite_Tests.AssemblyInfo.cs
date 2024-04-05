@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AudiophileEcommerceWebsite_Tests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2ea829131ceef0fbe7ace99cf57922dac210652c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+708e3e32d5c8438583083c01d830b09d525500c2")]
 [assembly: System.Reflection.AssemblyProductAttribute("AudiophileEcommerceWebsite_Tests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AudiophileEcommerceWebsite_Tests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

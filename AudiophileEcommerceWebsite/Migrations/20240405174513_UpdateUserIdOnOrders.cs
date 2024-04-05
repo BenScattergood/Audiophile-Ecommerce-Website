@@ -11,7 +11,7 @@ namespace AudiophileEcommerceWebsite.Migrations
             migrationBuilder.Sql(@"DECLARE @userId as nvarchar(450) = null;
 
 SELECT Top 1 @userId = (Id)
-  FROM [Audiophile_FEM].[dbo].[AspNetUsers]
+  FROM .[dbo].[AspNetUsers]
 
   UPDATE dbo.[Orders] SET UserId = (@userId)
   FROM	dbo.[Orders]");
