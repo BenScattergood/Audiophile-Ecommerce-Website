@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AudiophileEcommerceWebsite")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+708e3e32d5c8438583083c01d830b09d525500c2")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0ecde6745ef80f7cdea012b41bbd43bf32846307")]
 [assembly: System.Reflection.AssemblyProductAttribute("AudiophileEcommerceWebsite")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AudiophileEcommerceWebsite")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
